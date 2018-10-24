@@ -2,15 +2,24 @@ import React from 'react';
 import Weather from "./components/weather";
 import Form from "./components/form";
 import Titles from "./components/titles";
-require('dotenv').config();
-const apikey  = process.env.API_KEY;
+// require('dotenv').config();
+
+let Api_Key = String(process.env.REACT_APP_API_KEY);
+const longitude =  "-90.199402";
+const latitude = "38.627003";
+
+const weatherUrl = "https://api.darksky.net/forecast/" + Api_Key + "/" + latitude + "," + longitude ;
+console.log(weatherUrl);
 
 
     class App extends React.Component {
 
-        getWeather = async () => {
-            const api_call = await fetch(`https://api.darksky.net/forecast/${apikey}/37.8267,-122.4233`);
+        getWeather = async (e) => {
+            e.preventDefault();
+            const api_call = await fetch("https://api.darksky.net/forecast/" + Api_Key + "/" + latitude + "," + longitude );
+            console.log(api_call);
             const response = await api_call.json();
+
             console.log(response);
         }
 
@@ -19,7 +28,7 @@ const apikey  = process.env.API_KEY;
             return (
                 <div>
                     <Titles />
-                    <Form />
+                    <Form loadWeather = {this.getWeather} />
                     <Weather />
                 </div>
             )
