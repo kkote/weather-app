@@ -5,8 +5,8 @@ import Titles from "./components/titles";
 // require('dotenv').config();
 
 let Api_Key = (process.env.REACT_APP_API_KEY);
-const longitude =  "-90.2";
-const latitude = "38.6";
+// const longitude =  "-90.2";
+// const latitude = "38.6";
 
 // const weatherUrl = "https://crossorigin.me/https://api.darksky.net/forecast/" + Api_Key + "/" + latitude + "," + longitude ;
 // console.log(weatherUrl);
@@ -69,10 +69,12 @@ const latitude = "38.6";
                         <div className="main">
                             <div className="container">
                                 <div className="row">
-                                    <div className="col-xs-5 title-container">
+                                    <div className="col-xs-6 title-container">
+
                                         <Titles />
+
                                     </div>
-                                    <div className="col-xs-7 form-container">
+                                    <div className="col-xs-6 form-container">
                                         <Form loadWeather={this.getWeather} />
                                         <Weather
                                             temperature={this.state.temperature}
