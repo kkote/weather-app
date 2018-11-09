@@ -4,6 +4,10 @@ import Form from "./components/form";
 import Titles from "./components/titles";
 // require('dotenv').config();
 
+import Grids from "./components/grid";
+import { Grid, Cell } from 'react-flexr';
+import 'react-flexr/styles.css'
+
 let Api_Key = (process.env.REACT_APP_API_KEY);
 // const longitude =  "-90.2";
 // const latitude = "38.6";
@@ -49,7 +53,7 @@ let Api_Key = (process.env.REACT_APP_API_KEY);
                     temperature: response.main.temp,
                     city: response.name,
                     country: response.sys.country,
-                    humidity: response.main.humidity,
+
                     description: response.weather[0].description,
                     error: ""
                 })
@@ -68,23 +72,85 @@ let Api_Key = (process.env.REACT_APP_API_KEY);
                     <div className="wrapper">
                         <div className="main">
                             <div className="container">
+
                                 <div className="row">
-                                    <div className="col-xs-6 title-container">
+                                    <div className=" title-container">
+                                        <Grid>
 
-                                        <Titles />
+                                <Cell size='2/3'>
 
-                                    </div>
-                                    <div className="col-xs-6 form-container">
-                                        <Form loadWeather={this.getWeather} />
-                                        <Weather
-                                            temperature={this.state.temperature}
-                                            city={this.state.city}
+                                    <Titles />
+
+                                </Cell>
+                                <Cell  >
+                                <Form loadWeather={this.getWeather} />
+
+                                </Cell>
+                                <Cell className="img-box" size='1/3'>
+
+
+                                </Cell>
+                                 <Cell>
+                                  <Grid>
+                                <Cell size='1/2'>
+                                <Weather
+                                          city={this.state.city}
                                             country={this.state.country}
-                                            humidity={this.state.humidity}
                                             description={this.state.description}
                                             error={this.state.error}
-                                        />
+                                            />
+                                1
+                                </Cell>
+                                <Cell size='1/2'>
+                                <Weather
+                                            temperature={this.state.temperature}
+                                            error={this.state.error}
+                                            />
+                                2
+                                </Cell>
+
+                                 <Cell size='1/2'>
+                                <Weather
+                                          city={this.state.city}
+                                            country={this.state.country}
+                                            error={this.state.error}
+                                            />
+                                   <span> 3 </span>
+                                </Cell>
+                                <Cell size='1/2'>
+                                <Weather
+                                            temperature={this.state.temperature}
+                                            error={this.state.error}
+                                            />
+                                   4
+                                </Cell>
+
+                                 </Grid>
+
+                                </Cell>
+
+                              </Grid>
+
+
+                                       { /* <Titles />  */}
+
                                     </div>
+                                    {
+//                                    <div className="col-xs-6 form-container">
+//                                        <Form loadWeather={this.getWeather} />
+//                                        <Weather
+//                                            temperature={this.state.temperature}
+//                                            city={this.state.city}
+//                                            country={this.state.country}
+//                                            humidity={this.state.humidity}
+//                                            description={this.state.description}
+//                                            error={this.state.error}
+//                                        />
+//                                    </div>
+//
+                                    }
+
+
                                 </div>
                             </div>
                         </div>

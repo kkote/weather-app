@@ -16,6 +16,10 @@
 
 
 import React from 'react';
+import { Grid, Cell } from 'react-flexr';
+import 'react-flexr/styles.css'
+
+
 class Weather extends React.Component{
     render(){
         return(
@@ -32,11 +36,6 @@ class Weather extends React.Component{
                     </p>
                 }
 
-                {
-                    this.props.humidity && <p className="weather__key">Humidity:
-                        <span className="weather__value">  {this.props.humidity}</span>
-                    </p>
-                }
 
                 {
                     this.props.description && <p className="weather__key">Conditions:

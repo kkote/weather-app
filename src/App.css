@@ -24,15 +24,44 @@ body {
     margin: 0 auto;
 }
 
+
+
+
+._11Q4tC {
+    outline: 1px dashed black  ;
+
+    padding: 0;
+}
+
+._2iUMdY {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+     margin: 0 ;
+}
+
+.img-box {
+height: auto;
+    background: url(Images/couple.jpg) center center no-repeat;
+    background-size: cover;
+
+}
+
+
+
 .row {
     display: flex;
+    background: lightslategray;
 }
 
 .title-container {
-    height: 90vh;
-    background: url(Images/couple.jpg) center center no-repeat;
-    /*background-size: cover;*/
-    background-size: contain;
+    /*height: 90vh; */
+        height: -webkit-fill-available;
+
+    /* background: url(Images/couple.jpg) center center no-repeat; */
+    /*background-size: contain;*/
+    background-size: cover;
     display: flex;
     /*align-items: center;*/
     justify-content: center;
@@ -134,14 +163,16 @@ button:active {
 }
 
 .weather__error {
-    color: #fff;
+    color: black;
     font-size: 20px;
     letter-spacing: 1px;
     font-weight: 200;
 }
 
 
-
+form {
+    padding-top: 3em;
+}
 
 
 
