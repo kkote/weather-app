@@ -30,6 +30,18 @@ class Weather extends React.Component {
 							<span className="weather__value"> <img src={this.props.icon} /></span>
 					</p>
 				)}
+				{this.props.maxtemp && (
+					<div className="weather__key">
+						Max Temp:
+						<span className="weather__value"> {this.props.maxtemp}</span>° F
+					</div>
+				)}
+				{this.props.mintemp && (
+					<div className="weather__key">
+						Min Temp:
+						<span className="weather__value"> {this.props.mintemp}</span>° F
+					</div>
+				)}
 
 				{this.props.error && (
 					<p className="weather__error">{this.props.error}</p>

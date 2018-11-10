@@ -25,49 +25,37 @@ const Titles = (props) => {
 
 const Form = (props) => {
     return (
-
         <form onSubmit = {props.loadWeather}>
         <input type="text" name="city" placeholder="city" />
         <input type="text" name="country" placeholder="country"/>
             <button>Get Weather</button>
         </form>
-
     )
 }
 
 const Morning = (props) => {
     return (
-
          <div>
            <p>Warming</p>
-
         </div>
-
     )
 }
 
 const Afternoon = (props) => {
     return (
-
          <div>
            <p>Cold</p>
-
         </div>
-
     )
 }
 
 const Evening = (props) => {
     return (
-
          <div>
            <p>More Cold</p>
-
         </div>
-
     )
 }
-
 
 class App extends React.Component {
 	state = {
@@ -75,9 +63,10 @@ class App extends React.Component {
 		city: "_____",
 		country: "__",
 		description: "___",
+		mintemp: "__",
+		maxtemp: "__",
 		icon: " ",
 		error: undefined,
-
         outer: undefined,
         top: undefined,
 		pants: undefined,
@@ -86,7 +75,6 @@ class App extends React.Component {
 
 	getWeather = async e => {
 		// const city = e.target.elements.city.value;
-		//
 		// const country = e.target.elements.country.value;
 
 		const city = "St. Louis";
@@ -97,8 +85,8 @@ class App extends React.Component {
 			`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${Api_Key}`
 		);
 
+		console.log(api_call)
 		const response = await api_call.json();
-
 		console.log(response);
 
          var iconcode = response.weather[0].icon;
@@ -111,6 +99,8 @@ class App extends React.Component {
 				country: response.sys.country,
 				description: response.weather[0].description,
 				icon: iconurl,
+				mintemp: response.main.temp_min,
+				maxtemp: response.main.temp_max,
 				error: ""
 			});
 		} else {
@@ -119,32 +109,56 @@ class App extends React.Component {
 			});
 		}
 
-    /*const tempNum = parseInt(response.main.temp);*/
-    const tempNum = "30";
+    const tempNum = parseInt(response.main.temp);
     console.log(tempNum);
 
-		if (tempNum < 50) {
+		if (tempNum >= 75) {
 			this.setState({
-			    outer: "Jacket",
-			    top: "long sleeve",
-				pants: "warm pants",
-				shoes: "bootss",
-
+			    outer: "None",
+			    top: "T-shirt",
+				pants: "Shorts",
+				shoes: "Sandals",
+				error: ""
+			})
+		} else if ((tempNum >= 60) & (tempNum < 75)  ) {
+		this.setState({
+			    outer: "Hoodie/Light",
+			    top: "T-shirt",
+				pants: "Shorts or Pants",
+				shoes: "Shoes",
+				error: ""
+			});
+		}
+			else if ((tempNum >=50) & (tempNum < 60)  ) {
+		this.setState({
+			    outer: "Jacket/Fleece",
+			    top: "T-shirt or LongSleeve",
+				pants: "Pants",
+				shoes: "Shoes",
+				error: ""
+			});
+		}
+			else if ((tempNum >=40 ) & (tempNum < 50 ) ) {
+		this.setState({
+			    outer: "Jacket/Fleece",
+			    top: " LongSleeve",
+				pants: "Pants",
+				shoes: "Shoes",
 				error: ""
 			});
 
+
 		} else {
 			this.setState({
-                outer: "Light/none",
-                top: "short sleeve",
-			    pants: "shorts",
-			    shoes: "sandals"
+                outer: "layers, hoodie/coat",
+                top: "long",
+			    pants: "pants/ layered",
+			    shoes: "boots"
 
 			});
 		}
 
 	};
-
 
 
 	render() {
@@ -192,7 +206,12 @@ class App extends React.Component {
                                         <Cell size="1/1">
                                         <Grid>
                                             <Cell size="1/3">
-                                            <Morning />
+                                            <Weather
+                                                maxtemp={this.state.maxtemp}
+                                                mintemp={this.state.mintemp}
+                                                error={this.state.error}
+
+                                            />
                                             </Cell>
                                                 <Cell size="1/3">
                                         <Afternoon />
