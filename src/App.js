@@ -35,12 +35,34 @@ const Form = (props) => {
     )
 }
 
-const Styles = (props) => {
+const Morning = (props) => {
     return (
 
          <div>
-           <p>Afternoon</p>
-            <p>Evening</p>
+           <p>Warming</p>
+
+        </div>
+
+    )
+}
+
+const Afternoon = (props) => {
+    return (
+
+         <div>
+           <p>Cold</p>
+
+        </div>
+
+    )
+}
+
+const Evening = (props) => {
+    return (
+
+         <div>
+           <p>More Cold</p>
+
         </div>
 
     )
@@ -165,17 +187,26 @@ class App extends React.Component {
 
                                         </Cell>
 
-                                        <Cell size="1/2">
-
-                                        <Styles />
 
 
-                                            <span> 3  </span>
+                                        <Cell size="1/1">
+                                        <Grid>
+                                            <Cell size="1/3">
+                                            <Morning />
+                                            </Cell>
+                                                <Cell size="1/3">
+                                        <Afternoon />
+
                                         </Cell>
-                                        <Cell size="1/2">
 
-                                            4
+                                            <Cell >
+                                             <Evening />
+                                            </Cell>
+                                        </Grid>
                                         </Cell>
+
+
+
                                     </Grid>
                                 </Cell>
                             </Grid>
