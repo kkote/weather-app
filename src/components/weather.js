@@ -23,10 +23,11 @@ class Weather extends React.Component {
 					</div>
 				)}
 
-				{this.props.description && (
+				{this.props.description && this.props.icon && (
 					<p className="weather__key">
 						With
 						<span className="weather__value"> {this.props.description}</span>
+							<span className="weather__value"> <img src={this.props.icon} /></span>
 					</p>
 				)}
 

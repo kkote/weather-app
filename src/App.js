@@ -39,8 +39,8 @@ const Styles = (props) => {
     return (
 
          <div>
-           <p>Pants</p>
-            <p>Shoes</p>
+           <p>Afternoon</p>
+            <p>Evening</p>
         </div>
 
     )
@@ -53,6 +53,7 @@ class App extends React.Component {
 		city: "_____",
 		country: "__",
 		description: "___",
+		icon: " ",
 		error: undefined,
 
         outer: undefined,
@@ -74,10 +75,12 @@ class App extends React.Component {
 			`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${Api_Key}`
 		);
 
-		console.log(api_call);
 		const response = await api_call.json();
 
 		console.log(response);
+
+         var iconcode = response.weather[0].icon;
+         const iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
 		if (city && country) {
 			this.setState({
@@ -85,6 +88,7 @@ class App extends React.Component {
 				city: response.name,
 				country: response.sys.country,
 				description: response.weather[0].description,
+				icon: iconurl,
 				error: ""
 			});
 		} else {
@@ -102,7 +106,7 @@ class App extends React.Component {
 			    outer: "Jacket",
 			    top: "long sleeve",
 				pants: "warm pants",
-				shoes: "boots",
+				shoes: "bootss",
 
 				error: ""
 			});
@@ -155,6 +159,7 @@ class App extends React.Component {
                                                 country={this.state.country}
                                                 description={this.state.description}
                                                 error={this.state.error}
+                                                icon={this.state.icon}
                                             />
                                             2
 
