@@ -6,8 +6,7 @@ class Style extends React.Component {
 	render() {
 		return (
 			<div className="weather-info">
-
-                {this.props.outer && (
+				{this.props.outer && (
 					<div className="weather__key">
 						Outerwear:
 						<span className="weather__value"> {this.props.outer}</span>

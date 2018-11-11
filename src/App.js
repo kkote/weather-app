@@ -7,10 +7,6 @@ import "react-flexr/styles.css";
 let Api_Key = process.env.REACT_APP_API_KEY;
 // const longitude =  "-90.2";
 // const latitude = "38.6";
-
-// const weatherUrl = "https://crossorigin.me/https://api.darksky.net/forecast/" + Api_Key + "/" + latitude + "," + longitude ;
-// console.log(weatherUrl);
-
 // const weatherUrl = ("api.openweathermap.org/data/2.5/weather?lat="   + latitude + "&lon=" + longitude + "&appid=" + Api_Key) ;
 // console.log(weatherUrl);
 
@@ -93,12 +89,12 @@ class App extends React.Component {
 			    outer: "None",
 			    top: "T-shirt",
 				pants: "Shorts",
-				shoes: "Sandals",
+				shoes: "Sandals or Shoes",
 				error: ""
 			})
 		} else if ((tempNum >= 60) & (tempNum < 75)  ) {
 		this.setState({
-			    outer: "Hoodie/Light",
+			    outer: "Hoodie or Light Jacket",
 			    top: "T-shirt",
 				pants: "Shorts or Pants",
 				shoes: "Shoes",
@@ -117,19 +113,19 @@ class App extends React.Component {
 			else if ((tempNum >=40 ) & (tempNum < 50 ) ) {
 		this.setState({
 			    outer: "Jacket/Fleece",
-			    top: " LongSleeve",
+			    top: " LongS leeve",
 				pants: "Pants",
-				shoes: "Shoes",
+				shoes: "Shoes or Boots",
 				error: ""
 			});
 
 
 		} else {
 			this.setState({
-                outer: "layers, hoodie/coat",
-                top: "long",
-			    pants: "pants/ layered",
-			    shoes: "boots"
+                outer: "Layers: Hoodie/Jacket/Coat",
+                top: "Long Sleeve",
+			    pants: "Thick Pants or Layered",
+			    shoes: "Boots"
 
 			});
 		}
