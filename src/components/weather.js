@@ -24,11 +24,14 @@ class Weather extends React.Component {
 				)}
 
 				{this.props.description && this.props.icon && (
-					<p className="weather__key">
+					<div className="weather__key"
+					style={{
+    paddingTop: '-3rem',
+  }}>
 						With
 						<span className="weather__value"> {this.props.description}</span>
 							<span className="weather__value"> <img src={this.props.icon} /></span>
-					</p>
+					</div>
 				)}
 				{this.props.maxtemp && (
 					<div className="weather__key">
@@ -39,7 +42,7 @@ class Weather extends React.Component {
 				{this.props.mintemp && (
 					<div className="weather__key">
 						Min Temp:
-						<span className="weather__value"> {this.props.mintemp}</span>° F
+						<span className="weather__value"> {this.props.mintemp} °F</span>
 					</div>
 				)}
 

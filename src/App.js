@@ -17,8 +17,8 @@ let Api_Key = process.env.REACT_APP_API_KEY;
 const Titles = (props) => {
     return (
         <div>
-            <h1 className="title-container__title">Weather Wear</h1>
-            <p className="title-container__subtitle">Forecast Style Guide.</p>
+            <h1 className="title-container__title">Fashion Forecast</h1>
+            <p className="title-container__subtitle">Weather Style Guide</p>
         </div>
     )
 }
@@ -28,49 +28,25 @@ const Form = (props) => {
         <form onSubmit = {props.loadWeather}>
         <input type="text" name="city" placeholder="city" />
         <input type="text" name="country" placeholder="country"/>
-            <button>Get Weather</button>
+            <button>Get Location</button>
         </form>
-    )
-}
-
-const Morning = (props) => {
-    return (
-         <div>
-           <p>Warming</p>
-        </div>
-    )
-}
-
-const Afternoon = (props) => {
-    return (
-         <div>
-           <p>Cold</p>
-        </div>
-    )
-}
-
-const Evening = (props) => {
-    return (
-         <div>
-           <p>More Cold</p>
-        </div>
     )
 }
 
 class App extends React.Component {
 	state = {
-		temperature: "___",
+		temperature: " -  -",
 		city: "_____",
 		country: "__",
-		description: "___",
-		mintemp: "__",
-		maxtemp: "__",
+		description: "_____",
+		mintemp: " -  -",
+		maxtemp: " -  -",
 		icon: " ",
 		error: undefined,
-        outer: undefined,
-        top: undefined,
-		pants: undefined,
-		shoes: undefined
+        outer: " ",
+        top: " ",
+		pants: " ",
+		shoes: " "
 	};
 
 	getWeather = async e => {
@@ -178,7 +154,7 @@ class App extends React.Component {
                                 <Cell className="img-box" size="1/3" />
                                 <Cell className="info-box">
                                     <Grid>
-                                        <Cell size="1/2">
+                                        <Cell className="style-box" size="1/2">
                                             <Style
                                                 top={this.state.top}
                                                 pants={this.state.pants}
@@ -186,45 +162,22 @@ class App extends React.Component {
                                                 shoes={this.state.shoes}
                                                 error={this.state.error}
                                             />
-                                            1
+
                                         </Cell>
-                                        <Cell size="1/2">
+                                        <Cell className="weather-box" size="1/2">
                                             <Weather
                                                 temperature={this.state.temperature}
                                                 city={this.state.city}
                                                 country={this.state.country}
                                                 description={this.state.description}
+                                                  maxtemp={this.state.maxtemp}
+                                                mintemp={this.state.mintemp}
                                                 error={this.state.error}
                                                 icon={this.state.icon}
                                             />
-                                            2
+
 
                                         </Cell>
-
-
-
-                                        <Cell size="1/1">
-                                        <Grid>
-                                            <Cell size="1/3">
-                                            <Weather
-                                                maxtemp={this.state.maxtemp}
-                                                mintemp={this.state.mintemp}
-                                                error={this.state.error}
-
-                                            />
-                                            </Cell>
-                                                <Cell size="1/3">
-                                        <Afternoon />
-
-                                        </Cell>
-
-                                            <Cell >
-                                             <Evening />
-                                            </Cell>
-                                        </Grid>
-                                        </Cell>
-
-
 
                                     </Grid>
                                 </Cell>

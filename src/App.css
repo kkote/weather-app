@@ -9,7 +9,7 @@ body {
 }
 
 .wrapper {
-    background: #ccc;
+    background: #eeeeee4f;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -28,8 +28,8 @@ body {
 
 
 ._11Q4tC {
-    outline: 1px dashed black  ;
-
+    /*outline: 1px dashed black  ;*/
+    align-items: center;
     padding: 0;
 
     display: inline-grid ;
@@ -52,12 +52,14 @@ height: auto;
 
 .info-box {
     min-height: 65%;
+        border-radius: .5rem;
+
 }
 
 
 .row {
     display: flex;
-    background: lightslategray;
+    background: #eeeeee4f;
 }
 
 .title-container {
@@ -102,7 +104,8 @@ height: auto;
 
 
 ::placeholder {
-    color: red;
+    color: #b9402d;
+    font-size: 15px;
     opacity: 1; /* Firefox */
 }
 
@@ -112,7 +115,7 @@ input[type="text"] {
     background-color: transparent;
     border: 0;
     border-bottom: solid 1px #5eba7d;
-    width: 30%;
+    width: 60%;
     padding-bottom: 4px;
     color: #fff !important;
     font-weight: lighter;
@@ -140,7 +143,7 @@ button {
     letter-spacing: 1px;
     font-size: 15px;
     cursor: pointer;
-    background-color: #49aee9;
+    background-color: #479851;
     color: #fff;
     font-weight: 100;
 }
@@ -158,7 +161,7 @@ button:active {
 
 .weather__key {
 
-    border-bottom: solid 2px rgba(255,255,255,0.06);
+    border-bottom: solid 2px #4d4d4d24;
     /* padding: 20px 0 20px 0; */
     padding: 20px 0 20px 0;
     font-weight: 400;
@@ -173,6 +176,7 @@ button:active {
 .weather__value {
 
     font-weight: 200;
+        font-size: x-large;
 }
 
 .weather__error {
@@ -182,6 +186,23 @@ button:active {
     font-weight: 200;
 }
 
+.weather-box {
+background: #4d4d4d17;
+border-radius: .5rem;
+}
+
+.weather-box div {
+    border: 0;
+}
+
+.weather-info {
+    display: inline-grid;
+}
+
+
+.style-box div {
+    padding: 30px 0 30px 0;
+}
 
 form {
     padding-top: 3em;
