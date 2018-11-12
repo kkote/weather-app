@@ -90,6 +90,7 @@
     /* Firefox */
 }
  input[type="text"] {
+    text-transform: capitalize;
      background-color: transparent;
      border: 0;
      border-bottom: solid 1px #5eba7d;
@@ -104,6 +105,7 @@
     */
 }
  input[type="text"] {
+    text-align: center;
      outline: none;
 }
  input:-webkit-autofill {
@@ -140,12 +142,14 @@
      padding: 20px 0 20px 0;
      font-weight: 400;
      margin: auto;
+     color: blue;
 }
  .weather__key:last-child {
      border: 0;
 }
  .weather__value {
-     font-weight: 200;
+     font-weight: 500;
+         color: #222222e8;
      font-size: x-large;
 }
  .weather__error {
@@ -170,4 +174,21 @@
  form {
      padding-top: 3em;
 }
- 
+
+
+#tempDisplay {
+    font-weight: 600;
+    background: #2f4f4fab;
+    border-radius: .4rem;
+    margin: 4px;
+    padding: 2px;
+    color: #eee;
+}
+
+
+nav {
+padding: 1rem;
+    font-size: x-large;
+    height: 50px;
+background: lightgray;
+}

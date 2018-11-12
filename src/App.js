@@ -104,7 +104,7 @@ class App extends React.Component {
 			else if ((tempNum >=50) & (tempNum < 60)  ) {
 		this.setState({
 			    outer: "Jacket/Fleece",
-			    top: "T-shirt or LongSleeve",
+			    top: "T-shirt or Long sleeve",
 				pants: "Pants",
 				shoes: "Shoes",
 				error: ""
@@ -113,7 +113,7 @@ class App extends React.Component {
 			else if ((tempNum >=40 ) & (tempNum < 50 ) ) {
 		this.setState({
 			    outer: "Jacket/Fleece",
-			    top: " LongS leeve",
+			    top: " Long Sleeve",
 				pants: "Pants",
 				shoes: "Shoes or Boots",
 				error: ""
@@ -136,8 +136,15 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
+			 <nav>
+                        <div> Fashion Forecast</div>
+                    </nav>
 				<div className="wrapper">
+
+
+
 					<div className="main">
+
                         <div className=" title-container">
                             <Grid>
                                 <Cell size="2/3">
