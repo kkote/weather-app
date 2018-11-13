@@ -9,31 +9,31 @@ class Style extends React.Component {
 				{this.props.outer && (
 					<div className="style-div">
 
-						<span className="hi styles"> Outerwear:</span>
-						<span className="weather__value lo styles"> {this.props.outer}</span>
+						<span className="style-key styles"> Outerwear:</span>
+						<span className="weather__value style-result styles"> {this.props.outer}</span>
 					</div>
 				)}
 
 				{this.props.top && (
 					<div className="style-div">
-						<span className="weather__value hi styles"> Top: </span>
-						<span className="weather__value lo styles"> {this.props.top}</span>
+						<span className="weather__value style-key styles"> Top: </span>
+						<span className="weather__value style-result styles"> {this.props.top}</span>
 					</div>
 				)}
 
 				{this.props.pants && (
 					<div className="style-div">
-					<span className="weather__value hi styles"> Bottoms </span>
+					<span className="weather__value style-key styles"> Bottoms </span>
 
-						<span className="weather__value lo styles"> {this.props.pants}</span>
+						<span className="weather__value style-result styles"> {this.props.pants}</span>
 					</div>
 				)}
 
 				{this.props.shoes && (
 					<div className="style-div">
-					<span className="weather__value hi styles"> Shoes </span>
+					<span className="weather__value style-key styles"> Shoes </span>
 
-						<span className="weather__value lo styles"> {this.props.shoes}</span>
+						<span className="weather__value style-result styles"> {this.props.shoes}</span>
 					</div>
 				)}
 

@@ -112,10 +112,10 @@ class App extends React.Component {
 		}
 			else if ((tempNum >=40 ) & (tempNum < 50 ) ) {
 		this.setState({
-			    outer: "Jacket/Fleece",
+			    outer: "Jacket/Fleece ",
 			    top: " Long Sleeve",
 				pants: "Pants",
-				shoes: "Shoes or Boots",
+				shoes: "Shoes or Bootss",
 				error: ""
 			});
 
