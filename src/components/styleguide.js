@@ -7,35 +7,38 @@ class Style extends React.Component {
 		return (
 			<div className="weather-info">
 				{this.props.outer && (
-					<div className="weather__key">
-						Outerwear:
-						<span className="weather__value"> {this.props.outer}</span>
+					<div className="style-div">
+
+						<span className="hi styles"> Outerwear:</span>
+						<span className="weather__value lo styles"> {this.props.outer}</span>
 					</div>
 				)}
 
 				{this.props.top && (
-					<div className="weather__key">
-						Top:
-						<span className="weather__value"> {this.props.top}</span>
+					<div className="style-div">
+						<span className="weather__value hi styles"> Top: </span>
+						<span className="weather__value lo styles"> {this.props.top}</span>
 					</div>
 				)}
 
 				{this.props.pants && (
-					<p className="weather__key">
-						Bottoms:
-						<span className="weather__value"> {this.props.pants}</span>
-					</p>
+					<div className="style-div">
+					<span className="weather__value hi styles"> Bottoms </span>
+
+						<span className="weather__value lo styles"> {this.props.pants}</span>
+					</div>
 				)}
 
 				{this.props.shoes && (
-					<p className="weather__key">
-						Shoes:
-						<span className="weather__value"> {this.props.shoes}</span>
-					</p>
+					<div className="style-div">
+					<span className="weather__value hi styles"> Shoes </span>
+
+						<span className="weather__value lo styles"> {this.props.shoes}</span>
+					</div>
 				)}
 
 				{this.props.error && (
-					<p className="weather__error">{this.props.error}</p>
+					<div className="weather__error">{this.props.error}</div>
 				)}
 			</div>
 		);

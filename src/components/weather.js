@@ -29,19 +29,23 @@ class Weather extends React.Component {
 					>
 						With
 						<span className="weather__value"> {this.props.description}</span>
-						<span className="weather__value">
+						{ /* <span className="weather__value">
 							{" "}
-							{/* {<img src={this.props.icon} />} */}
-						</span>
+							{<img src={this.props.icon} />}
+						</span> */}
 					</div>
 				)}
 				{this.props.maxtemp && this.props.mintemp && (
-					<div className="weather__key">
-						High|
-						<span className="weather__value"> {this.props.maxtemp} ° F</span>
-						{" "}
-						Low|
-						<span className="weather__value"> {this.props.mintemp} °F</span>
+					<div className="weather__key  ">
+
+						<span className="weather__value hi numbers"> High</span>
+
+						<span className="weather__value lo numbers"> {this.props.maxtemp} ° F</span>
+
+
+						<span className="weather__value hi numbers"> Low</span>
+
+						<span className="weather__value lo numbers"> {this.props.mintemp} °F</span>
 					</div>
 				)}
 

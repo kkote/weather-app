@@ -137,11 +137,11 @@
 }
  .weather__key {
      border-bottom: solid 2px #4d4d4d24;
-    /* padding: 20px 0 20px 0;
-     */
-     padding: 20px 0 20px 0;
+     /*padding: 20px 0 20px 0; */
+        padding: 20px;
+     /* margin: 20px 0 20px 0; */
      font-weight: 400;
-     margin: auto;
+     /* margin: auto; */
      color: blue;
 }
  .weather__key:last-child {
@@ -168,9 +168,15 @@
  .weather-info {
      display: inline-grid;
 }
+
+
  .style-box div {
-     padding: 30px 0 30px 0;
+     min-height: 100px;
+
+     /*padding: 30px 0 30px 0;*/
 }
+
+
  form {
      /*padding-top: 3em;*/
 }
@@ -210,12 +216,62 @@ float: left;
  .display-container {
     /*height: 90vh;
      */
+     min-height: 120px;
      height: -webkit-fill-available;
      display: inline;
     /*align-items: center;
     */
 
-     text-align: center;
+     /* text-align: center; */
      color: rgb(11, 3, 82);
      margin: auto;
+}
+
+
+.numbers {
+   padding: 3px;
+    color: #fff;
+    display: inline;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+
+.temp {
+    font-size: 24px;
+    width: 50%;
+    padding: 5px 0px;
+    float: left;
+    text-align: center;
+}
+
+.hi {
+    background-color: rgba(110,110,110,0.87);
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.lo {
+    background-color: rgba(167,167,167,0.8);
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+
+.styles {
+   padding: 3px;
+    color: #fff;
+    display: block;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.style-div {
+padding: 10px;
+}
+
+.style-div span {
+min-height: 40px;
 }

@@ -97,7 +97,7 @@ class App extends React.Component {
 			    outer: "Hoodie or Light Jacket",
 			    top: "T-shirt",
 				pants: "Shorts or Pants",
-				shoes: "Shoes",
+				shoes: "Shoes ",
 				error: ""
 			});
 		}
