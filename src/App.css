@@ -172,7 +172,7 @@
      padding: 30px 0 30px 0;
 }
  form {
-     padding-top: 3em;
+     /*padding-top: 3em;*/
 }
 
 
@@ -187,8 +187,35 @@
 
 
 nav {
-padding: 1rem;
+    padding: 1rem;
     font-size: x-large;
-    height: 50px;
-background: lightgray;
+    height: 120px;
+    background: lightgray;
+}
+
+
+
+.search-form {
+float: right;
+width: 50%;
+}
+
+.title-box {
+width: 50%;
+float: left;
+
+}
+
+
+ .display-container {
+    /*height: 90vh;
+     */
+     height: -webkit-fill-available;
+     display: inline;
+    /*align-items: center;
+    */
+
+     text-align: center;
+     color: rgb(11, 3, 82);
+     margin: auto;
 }

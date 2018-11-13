@@ -14,7 +14,7 @@ const Titles = (props) => {
     return (
         <div>
             <h1 className="title-container__title">Fashion Forecast</h1>
-            <p className="title-container__subtitle">Weather Style Guide</p>
+            <div className="title-container__subtitle">Weather Style Guide</div>
         </div>
     )
 }
@@ -136,28 +136,30 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
+
+
 			 <nav>
-                        <div> Fashion Forecast</div>
-                    </nav>
+			 <div className="title-box">
+			   <Titles />
+			  </div>
+                   <div className="search-form">
+			   <Form  loadWeather={this.getWeather} />
+			   </div>
+
+ </nav>
+
+
 				<div className="wrapper">
 
 
 
 					<div className="main">
 
-                        <div className=" title-container">
+                        <div className="display-container">
                             <Grid>
-                                <Cell size="2/3">
-                                    <Titles />
-                                </Cell>
-                                <Cell>
-                                    <Form loadWeather={this.getWeather} />
 
-                                </Cell>
-                                <Cell className="img-box" size="1/3" />
-                                <Cell className="info-box">
-                                    <Grid>
-                                        <Cell className="style-box" size="1/2">
+
+                                <Cell className="style-box" size="1/3">
                                             <Style
                                                 top={this.state.top}
                                                 pants={this.state.pants}
@@ -167,7 +169,8 @@ class App extends React.Component {
                                             />
 
                                         </Cell>
-                                        <Cell className="weather-box" size="1/2">
+                                        <Cell className="img-box" size="1/3" />
+                                 <Cell className="weather-box" >
                                             <Weather
                                                 temperature={this.state.temperature}
                                                 city={this.state.city}
@@ -176,14 +179,9 @@ class App extends React.Component {
                                                   maxtemp={this.state.maxtemp}
                                                 mintemp={this.state.mintemp}
                                                 error={this.state.error}
-                                                icon={this.state.icon}
-                                            />
+                                                icon={this.state.icon} />
+                                          </Cell>
 
-
-                                        </Cell>
-
-                                    </Grid>
-                                </Cell>
                             </Grid>
                         </div>
 					</div>
