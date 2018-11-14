@@ -23,7 +23,7 @@ const Form = (props) => {
     return (
         <form onSubmit = {props.loadWeather}>
         <input type="text" name="city" placeholder="city" />
-        <input type="text" name="country" placeholder="country"/>
+        {/* <input type="text" name="country" placeholder="country"/> */}
             <button>Get Location</button>
         </form>
     )
@@ -36,7 +36,7 @@ class App extends React.Component {
 		country: "__",
 		description: "_____",
 		mintemp: " -  -",
-		maxtemp: " -  -",
+		maxtemp: " -   -",
 		icon: " ",
 		error: undefined,
         outer: " ",
@@ -46,10 +46,10 @@ class App extends React.Component {
 	};
 
 	getWeather = async e => {
-		// const city = e.target.elements.city.value;
+//		 const city = e.target.elements.city.value;
 		// const country = e.target.elements.country.value;
 
-		const city = "St. Louis";
+		 const city = "St. Louis";
 		const country = "us";
 
 		e.preventDefault();
@@ -61,8 +61,8 @@ class App extends React.Component {
 		const response = await api_call.json();
 		console.log(response);
 
-         var iconcode = response.weather[0].icon;
-         const iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+         {/*var iconcode = response.weather[0].icon;
+         const iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";*/}
 
 		if (city && country) {
 			this.setState({
@@ -70,10 +70,9 @@ class App extends React.Component {
 				city: response.name,
 				country: response.sys.country,
 				description: response.weather[0].description,
-				icon: iconurl,
 				mintemp: response.main.temp_min,
 				maxtemp: response.main.temp_max,
-				error: ""
+				error: "Please retry"
 			});
 		} else {
 			this.setState({
@@ -137,16 +136,32 @@ class App extends React.Component {
 		return (
 			<div>
 
+			<Grid >
+			<Cell className="nav-box">
 
-			 <nav>
-			 <div className="title-box">
+			<Cell className="title-box" size="1/4">
 			   <Titles />
-			  </div>
-                   <div className="search-form">
+			  </Cell>
+                   <Cell className="search-form">
 			   <Form  loadWeather={this.getWeather} />
-			   </div>
+			   </Cell>
 
- </nav>
+			  <Cell className="weather-top" size="1/2">
+			 <Weather
+                                                temperature={this.state.temperature}
+                                                city={this.state.city}
+                                                country={this.state.country}
+                                                description={this.state.description}
+                                                  maxtemp={this.state.maxtemp}
+                                                mintemp={this.state.mintemp}
+                                                error={this.state.error}
+                                                icon={this.state.icon} />
+
+			  </Cell>
+
+			</Cell>
+
+			</Grid>
 
 
 				<div className="wrapper">
@@ -159,7 +174,7 @@ class App extends React.Component {
                             <Grid>
 
 
-                                <Cell className="style-box" size="1/3">
+                                <Cell className="style-box" >
                                             <Style
                                                 top={this.state.top}
                                                 pants={this.state.pants}
@@ -169,18 +184,8 @@ class App extends React.Component {
                                             />
 
                                         </Cell>
-                                        <Cell className="img-box" size="1/3" />
-                                 <Cell className="weather-box" >
-                                            <Weather
-                                                temperature={this.state.temperature}
-                                                city={this.state.city}
-                                                country={this.state.country}
-                                                description={this.state.description}
-                                                  maxtemp={this.state.maxtemp}
-                                                mintemp={this.state.mintemp}
-                                                error={this.state.error}
-                                                icon={this.state.icon} />
-                                          </Cell>
+                                        <Cell className="img-box" size="1/2" />
+
 
                             </Grid>
                         </div>

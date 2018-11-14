@@ -6,7 +6,7 @@ class Weather extends React.Component {
 	render() {
 		return (
 			<div className="weather-info">
-				{this.props.country && this.props.city && this.props.temperature &&  (
+				{this.props.country && this.props.city && this.props.temperature && this.props.description &&  (
 					<div className="weather__key">
 						In
 						<span className="weather__value">
@@ -16,25 +16,24 @@ class Weather extends React.Component {
 						</span>
 						Its currently
 						<span id="tempDisplay" className="weather__value"> {this.props.temperature} ° F</span>
+						With
+						<span className="weather__value"> {this.props.description}</span>
 					</div>
 				)}
 
 
-				{this.props.description && this.props.icon && (
-					<div
-						className="weather__key"
-						style={{
-							paddingTop: "-3rem"
-						}}
-					>
+			{ /*	{this.props.description && this.props.icon && (
+					<div className="weather__key">
 						With
 						<span className="weather__value"> {this.props.description}</span>
 						{ /* <span className="weather__value">
 							{" "}
 							{<img src={this.props.icon} />}
-						</span> */}
+						</span> }
 					</div>
-				)}
+				)} */ }
+
+
 				{this.props.maxtemp && this.props.mintemp && (
 					<div className="weather__key  ">
 
