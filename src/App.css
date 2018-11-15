@@ -268,7 +268,7 @@ img {
      flex-direction: row-reverse;
 }
  .location-search {
-     display: inline;
+     /*display: inline; */
 }
  .location-search input,button {
      padding: 8px;

@@ -68,7 +68,7 @@ class App extends React.Component {
 		top: " ",
 		pants: " ",
 		shoes: " ",
-		img: require('./Images/couple.jpg')
+		img: require('./Images/winter-couplesize.jpg')
 	};
 
 	getWeather = async e => {
@@ -118,7 +118,7 @@ class App extends React.Component {
 				top: "T-shirt",
 				pants: "Shorts",
 				shoes: "Sandals",
-				img: require('./Images/summer-group.jpg'),
+				img: require('./Images/summer-groups.jpg'),
 				error: ""
 			});
 		} else if ((tempNum >= 60) & (tempNum < 75)) {
@@ -127,7 +127,7 @@ class App extends React.Component {
 				top: "T-shirt",
 				pants: "Shorts or Pants",
 				shoes: "Shoes ",
-				img: require('./Images/spring-group.jpg'),
+				img: require('./Images/spring-group-s.jpg'),
 				error: ""
 			});
 		} else if ((tempNum >= 50) & (tempNum < 60)) {
@@ -137,7 +137,7 @@ class App extends React.Component {
 				pants: "Pants",
 				shoes: "Shoes",
 				img: "",
-				img: require('./Images/fall-couple.jpg'),
+				img: require('./Images/fall-couple-s.jpg'),
 				error: ""
 			});
 		} else if ((tempNum >= 40) & (tempNum < 50)) {
@@ -147,7 +147,7 @@ class App extends React.Component {
 				pants: "Pants",
 				shoes: "Shoes or Boots",
 				img: "",
-				img: require('./Images/winter-couple.jpg'),
+				img: require('./Images/winter-couplesize.jpg'),
 				error: ""
 
 			});
@@ -157,7 +157,7 @@ class App extends React.Component {
 				top: "Long Sleeve",
 				pants: "Thick Pants or Layered",
 				shoes: "Boots",
-				img: require('./Images/winter-woman-crop2.jpg')
+				img: require('./Images/winter-woman-crop2size.jpg')
 			});
 		}
 
@@ -171,18 +171,18 @@ class App extends React.Component {
 			<div>
 				<Grid>
 					<Cell className="nav-box">
-						<Cell className="title-box" size="1/4">
+						<Cell className="title-box" palm="hidden" size="1/4">
 							<Titles />
 						</Cell>
 						{/*{<Cell className="search-form">
 							<Form loadWeather={this.getWeather} />
 						</Cell> }*/ }
-						<Cell className="weather-top" >
+						<Cell className="weather-top" palm="2/3">
 							<Cell className="search-form">
 								<Form loadWeather={this.getWeather} />
 							</Cell>
 
-							<Cell  size="2/3">
+							<Cell   size="2/3">
 								<Weather
 									temperature={this.state.temperature}
 									city={this.state.city}
