@@ -5,7 +5,7 @@ import "react-flexr/styles.css";
 class Weather extends React.Component {
 	render() {
 		return (
-			<div className="weather-info">
+			<div className="weather-top-display">
 				{this.props.country && this.props.city && this.props.temperature && this.props.description &&  (
 					<div className="weather__key">
 						In
