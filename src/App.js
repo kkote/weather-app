@@ -37,6 +37,40 @@ const Form = props => {
 	);
 };
 
+
+
+
+
+
+class Img extends React.Component {
+
+	render() {
+
+        var aImg = "couple";
+
+        var imageName = require('./Images/' + aImg + '.jpg');
+
+		return (
+			<div className="imgTwo">
+				{this.props.img    &&  (
+					<div >
+
+                        {this.props.img}
+                        {/*<img src={this.props.img} />*/}
+                        {/*<img src={imageName} /> */ }
+                        <img src={imageName} />
+
+					</div>
+				)}
+			</div>
+		);
+	}
+}
+
+
+
+
+
 class App extends React.Component {
 	state = {
 		temperature: " -  -",
@@ -50,7 +84,8 @@ class App extends React.Component {
 		outer: " ",
 		top: " ",
 		pants: " ",
-		shoes: " "
+		shoes: " ",
+		img: "winter-man"
 	};
 
 	getWeather = async e => {
@@ -100,6 +135,7 @@ class App extends React.Component {
 				top: "T-shirt",
 				pants: "Shorts",
 				shoes: "Sandals",
+				img: "",
 				error: ""
 			});
 		} else if ((tempNum >= 60) & (tempNum < 75)) {
@@ -108,6 +144,7 @@ class App extends React.Component {
 				top: "T-shirt",
 				pants: "Shorts or Pants",
 				shoes: "Shoes ",
+				img: "",
 				error: ""
 			});
 		} else if ((tempNum >= 50) & (tempNum < 60)) {
@@ -116,6 +153,7 @@ class App extends React.Component {
 				top: "T-shirt or Long sleeve",
 				pants: "Pants",
 				shoes: "Shoes",
+				img: "",
 				error: ""
 			});
 		} else if ((tempNum >= 40) & (tempNum < 50)) {
@@ -124,6 +162,7 @@ class App extends React.Component {
 				top: " Long Sleeve",
 				pants: "Pants",
 				shoes: "Shoes or Bootss",
+				img: "",
 				error: ""
 			});
 		} else {
@@ -134,7 +173,23 @@ class App extends React.Component {
 				shoes: "Boots"
 			});
 		}
+
+
+
 	};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	render() {
 		return (
@@ -172,7 +227,7 @@ class App extends React.Component {
 					<div className="main">
 						<div className="display-container">
 							<Grid>
-								<Cell className="style-box">
+								<Cell className="style-box" size="1/2">
 									<Style
 										top={this.state.top}
 										pants={this.state.pants}
@@ -181,7 +236,8 @@ class App extends React.Component {
 										error={this.state.error}
 									/>
 								</Cell>
-								<Cell className="img-box" size="1/2" />
+								<Img img={this.state.img} />
+
 							</Grid>
 						</div>
 					</div>
