@@ -118,7 +118,7 @@ class App extends React.Component {
 				top: "T-shirt",
 				pants: "Shorts",
 				shoes: "Sandals",
-				img: require('./Images/summer-woman.jpg'),
+				img: require('./Images/summer-group.jpg'),
 				error: ""
 			});
 		} else if ((tempNum >= 60) & (tempNum < 75)) {
@@ -127,7 +127,7 @@ class App extends React.Component {
 				top: "T-shirt",
 				pants: "Shorts or Pants",
 				shoes: "Shoes ",
-				img: require('./Images/summer-man.jpg'),
+				img: require('./Images/spring-group.jpg'),
 				error: ""
 			});
 		} else if ((tempNum >= 50) & (tempNum < 60)) {
@@ -137,7 +137,7 @@ class App extends React.Component {
 				pants: "Pants",
 				shoes: "Shoes",
 				img: "",
-				img: require('./Images/couple.jpg'),
+				img: require('./Images/fall-couple.jpg'),
 				error: ""
 			});
 		} else if ((tempNum >= 40) & (tempNum < 50)) {
@@ -147,7 +147,7 @@ class App extends React.Component {
 				pants: "Pants",
 				shoes: "Shoes or Boots",
 				img: "",
-				img: require('./Images/winter-woman.jpg'),
+				img: require('./Images/winter-couple.jpg'),
 				error: ""
 
 			});
@@ -157,7 +157,7 @@ class App extends React.Component {
 				top: "Long Sleeve",
 				pants: "Thick Pants or Layered",
 				shoes: "Boots",
-				img: require('./Images/winter-woman.jpg')
+				img: require('./Images/winter-woman-crop2.jpg')
 			});
 		}
 
