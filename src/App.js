@@ -39,36 +39,19 @@ const Form = props => {
 
 
 
-
-
+//        var aImg = "couple";
+//
+//        var imageName = require('./Images/' + aImg + '.jpg');
 
 class Img extends React.Component {
-
 	render() {
-
-        var aImg = "couple";
-
-        var imageName = require('./Images/' + aImg + '.jpg');
-
 		return (
-			<div className="imgTwo">
-				{this.props.img    &&  (
-					<div >
-
-                        {this.props.img}
-                        {/*<img src={this.props.img} />*/}
-                        {/*<img src={imageName} /> */ }
-                        <img src={imageName} />
-
-					</div>
-				)}
+			<div className="img-box">
+			<img src={this.props.img} />
 			</div>
 		);
 	}
 }
-
-
-
 
 
 class App extends React.Component {
@@ -85,7 +68,7 @@ class App extends React.Component {
 		top: " ",
 		pants: " ",
 		shoes: " ",
-		img: "winter-man"
+		img: require('./Images/couple.jpg')
 	};
 
 	getWeather = async e => {
@@ -135,7 +118,7 @@ class App extends React.Component {
 				top: "T-shirt",
 				pants: "Shorts",
 				shoes: "Sandals",
-				img: "",
+				img: require('./Images/summer-woman.jpg'),
 				error: ""
 			});
 		} else if ((tempNum >= 60) & (tempNum < 75)) {
@@ -144,7 +127,7 @@ class App extends React.Component {
 				top: "T-shirt",
 				pants: "Shorts or Pants",
 				shoes: "Shoes ",
-				img: "",
+				img: require('./Images/summer-man.jpg'),
 				error: ""
 			});
 		} else if ((tempNum >= 50) & (tempNum < 60)) {
@@ -154,6 +137,7 @@ class App extends React.Component {
 				pants: "Pants",
 				shoes: "Shoes",
 				img: "",
+				img: require('./Images/couple.jpg'),
 				error: ""
 			});
 		} else if ((tempNum >= 40) & (tempNum < 50)) {
@@ -161,34 +145,25 @@ class App extends React.Component {
 				outer: "Jacket/Fleece ",
 				top: " Long Sleeve",
 				pants: "Pants",
-				shoes: "Shoes or Bootss",
+				shoes: "Shoes or Boots",
 				img: "",
+				img: require('./Images/winter-woman.jpg'),
 				error: ""
+
 			});
 		} else {
 			this.setState({
 				outer: "Layers: Hoodie/Jacket/Coat",
 				top: "Long Sleeve",
 				pants: "Thick Pants or Layered",
-				shoes: "Boots"
+				shoes: "Boots",
+				img: require('./Images/winter-woman.jpg')
 			});
 		}
 
 
 
 	};
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	render() {
@@ -226,7 +201,7 @@ class App extends React.Component {
 				<div className="wrapper">
 					<div className="main">
 						<div className="display-container">
-							<Grid>
+							<Grid className="display-container">
 								<Cell className="style-box" size="1/2">
 									<Style
 										top={this.state.top}

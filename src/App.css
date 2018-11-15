@@ -148,13 +148,17 @@
      height: auto;
          justify-content: center;
      /* background: url(Images/couple.jpg) center center no-repeat; */
+
      background-size: cover;
 }
 
 img {
         max-width: 100%;
-     background: url(Images/couple.jpg) center center no-repeat;
+        max-height: 100%;
+     /* background: url(Images/couple.jpg) center center no-repeat; */
+      background: center center no-repeat;
      background-size: contain;
+     /*padding: 3rem 0rem 3rem 1rem;*/
 
 }
 
@@ -186,11 +190,13 @@ img {
      text-align: end;
 }
  .display-container {
-     min-height: 120px;
+     /* min-height: 120px;
      height: -webkit-fill-available;
      display: inline;
      color: rgb(11, 3, 82);
-     margin: auto;
+     margin: auto; */
+
+     align-items: center;
 }
  .numbers {
      padding: 3px;
