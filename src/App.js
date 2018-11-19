@@ -182,7 +182,7 @@ class App extends React.Component {
 								<Form loadWeather={this.getWeather} />
 							</Cell>
 
-							<Cell   size="2/3">
+							<Cell   size="3/5">
 								<Weather
 									temperature={this.state.temperature}
 									city={this.state.city}

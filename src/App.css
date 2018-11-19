@@ -5,17 +5,22 @@
      font-family: "Open Sans", serif;
 }
  .wrapper {
-     background: #eeeeee4f;
-     height: 100vh;
+     background: whitesmoke;
+     /*height: 100vh;*/
+     height: auto;
      display: flex;
      justify-content: center;
      align-items: center;
 }
  .main {
-     height: 90vh;
-     background: #fff;
+     /*height: 90vh; */
+     height: auto;
+     /*background: #fff; */
+     background: #8080809e;
      width: 80%;
-     margin: 0 auto;
+     /*margin: 0 auto; */
+
+         margin-top: 20px;
 }
 
  .row {
@@ -69,6 +74,7 @@
  input[type="text"] {
      text-align: center;
      outline: none;
+     background: whitesmoke;
 }
  input:-webkit-autofill {
      -webkit-box-shadow: 0 0 0 30px #2c3e50 inset;
@@ -78,9 +84,10 @@
      border: 0;
      letter-spacing: 1px;
      cursor: pointer;
-     background-color: #479851;
+     background-color: cadetblue;
      color: #fff;
      font-weight: 100;
+     font-size: large;
 }
  button:active {
      outline: none;
@@ -103,7 +110,7 @@
 }
  .weather__value {
      font-weight: 500;
-     color: midnightblue;
+     color: #050b13;
      font-size: x-large;
 }
  .weather__error {
@@ -137,7 +144,6 @@
      padding: 0;
      margin: 0 ;
 }
-
 
 
 
@@ -195,6 +201,7 @@ img {
      display: inline;
      color: rgb(11, 3, 82);
      margin: auto; */
+     padding-right: 5px;
 
      align-items: center;
 }
@@ -251,21 +258,26 @@ img {
      flex-wrap: wrap;
      flex-direction: row;
      justify-content: flex-end;
+     align-items: baseline;
 }
  .nav-box {
      background: lightgray;
      display: flex;
      justify-content: space-between;
-     padding: 20px 40px 20px 35px;;
+     padding: 4px 40px 10px 5px;
 }
  .title-box {
      width: 50%;
      float: left;
+     padding: 5px;
+     padding-left: 15px;
 }
  .weather-top-display {
      display: flex;
-     flex-wrap: wrap;
-     flex-direction: row-reverse;
+     /*flex-wrap: wrap; */
+     flex-wrap: wrap-reverse;
+     /* flex-direction: row-reverse; */
+     flex-direction: row;
 }
  .location-search {
      /*display: inline; */
@@ -273,4 +285,13 @@ img {
  .location-search input,button {
      padding: 8px;
      font-size: 15px;
+}
+
+
+#hiLoTemp {
+width: 100%;
+text-align: end;
+padding-top: 0;
+padding-right: 0;
+
 }
