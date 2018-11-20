@@ -14,7 +14,7 @@ const Titles = props => {
 	return (
 		<div>
 			<h1 className="title-container__title">Fashion Forecast</h1>
-			<div className="title-container__subtitle">Weather Style Guide</div>
+			<div className="title-container__subtitle ">Weather Style Guide</div>
 		</div>
 	);
 };
@@ -155,7 +155,7 @@ class App extends React.Component {
 			this.setState({
 				outer: "Layers: Hoodie/Jacket/Coat",
 				top: "Long Sleeve",
-				pants: "Thick Pants or Layered",
+				pants: "Thick Pants or Layers",
 				shoes: "Boots",
 				img: require('./Images/winter-woman-crop2size.jpg')
 			});

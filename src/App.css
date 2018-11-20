@@ -3,6 +3,7 @@
  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
  body {
      font-family: "Open Sans", serif;
+     background: whitesmoke;
 }
  .wrapper {
      background: whitesmoke;
@@ -291,7 +292,9 @@ img {
 #hiLoTemp {
 width: 100%;
 text-align: end;
-padding-top: 0;
+/* padding-top: 0; */
 padding-right: 0;
 
 }
+
+
