@@ -1,6 +1,6 @@
 import React from "react";
 import Weather from "./components/weather";
-import Style from "./components/styleguide";
+import Style from "./components/style";
 import {Grid, Cell} from "react-flexr";
 import "react-flexr/styles.css";
 
