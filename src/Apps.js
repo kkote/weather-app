@@ -5,51 +5,7 @@ import Img from "./components/img";
 import Display from "./components/display";
 import Header from "./components/header";
 
-
 let Api_Key = process.env.REACT_APP_API_KEY;
-
-
-const App = () => {
-  return (
-<div className="App">
-    <div class= "header">
-    <Header />
-
-    <Search loadWeather={this.getWeather}/>
-    <Search key={event} loadWeather={handleSubmit}/>
-
-    <Display
-      city={this.state.city}
-      currentTemp={this.state.currentTemp}
-      currentWeather={this.state.weather}
-      hiTemp={this.state.hiTemp} hiTemp={this.state.loTemp}
-       />
-    </div>
-  <div class="styledisplay">
-  <Style
-    currentTemp={this.state.currentTemp}
-    />
-  <Img currentTemp={this.state.currentTemp}/>
-  </div>
-</div>
-  );
-}
-
-
-
-
-export default App;
-
-
-
-
-
-
-
-
-
-
-
 
 class App extends React.Component {
   constructor(props) {
@@ -67,13 +23,11 @@ class App extends React.Component {
     };
   }
 
-
   handleDataChange(city) {
     this.setState({
       city
     });
   }
-
 
   componentDidMount() {
  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},us&units=imperial&appid=${Api_Key}`)
@@ -81,7 +35,7 @@ class App extends React.Component {
        .then(
          (result) => {
            this.setState({
-             currentTemp: parseInt(response.main.temp, 10),
+             currentTemp: parseInt(result.main.temp, 10),
              isLoaded: true,
              city: result.name,
              data: result,
@@ -104,7 +58,7 @@ class App extends React.Component {
 
   render() {
 
-    const temperature = this.state.temperature;
+
     const temp = this.state.currentTemp ;
     const hightemp = this.state.hiTemp ;
     const lowtemp = this.state.loTemp ;
@@ -116,15 +70,15 @@ class App extends React.Component {
 
       <div className="header">
         <Search
-          temperature={temp}
-          onCityChange={this.handleDataChange} />
+          city={city}
+          onCityChange={this.onCityChange} />
 
           <Display
             city={this.state.city}
             currentTemp={temp}
             currentWeather={currentForecast}
             hiTemp={hightemp}
-            hiTemp={lowtemp}
+            loTemp={lowtemp}
              />
          </div>
 

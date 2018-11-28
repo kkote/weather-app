@@ -3,29 +3,29 @@ import React from 'react';
 
 
 class Search extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    this.props.onCityChange(e.target.value);
+  }
+
   render() {
+    const city = this.props.city;
+    const scale = this.props.scale;
     return (
-      <div>
-      <form onSubmit={props.loadWeather(Weather Component)}>
-        <div className="location-search" size="2/3">
-          <input type="text" name="city" placeholder="city"/>
 
-
-
-          <input
-         value={temperature}
-         onChange={this.handleChange} />
-
-
-
-        </div>
-          <button>Search</button>
-      </form>
-        </div>
-    )
+      <form onSubmit={this.handleSubmit}>
+        <legend>Enter location:</legend>
+        <input value={City}
+               placeholder="City"/>
+             <button>Search</button>
+           </form>
+    );
   }
 }
-
 
 
 export default Search;

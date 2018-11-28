@@ -4,14 +4,14 @@ import React from "react";
 
 
 class Style extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       top: null,
       pants: false,
       outer: false,
       shoes: false,
-      tempNum: this.state.temp,
+      currentTemp: "",
       error: null
     };
   }
@@ -21,16 +21,14 @@ class Style extends Component {
       outer: "None",
       top: "T-shirt",
       pants: "Shorts",
-      shoes: "Sandals",
-      img: require('./Images/summer-groups.jpg'),
+      shoes: "Sandals"
     });
   } else if ((tempNum >= 60) & (tempNum < 75)) {
     this.setState({
       outer: "Hoodie or Light Jacket",
       top: "T-shirt",
       pants: "Shorts or Pants",
-      shoes: "Shoes ",
-      img: require('./Images/spring-group-s.jpg'),
+      shoes: "Shoes "
     });
   } else if ((tempNum >= 50) & (tempNum < 60)) {
     this.setState({

@@ -15,9 +15,9 @@ import React from "react";
          </div>
            <div>
            Its currently
-           <span id="curentTemp" className=""> {this.props.temperature} ° F</span>
+           <span id="curentTemp" className=""> {this.props.currentTemp} ° F</span>
            With
-           <span className="description"> {this.props.description}
+           <span className="description"> {this.props.currentWeather}
            </span>
            </div>
 
@@ -26,9 +26,9 @@ import React from "react";
        { (<div id="hiLoTemp" className="tempRangedisplayGroup">
            <span className="temprange"> High</span>
            <span className="tempoutput">
-           {this.props.maxtemp} ° F</span>
+           {this.props.hiTemp} ° F</span>
            <span className="temprange"> Low</span>
-           <span className="tempoutput"> {this.props.mintemp} °F</span>
+           <span className="tempoutput"> {this.props.loTemp} °F</span>
          </div>
        )}
      </div>

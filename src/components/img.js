@@ -3,13 +3,11 @@ import React from "react";
 
 
 class Img extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      gender: undefined,
+      currentTemp: "",
       img: require('./Images/winter-couplesize.jpg'),
-      tempNum: this.state.temp,
-      tempNum: {this.props.currentTemp},
       error: null
     };
   }
