@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
-import Apps from './App';
+import Apps from './Apps';
 import './App.css'
 import * as serviceWorker from './serviceWorker';
 

@@ -7,17 +7,17 @@ import Header from "./components/header";
 
 let Api_Key = process.env.REACT_APP_API_KEY;
 
-class App extends React.Component {
+class Apps extends React.Component {
   constructor(props) {
     super(props);
     this.handleDataChange = this.handleDataChange.bind(this);
     this.state = {
       data: '',
       city: 'St. Louis',
-      currentTemp="",
-      currentWeather="",
-      hiTemp="",
-      hiTemp= "",
+      currentTemp: "",
+      currentWeather: "",
+      hiTemp:"",
+      loTemp:"",
       isLoaded: false,
       error: null
     };
@@ -30,7 +30,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
- fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},us&units=imperial&appid=${Api_Key}`)
+ fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.city},us&units=imperial&appid=${Api_Key}`)
  .then(res => res.json())
        .then(
          (result) => {
@@ -58,7 +58,7 @@ class App extends React.Component {
 
   render() {
 
-
+    const city = this.state.city;
     const temp = this.state.currentTemp ;
     const hightemp = this.state.hiTemp ;
     const lowtemp = this.state.loTemp ;
@@ -69,12 +69,13 @@ class App extends React.Component {
       <div className="App">
 
       <div className="header">
+        <Header />
         <Search
           city={city}
           onCityChange={this.onCityChange} />
 
           <Display
-            city={this.state.city}
+            city={city}
             currentTemp={temp}
             currentWeather={currentForecast}
             hiTemp={hightemp}
@@ -94,7 +95,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Calculator />,
-  document.getElementById('root')
-);
+export default Apps;

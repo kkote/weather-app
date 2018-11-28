@@ -2,39 +2,57 @@ import React from "react";
 
 
 
-class Img extends Component {
+class Img extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentTemp: "",
-      img: require('./Images/winter-couplesize.jpg'),
+      currentTemp: 70,
+      img: require('../Images/winter-couplesize.jpg'),
       error: null
     };
-  }
+    this.setImg = this.setImg.bind(this);
 
-  if (tempNum >= 75) {
+
+
+
+
+
+
+  };
+
+
+
+
+
+  setImg(currentTemp){
+  if (currentTemp >= 75) {
     this.setState({
-      img: require('./Images/summer-groups.jpg'),
+      img: require('../Images/summer-groups.jpg')
     });
-  } else if ((tempNum >= 60) & (tempNum < 75)) {
+  } else if ((currentTemp >= 60) & (currentTemp < 75)) {
     this.setState({
-      img: require('./Images/spring-group-s.jpg'),
+      img: require('../Images/spring-group-s.jpg')
     });
-  } else if ((tempNum >= 50) & (tempNum < 60)) {
+  } else if ((currentTemp >= 50) & (currentTemp < 60)) {
     this.setState({
-      img: require('./Images/fall-couple-s.jpg'),
+      img: require('../Images/fall-couple-s.jpg')
     });
-  } else if ((tempNum >= 40) & (tempNum < 50)) {
+  } else if ((currentTemp >= 40) & (currentTemp < 50)) {
     this.setState({
-      img: require('./Images/winter-couplesize.jpg'),
+      img: require('../Images/winter-couplesize.jpg')
     });
   } else {
     this.setState({
-    img: require('./Images/winter-woman-crop2size.jpg')});
+    img: require('../Images/winter-woman-crop2size.jpg')});
   }
+}
+
+
+
   render() {
+
     return (<div className="img-box">
-      <img src={this.props.img}/>
+      <img src={this.state.img}/>
     </div>);
   }
 }

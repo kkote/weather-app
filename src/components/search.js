@@ -19,7 +19,7 @@ class Search extends React.Component {
 
       <form onSubmit={this.handleSubmit}>
         <legend>Enter location:</legend>
-        <input value={City}
+        <input value={city}
                placeholder="City"/>
              <button>Search</button>
            </form>
