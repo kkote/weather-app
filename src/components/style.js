@@ -7,10 +7,10 @@ class Style extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      top: "",
-      pants: "",
-      outer: "",
-      shoes: "",
+      top: "top",
+      pants: "pants",
+      outer: "out",
+      shoes: "shoes",
       currentTemp: "",
       error: "error"
     };
