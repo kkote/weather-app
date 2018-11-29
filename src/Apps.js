@@ -7,6 +7,8 @@ import Header from "./components/header";
 
 let Api_Key = process.env.REACT_APP_API_KEY;
 
+
+
 class Apps extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +17,7 @@ class Apps extends React.Component {
       data: '',
       city: 'St. Louis',
       currentTemp: "",
-      currentWeather: "",
+      currentWeather: " ",
       hiTemp:"",
       loTemp:"",
       isLoaded: false,
@@ -24,34 +26,43 @@ class Apps extends React.Component {
   }
 
   handleDataChange(city) {
+    console.log(city);
     this.setState({
-      city
+
+      city: city
     });
+
   }
 
+
   componentDidMount() {
- fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.city},us&units=imperial&appid=${Api_Key}`)
- .then(res => res.json())
-       .then(
-         (result) => {
-           this.setState({
-             currentTemp: parseInt(result.main.temp, 10),
-             isLoaded: true,
-             city: result.name,
-             data: result,
-             description: result.weather[0].description,
-             hiTemp: parseInt(result.main.temp_max, 10),
-             loTemp: parseInt(result.main.temp_min, 10)
-           });
-           console.log(this.state.data);
-         },
-         (error) => {
-           this.setState({
-             isLoaded: true,
-             error
-           });
-         }
-       )
+
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.city},us&units=imperial&appid=${Api_Key}`)
+    .then(res => res.json())
+          .then(
+            (result) => {
+              this.setState({
+                currentTemp: parseInt(result.main.temp, 10),
+                isLoaded: true,
+                city: result.name,
+                data: result,
+                currentWeather: (result.weather[0].description),
+                hiTemp: parseInt(result.main.temp_max, 10),
+                loTemp: parseInt(result.main.temp_min, 10)
+              });
+
+              console.log(this.state.data);
+
+
+            },
+            (error) => {
+              this.setState({
+                isLoaded: true,
+                error
+              });
+            }
+          )
+
    };
 
 
@@ -62,7 +73,7 @@ class Apps extends React.Component {
     const temp = this.state.currentTemp ;
     const hightemp = this.state.hiTemp ;
     const lowtemp = this.state.loTemp ;
-    const currentForecast = this.state.currentWeather ;
+    const currentWeather = this.state.currentWeather ;
 
 
     return (
@@ -72,18 +83,18 @@ class Apps extends React.Component {
         <Header />
         <Search
           city={city}
-          onCityChange={this.onCityChange} />
+          onCityChange={this.handleDataChange} />
 
           <Display
             city={city}
             currentTemp={temp}
-            currentWeather={currentForecast}
+            currentWeather={currentWeather}
             hiTemp={hightemp}
             loTemp={lowtemp}
              />
          </div>
 
-             <div class="styledisplay">
+             <div className="styledisplay">
              <Style
                currentTemp={temp}
                />

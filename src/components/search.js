@@ -5,8 +5,9 @@ import React from 'react';
 class Search extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      value: 'Please write an essay about your favorite DOM element.'
+      value: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -21,6 +22,8 @@ class Search extends React.Component {
 
   handleSubmit(e) {
     this.props.onCityChange(e.target.value);
+
+
   }
 
   render() {
@@ -31,8 +34,7 @@ class Search extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <legend>Enter location:</legend>
         <textarea value={this.state.value} onChange={this.handleChange} />
-        <input type="textarea" value={city}
-               placeholder="City"/>
+
              <button>Search</button>
            </form>
     );

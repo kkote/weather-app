@@ -3,6 +3,10 @@ import React from "react";
 
 
  const Display = props => {
+
+   console.log(props.currentTemp);
+    console.log(props.currentWeather);
+
    return (
      <div className="weather-display">
        {  (
@@ -15,8 +19,8 @@ import React from "react";
          </div>
            <div>
            Its currently
-           <span id="curentTemp" className=""> {props.currentTemp} ° F</span>
-           With
+           <span id="currentTemp" className=""> {props.currentTemp} ° F</span>
+           {" "}With{" "}
            <span className="description"> {props.currentWeather}
            </span>
            </div>
