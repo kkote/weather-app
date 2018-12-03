@@ -5,7 +5,6 @@ import React from 'react';
 class Search extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       value: ""
     };
@@ -20,6 +19,8 @@ class Search extends React.Component {
  }
 
 
+
+
   handleSubmit(e) {
     this.props.onCityChange(e.target.value);
 
@@ -27,7 +28,7 @@ class Search extends React.Component {
   }
 
   render() {
-    const city = this.props.city;
+    
     const scale = this.props.scale;
     return (
 

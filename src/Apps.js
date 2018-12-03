@@ -82,7 +82,7 @@ class Apps extends React.Component {
       <div className="header">
         <Header />
         <Search
-          city={city}
+          
           onCityChange={this.handleDataChange} />
 
           <Display

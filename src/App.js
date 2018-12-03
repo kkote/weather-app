@@ -61,7 +61,7 @@ class App extends React.Component {
   getWeather = async e => {
     //		 const city = e.target.elements.city.value;
     // const country = e.target.elements.country.value;
-    const city = "St. Louis";
+    const city = "Chicago";
     const country = "us";
 
     e.preventDefault();
