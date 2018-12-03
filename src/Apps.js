@@ -18,16 +18,20 @@
          this.state = {
            data: '',
            city: "St. Louis",
-           currentTemp: "",
+           currentTemp: " ",
            currentWeather: " ",
            hiTemp:"",
            loTemp:"",
            isLoaded: false,
            error: null
          };
+         this.onCityChange = this.onCityChange.bind(this);
        }
 
-       handleDataChange(e) {
+
+
+
+       handleDataChange() {
 
          fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.city},us&units=imperial&appid=${Api_Key}`)
          .then(res => res.json())
@@ -54,18 +58,18 @@
                    });
                  }
                )
-       }
+       };
+
 
        onCityChange(e) {
          e.preventDefault();
          this.setState({
         city: e.target.city.value
-          })
+       });
 
           console.log(this.state.city);
 
-       }
-
+       };
 
 
 
@@ -75,6 +79,12 @@
         };
 
 
+        componentDidUpdate(prevProps, prevState) {
+  // Typical usage (don't forget to compare props):
+      if (this.state.city !== prevState.city) {
+        this.handleDataChange();
+      }
+    }
 
 
 
