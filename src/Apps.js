@@ -30,7 +30,6 @@
 
 
 
-
        handleDataChange() {
 
          fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.city},us&units=imperial&appid=${Api_Key}`)
@@ -46,10 +45,7 @@
                      hiTemp: parseInt(result.main.temp_max, 10),
                      loTemp: parseInt(result.main.temp_min, 10)
                    });
-
                    console.log(this.state.data);
-
-
                  },
                  (error) => {
                    this.setState({
@@ -58,7 +54,7 @@
                    });
                  }
                )
-       };
+             };
 
 
        onCityChange(e) {
@@ -67,11 +63,7 @@
         city: e.target.city.value
        });
 
-          console.log(this.state.city);
-
        };
-
-
 
 
        componentDidMount() {
@@ -80,32 +72,23 @@
 
 
         componentDidUpdate(prevProps, prevState) {
-  // Typical usage (don't forget to compare props):
       if (this.state.city !== prevState.city) {
         this.handleDataChange();
       }
     }
 
-
-
        render() {
-
          const city = this.state.city;
          const temp = this.state.currentTemp ;
          const hightemp = this.state.hiTemp ;
          const lowtemp = this.state.loTemp ;
          const currentWeather = this.state.currentWeather ;
 
-
          return (
            <div className="App">
-
            <div className="header">
              <Header />
-             <Search
-
-               handleSubmit={this.onCityChange} />
-
+             <Search handleSubmit={this.onCityChange} />
                <Display
                  city={city}
                  currentTemp={temp}
@@ -114,17 +97,14 @@
                  loTemp={lowtemp}
                   />
               </div>
-
                   <div className="styledisplay">
-                  <Style
-                    currentTemp={temp}
-                    />
-                  <Img currentTemp={temp}/>
+                  <Style currentTemp={temp} />
+                  <Img currentTemp={temp} />
                   </div>
-
            </div>
          );
        }
      }
 
-     export default Apps;
+
+export default Apps;

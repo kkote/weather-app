@@ -11,7 +11,7 @@ class Style extends React.Component {
       pants: "pants",
       outer: "out",
       shoes: "shoes",
-      currentTemp: "",
+      currentTemp: this.props.currentTemp,
       error: "error"
     };
 this.setStyle = this.setStyle.bind(this);
@@ -20,9 +20,17 @@ this.setStyle = this.setStyle.bind(this);
 
 
 
-  setStyle({currentTemp}){
+componentDidUpdate(prevProps, prevState) {
+  if (this.state.currentTemp !== prevState.currentTemp) {
+  this.setStyle();
+  }
+  console.log("style updated");
+  console.log(this.props.currentTemp);
+}
 
 
+  setStyle(){
+  let currentTemp = this.state.currentTemp;
   if ({currentTemp} >= 75) {
     this.setState({
       outer: "None",
@@ -60,8 +68,19 @@ this.setStyle = this.setStyle.bind(this);
   }
 }
 
+
+
+
+
+
+
+
+
+
   render() {
-    const { outer, top, pants, shoes, currentTemp} = this.state;
+
+    const { outer, top, pants, shoes} = this.state;
+
     return (
       <div className="clothesDisplay">
         {(<div >
