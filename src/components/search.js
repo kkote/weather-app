@@ -10,31 +10,27 @@ class Search extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
 
   handleChange(event) {
    this.setState({value: event.target.value});
+   console.log(this.state.value);
  }
 
 
 
 
-  handleSubmit(e) {
-    this.props.onCityChange(e.target.value);
 
-
-  }
 
   render() {
-    
-    const scale = this.props.scale;
+
     return (
 
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.props.handleSubmit}>
         <legend>Enter location:</legend>
-        <textarea value={this.state.value} onChange={this.handleChange} />
+        <textarea  name="city" onChange={this.handleChange} />
 
              <button>Search</button>
            </form>

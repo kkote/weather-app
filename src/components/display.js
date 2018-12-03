@@ -4,9 +4,6 @@ import React from "react";
 
  const Display = props => {
 
-   console.log(props.currentTemp);
-    console.log(props.currentWeather);
-
    return (
      <div className="weather-display">
        {  (
