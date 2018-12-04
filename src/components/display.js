@@ -1,11 +1,16 @@
 import React from "react";
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+
+import Typography from '@material-ui/core/Typography';
 
 
 
  const Display = props => {
 
    return (
-     <div className="weather-display">
+     <Grid item xs={12} md={4}>
+        <Paper elevation={0} className="blogsidebarpaper">
        {  (
          <div className="displayGroup">
          <div>
@@ -33,7 +38,8 @@ import React from "react";
              {props.loTemp} °F</span>
          </div>
        )}
-     </div>
+     </Paper>
+     </Grid>
    );
  }
 

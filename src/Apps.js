@@ -8,11 +8,13 @@
 
      import PropTypes from 'prop-types';
      import { withStyles } from '@material-ui/core/styles';
+     import Toolbar from '@material-ui/core/Toolbar';
      import Typography from '@material-ui/core/Typography';
-     import List from '@material-ui/core/List';
-     import ListItem from '@material-ui/core/ListItem';
-     import ListItemText from '@material-ui/core/ListItemText';
+     import Paper from '@material-ui/core/Paper';
      import Grid from '@material-ui/core/Grid';
+     import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
 
 
      let Api_Key = process.env.REACT_APP_API_KEY;
@@ -95,23 +97,45 @@
 
          return (
            <div className="App">
-           <div className="header">
+             <React.Fragment>
+               <Toolbar className="mainFeaturedPost">
+
              <Header />
-             <Search handleSubmit={this.onCityChange} />
-               <Display
-                 city={city}
-                 currentTemp={temp}
-                 currentWeather={currentWeather}
-                 hiTemp={hightemp}
-                 loTemp={lowtemp}
-                  />
-              </div>
-                  <div className="styledisplay">
-                  <Style currentTemp={temp}
-                          city={city}
-                    />
-                  <Img currentTemp={temp} />
-                  </div>
+
+
+                      </Toolbar>
+            </React.Fragment>
+                  <main>
+                    <Paper>
+                      <Grid container>
+                        <Grid item md={6}>
+                    <Search handleSubmit={this.onCityChange} />
+                    </Grid>
+                    <Grid item md={6}>
+                    <Display
+                      city={city}
+                      currentTemp={temp}
+                      currentWeather={currentWeather}
+                      hiTemp={hightemp}
+                      loTemp={lowtemp}
+                       />
+                     </Grid>
+                   </Grid>
+                     </Paper>
+                    <Paper className="mainFeaturedPost">
+                      <Grid container>
+                        <Grid item md={6}>
+                          <Style currentTemp={temp}
+                                city={city}
+                          />
+                      </Grid>
+                        <Grid item md={6}>
+                          <Img currentTemp={temp} />
+                        </Grid>
+
+                  </Grid>
+                  </Paper>
+                  </main>
            </div>
          );
        }
