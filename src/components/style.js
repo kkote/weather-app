@@ -1,6 +1,12 @@
 
 import React from "react";
 
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider';
+import Typography from '@material-ui/core/Typography';
+
 
 
 class Style extends React.Component {
@@ -73,31 +79,38 @@ componentDidUpdate(prevProps, prevState) {
 
   render() {
 
+
+
     const { outer, top, pants, shoes} = this.state;
 
     return (
-      <div className="clothesDisplay">
-        {(<div >
-            <span className="clothesType"> Outer: </span>
-            <span > {outer}</span>
-          </div>
+      <React.Fragment>
+        <List className="styledisplay">
+
+        {(<ListItem >
+          <ListItemText primary="Outer" secondary={outer} />
+          </ListItem>
+
         )}
-        {(<div className="style-div">
-            <span className="clothesType"> Top: </span>
-            <span className="style-result"> {top}</span>
-          </div>
+        <Divider  />
+        {(<ListItem className="style-div">
+          <ListItemText primary="Top" secondary={top} />
+          </ListItem>
+
         )}
-        {(<div className="style-div">
-            <span className="clothesType"> Pants: </span>
-            <span className="style-result"> {pants}</span>
-          </div>
+        <Divider  />
+        {(<ListItem className="style-div">
+          <ListItemText primary="Pants" secondary={pants} />
+          </ListItem>
         )}
-        {(<div className="style-div">
-            <span className="clothesType"> Shoes: </span>
-            <span className="style-result"> {shoes}</span>
-          </div>
+        <Divider  />
+        {(<ListItem className="style-div">
+          <ListItemText primary="Shoes" secondary={shoes} />
+
+          </ListItem>
         )}
-      </div>
+      </List>
+      </React.Fragment>
     );
   }
 }

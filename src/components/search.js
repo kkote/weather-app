@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
 
 class Search extends React.Component {
@@ -30,6 +31,8 @@ class Search extends React.Component {
         <textarea  name="city" onChange={this.handleChange} />
 
              <button>Search</button>
+
+
            </form>
     );
   }
