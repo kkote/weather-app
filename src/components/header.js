@@ -8,14 +8,14 @@ import Typography from '@material-ui/core/Typography';
 
 const Header = props => {
   return (
-    <div>
+    <div className="blogheader">
 
       <Typography
                component="h2"
                variant="h4"
                color="inherit"
                noWrap
-               className="blogheader"
+               className="blogheadermain"
              > Fashion Forecast
           </Typography>
 
@@ -25,7 +25,7 @@ const Header = props => {
                color="inherit"
                align="center"
                noWrap
-               className="blogheader"
+               className="blogheadertwo hiddenonmobile"
              > Weather Style Guide
           </Typography>
 

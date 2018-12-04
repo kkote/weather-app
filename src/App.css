@@ -1,10 +1,22 @@
 
 
 
-/* .blogsidebarpaper {
-  paddingTop: 3px;
-  marginBottom: 5px;
-} */
+.blogdisplaypaper {
+  margin: 5px;
+  padding: 10px;
+  background: lightslategray !important;
+  font-size: larger;
+}
+
+.blogsearchpaper {
+      text-align: center;
+      padding: 10px;
+      background: whitesmoke;
+}
+
+.paperforsearchanddisplay {
+  padding: 10px;
+}
 
 
 img {
@@ -15,4 +27,90 @@ img {
      background-size: contain;
      /*padding: 3rem 0rem 3rem 1rem;*/
 
+}
+
+
+.mainFeaturedPost {
+  background-color: lightgray;
+  color: white;
+  /* width: 90%; */
+margin: auto;
+
+}
+
+.mainFeaturedPostContainer{
+  flex-wrap: nowrap !important;
+}
+
+.mainDisplay {
+  margin: auto !important;
+  width: 80%
+
+}
+
+
+.divAbovedisplayPaper{
+  float: right;
+}
+
+
+.blogheader {
+  display: flex;
+}
+
+.blogheadermain {
+  padding: 10px;
+}
+.blogheadertwo {
+  padding: 10px;
+}
+
+
+.searchitemgrid {
+  margin: auto
+}
+
+
+.appbar {
+  position: static !important;
+  color: black !important;
+  background: whitesmoke !important;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .hiddenonmobile {
+    display: none !important;
+  }
+
+  .GridContainer{
+    flex-wrap: nowrap !important;
+  }
+
+  .styleDisplay {
+
+  }
+  .styleList{
+    display: inline-flex;
+  }
+
+  .styleList li {
+    padding: 2px !important;
+  }
+
+  .mainFeaturedPostContainer{
+    flex-wrap: wrap !important;
+  }
+
+}
+
+
+
+.GridContainer {
+  justify-content: space-evenly;
+}
+
+.styleList li span p {
+  font-size: large;
 }

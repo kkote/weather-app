@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
 
 
 class Search extends React.Component {
@@ -22,10 +23,11 @@ class Search extends React.Component {
 
 
 
+
   render() {
 
     return (
-
+      <div className="blogsearchpaper">
       <form onSubmit={this.props.handleSubmit}>
         <legend>Enter location:</legend>
         <textarea  name="city" onChange={this.handleChange} />
@@ -34,6 +36,7 @@ class Search extends React.Component {
 
 
            </form>
+         </div>
     );
   }
 }

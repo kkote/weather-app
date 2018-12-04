@@ -10,18 +10,18 @@ import Typography from '@material-ui/core/Typography';
 
 
    return (
-     <Grid item xs={12} md={4}>
-        <Paper elevation={0} className="blogsidebarpaper">
+     <Grid item xs={12} md={10} className="divAbovedisplayPaper">
+        <div elevation={0} className="blogdisplaypaper">
        {  (
          <div className="displayGroup">
          <div>
-         In
+         <span className="hiddenonmobile" >In</span>
          <span className="location">
            {" "}{props.city}{" "}
          </span>
          </div>
            <div>
-           Its currently
+           <span className="hiddenonmobile">Its currently</span>
            <span id="currentTemp" className=""> {props.currentTemp} ° F</span>
            {" "}With{" "}
            <span className="description"> {props.currentWeather}
@@ -30,7 +30,7 @@ import Typography from '@material-ui/core/Typography';
 
          </div>
        )}
-       { (<div id="hiLoTemp" className="tempRangedisplayGroup">
+       { (<div id="hiLoTemp" className="tempRangedisplayGroup hiddenonmobile">
            <span className="temprange"> High</span>
            <span className="tempoutput">
            {props.hiTemp} ° F</span>
@@ -39,7 +39,7 @@ import Typography from '@material-ui/core/Typography';
              {props.loTemp} °F</span>
          </div>
        )}
-     </Paper>
+     </div>
      </Grid>
    );
  }
