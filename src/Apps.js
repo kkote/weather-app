@@ -12,6 +12,7 @@
     import CssBaseline from '@material-ui/core/CssBaseline';
     import Toolbar from '@material-ui/core/Toolbar';
     import IconButton from '@material-ui/core/IconButton';
+    import SearchIcon from '@material-ui/icons/Search';
     import Paper from '@material-ui/core/Paper';
     import Typography from '@material-ui/core/Typography';
     import Grid from '@material-ui/core/Grid';
@@ -23,19 +24,19 @@
 
      let Api_Key = process.env.REACT_APP_API_KEY;
 
-     const styles = {
+     const styles = theme => ({
        layout: {
          width: 'auto',
-         marginLeft: this.spacing.unit * 3,
-         marginRight: this.spacing.unit * 3,
-         [this.breakpoints.up(1100 + this.spacing.unit * 3 * 2)]: {
+         marginLeft: theme.spacing.unit * 3,
+         marginRight: theme.spacing.unit * 3,
+         [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
            width: 1100,
            marginLeft: 'auto',
            marginRight: 'auto',
          },
        },
        toolbarMain: {
-         borderBottom: `1px solid ${this.palette.grey[300]}`,
+         borderBottom: `1px solid ${theme.palette.grey[300]}`,
        },
        toolbarTitle: {
          flex: 1,
@@ -44,18 +45,18 @@
     justifyContent: 'space-between',
   },
   mainFeaturedPost: {
-    backgroundColor: this.palette.grey[800],
-    color: this.palette.common.white,
-    marginBottom: this.spacing.unit * 4,
+    backgroundColor: theme.palette.grey[800],
+    color: theme.palette.common.white,
+    marginBottom: theme.spacing.unit * 4,
   },
   mainFeaturedPostContent: {
-    padding: `${this.spacing.unit * 6}px`,
-    [this.breakpoints.up('md')]: {
+    padding: `${theme.spacing.unit * 6}px`,
+    [theme.breakpoints.up('md')]: {
       paddingRight: 0,
     },
   },
   mainGrid: {
-    marginTop: this.spacing.unit * 3,
+    marginTop: theme.spacing.unit * 3,
   },
   card: {
     display: 'flex',
@@ -67,21 +68,21 @@
     width: 160,
   },
   markdown: {
-    padding: `${this.spacing.unit * 3}px 0`,
+    padding: `${theme.spacing.unit * 3}px 0`,
   },
   sidebarAboutBox: {
-    padding: this.spacing.unit * 2,
-    backgroundColor: this.palette.grey[200],
+    padding: theme.spacing.unit * 2,
+    backgroundColor: theme.palette.grey[200],
   },
   sidebarSection: {
-    marginTop: this.spacing.unit * 3,
+    marginTop: theme.spacing.unit * 3,
   },
   footer: {
-    backgroundColor: this.palette.background.paper,
-    marginTop: this.spacing.unit * 8,
-    padding: `${this.spacing.unit * 6}px 0`,
+    backgroundColor: theme.palette.background.paper,
+    marginTop: theme.spacing.unit * 8,
+    padding: `${theme.spacing.unit * 6}px 0`,
   },
-};
+});
 
 
 
@@ -165,7 +166,7 @@
          const lowtemp = this.state.loTemp ;
          const currentWeather = this.state.currentWeather ;
 
-         const { classes } = this.props;
+         
 
          return (
            <div className="App">
