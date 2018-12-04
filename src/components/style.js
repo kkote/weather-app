@@ -1,11 +1,16 @@
 
 import React from "react";
 
+import PropTypes from 'prop-types';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
+
+import { withStyles } from '@material-ui/core/styles';
+
 
 
 
@@ -85,9 +90,9 @@ componentDidUpdate(prevProps, prevState) {
 
     return (
       <React.Fragment>
-        <List className="styledisplay">
+        <List >
 
-        {(<ListItem >
+        {(<ListItem   >
           <ListItemText primary="Outer" secondary={outer} />
           </ListItem>
 
