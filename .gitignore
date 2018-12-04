@@ -23,3 +23,8 @@ yarn-error.log*
 
 
 /ref_files
+
+*newreact.js
+*psuesdo.js
+*tempexample.js
+/tests

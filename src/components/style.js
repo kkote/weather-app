@@ -30,7 +30,7 @@ componentDidUpdate(prevProps, prevState) {
 
 
   setStyle(){
-  let currentTemp = this.state.currentTemp;
+  let currentTemp = this.props.currentTemp;
   if ({currentTemp} >= 75) {
     this.setState({
       outer: "None",
@@ -67,12 +67,6 @@ componentDidUpdate(prevProps, prevState) {
     shoes: "Boots"});
   }
 }
-
-
-
-
-
-
 
 
 

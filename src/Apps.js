@@ -98,7 +98,9 @@
                   />
               </div>
                   <div className="styledisplay">
-                  <Style currentTemp={temp} />
+                  <Style currentTemp={temp}
+                          city={city}
+                    />
                   <Img currentTemp={temp} />
                   </div>
            </div>
