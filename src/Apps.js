@@ -7,17 +7,10 @@
      import Header from "./components/header";
 
 
-     import PropTypes from 'prop-types';
-    import { withStyles } from '@material-ui/core/styles';
-    import CssBaseline from '@material-ui/core/CssBaseline';
+
     import Toolbar from '@material-ui/core/Toolbar';
-    import IconButton from '@material-ui/core/IconButton';
     import Paper from '@material-ui/core/Paper';
-    import Typography from '@material-ui/core/Typography';
     import Grid from '@material-ui/core/Grid';
-    import Card from '@material-ui/core/Card';
-    import CardContent from '@material-ui/core/CardContent';
-    import CardMedia from '@material-ui/core/CardMedia';
     import Hidden from '@material-ui/core/Hidden';
     import AppBar from '@material-ui/core/AppBar';
 
@@ -44,10 +37,6 @@
          };
          this.onCityChange = this.onCityChange.bind(this);
        }
-
-
-
-
 
 
 
@@ -121,7 +110,7 @@
                   <main>
                     <Paper className="paperforsearchanddisplay">
                       <Grid container className="GridContainer">
-                        <Grid item md={6} classname="searchitemgrid">
+                        <Grid item md={6} className="searchitemgrid">
                     <Search handleSubmit={this.onCityChange} />
                     </Grid>
 
@@ -139,7 +128,7 @@
                      </Paper>
                     <div className="mainFeaturedPost">
                       <Grid container className="mainFeaturedPostContainer">
-                        <Grid item xs={10} md={4} className="mainDisplay styleDisplay">
+                        <Grid item xs={10} md={5} className="mainDisplay styleDisplay">
                           <Style currentTemp={temp}
                                 city={city}
                           />

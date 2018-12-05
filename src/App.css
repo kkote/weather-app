@@ -3,7 +3,7 @@
 
 .blogdisplaypaper {
   margin: 5px;
-  padding: 10px;
+  /* padding: 10px; */
   background: lightslategray !important;
   font-size: larger;
 }
@@ -67,7 +67,8 @@ margin: auto;
 
 
 .searchitemgrid {
-  margin: auto
+  margin: auto;
+      align-self: center;;
 }
 
 
@@ -77,6 +78,78 @@ margin: auto;
   background: whitesmoke !important;
 }
 
+
+.GridContainer {
+  justify-content: space-evenly;
+}
+
+.styleList li span p {
+  font-size: large;
+}
+
+
+
+
+#tempDisplay {
+    font-weight: 600;
+    background: #2f4f4fab;
+    border-radius: .4rem;
+    margin: 4px;
+    padding: 2px;
+    color: #eee;
+}
+
+
+.numbers {
+    padding: 3px;
+    color: #fff;
+    display: inline;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.displayGroup{
+    font-size: 21px;
+    color: azure;
+
+}
+
+.displayGroup div {
+  padding: 4px 0px 4px 0px;
+}
+
+
+.temprange {
+    background-color: rgba(110,110,110,0.87);
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.tempoutput {
+    background-color: rgba(167,167,167,0.8);
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+
+
+.styleDisplay {
+background: aliceblue;
+}
+
+.styleDisplay li {
+background: cadetblue;
+}
+
+
+.styleList span {
+  font-size: 20px;
+}
+
+.styleList p {
+  font-size: 25px;
+  float: right;
+}
 
 
 @media screen and (max-width: 600px) {
@@ -97,20 +170,63 @@ margin: auto;
 
   .styleList li {
     padding: 2px !important;
+        display: inline-block;
   }
 
   .mainFeaturedPostContainer{
     flex-wrap: wrap !important;
   }
 
+
+
+  .styleList span {
+    font-size: medium !important;
+  }
+
+  .styleList p {
+    font-size: medium !important;
+    float: right;
+  }
+
+  .CardContent {
+    padding: 5px !important;
+  }
+
+  .blogheadermain {
+    font-size: large;
+  }
+
+  .paperforsearchanddisplay {
+    padding: 2px;
 }
 
-
-
-.GridContainer {
-  justify-content: space-evenly;
+input {
+  padding: 7px !important;
 }
 
-.styleList li span p {
-  font-size: large;
+button {
+  padding: 5px !important;
+}
+
+.displayGroup {
+  font-size: medium !important;
+}
+
+}
+
+/* #currentTemp {
+  color: white;
+font-size: x-large;
+background: darkslategrey;
+padding: 3px;
+border-radius: .3rem;
+} */
+
+#currentTemp {
+    font-weight: 500;
+    background: #2f4f4fab;
+    border-radius: .4rem;
+    margin: 4px;
+    padding: 2px;
+    color: #eee;
 }

@@ -2,6 +2,8 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
+import FormControl from '@material-ui/core/FormControl';
 
 
 class Search extends React.Component {
@@ -29,10 +31,11 @@ class Search extends React.Component {
     return (
       <div className="blogsearchpaper">
       <form onSubmit={this.props.handleSubmit}>
-        <legend>Enter location:</legend>
-        <textarea  name="city" onChange={this.handleChange} />
 
-             <button>Search</button>
+
+        <TextField label="Enter location"  name="city" onChange={this.handleChange} defaultValue="Chicago" variant="outlined" />
+
+             <Button variant="contained" type="submit">Search</Button>
 
 
            </form>

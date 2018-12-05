@@ -1,16 +1,11 @@
 
 import React from "react";
 
-import PropTypes from 'prop-types';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
-
-import { withStyles } from '@material-ui/core/styles';
-
 
 
 
@@ -32,11 +27,12 @@ this.setStyle = this.setStyle.bind(this);
 
 
 componentDidUpdate(prevProps, prevState) {
-  if (this.state.currentTemp !== prevState.currentTemp) {
+  if (this.props.currentTemp !== prevProps.currentTemp) {
   this.setStyle();
   }
   console.log("style updated");
   console.log(this.props.currentTemp);
+  console.log(this.state.top);
 }
 
 
@@ -72,11 +68,12 @@ componentDidUpdate(prevProps, prevState) {
     });
   } else {
     this.setState({
-    outer: "Layers: Hoodie/Jacket/Coat",
+    outer: "Layers: Coat",
     top: "Long Sleeve",
-    pants: "Thick Pants or Layers",
+    pants: "Thick Pants, Layers",
     shoes: "Boots"});
   }
+  console.log("is working");
 }
 
 

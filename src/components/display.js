@@ -1,8 +1,9 @@
 import React from "react";
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
 
 
@@ -11,7 +12,8 @@ import Typography from '@material-ui/core/Typography';
 
    return (
      <Grid item xs={12} md={10} className="divAbovedisplayPaper">
-        <div elevation={0} className="blogdisplaypaper">
+        <Card elevation={0} className="blogdisplaypaper">
+          <CardContent className="CardContent">
        {  (
          <div className="displayGroup">
          <div>
@@ -31,15 +33,16 @@ import Typography from '@material-ui/core/Typography';
          </div>
        )}
        { (<div id="hiLoTemp" className="tempRangedisplayGroup hiddenonmobile">
-           <span className="temprange"> High</span>
-           <span className="tempoutput">
+           <span className="temprange numbers"> High</span>
+           <span className="tempoutput numbers">
            {props.hiTemp} ° F</span>
-           <span className="temprange"> Low</span>
-           <span className="tempoutput">
+         <span className="temprange numbers"> Low</span>
+           <span className="tempoutput numbers">
              {props.loTemp} °F</span>
          </div>
        )}
-     </div>
+     </CardContent>
+     </Card>
      </Grid>
    );
  }
