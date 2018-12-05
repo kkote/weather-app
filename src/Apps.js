@@ -19,6 +19,7 @@ import Typography from '@material-ui/core/Typography';
 import Menu from '@material-ui/core/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import Divider from '@material-ui/core/Divider';
+import withWidth from '@material-ui/core/withWidth';
 
 
      let Api_Key = process.env.REACT_APP_API_KEY;
@@ -157,9 +158,11 @@ import Divider from '@material-ui/core/Divider';
                         <Style currentTemp={temp}
                               city={city}
                         />
-                        <Style currentTemp={temp}
+                      <Hidden smDown>
+                      <Style className="hiddenonmobile" currentTemp={temp}
                               city={city}
                         />
+                    </Hidden>
                       </div>
 
                     </Grid>

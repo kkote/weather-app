@@ -7,6 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import ListSubheader from '@material-ui/core/ListSubheader';
+    import Hidden from '@material-ui/core/Hidden';
 
 
 class Style extends React.Component {
@@ -89,19 +90,19 @@ componentDidUpdate(prevProps, prevState) {
       <React.Fragment>
 
 
-
         <List component="nav"
-        subheader={<ListSubheader component="div">Style</ListSubheader>} className="styleList">
+        subheader={<Hidden smDown><ListSubheader component="div">Style</ListSubheader></Hidden>} className="styleList">
 
-        {(<ListItem   >
-          <ListItemText primary="Outer"  className="style-div"/>
+        {(<ListItem   ><Hidden smDown>
+          <ListItemText primary="Outer"  className="style-div"/></Hidden>
           <ListItemText  secondary={outer} className="style-div"/>
           </ListItem>
 
         )}
         <Divider  />
         {(<ListItem >
-          <ListItemText primary="Top"  className="style-div"/>
+          <Hidden smDown>
+          <ListItemText primary="Top"  className="style-div"/></Hidden>
           <ListItemText secondary={top} className="style-div"/>
           </ListItem>
 
