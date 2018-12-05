@@ -6,6 +6,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
+import ListSubheader from '@material-ui/core/ListSubheader';
 
 
 
@@ -87,7 +88,8 @@ componentDidUpdate(prevProps, prevState) {
 
     return (
       <React.Fragment>
-        <List className="styleList">
+        <List component="nav"
+        subheader={<ListSubheader component="div">Style</ListSubheader>} className="styleList">
 
         {(<ListItem   >
           <ListItemText primary="Outer" secondary={outer} className="style-div"/>
@@ -108,6 +110,7 @@ componentDidUpdate(prevProps, prevState) {
         <Divider  />
         {(<ListItem >
           <ListItemText primary="Shoes" secondary={shoes} className="style-div"/>
+          
 
           </ListItem>
         )}

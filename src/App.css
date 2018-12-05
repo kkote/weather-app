@@ -55,6 +55,9 @@ padding: 5px;
       padding: 10px;
       /* background: whitesmoke; */
 }
+.blogsearchpaper form{
+        display: inline-flex;
+}
 
 .blogsearchpaper label{
       background: whitesmoke;
@@ -86,11 +89,12 @@ padding: 5px;
 
 #currentTemp {
     font-weight: 500;
-    background: #2f4f4fab;
+        font-size: larger;
+    background: #eee;
     border-radius: .4rem;
     margin: 4px;
     padding: 2px;
-    color: #eee;
+    color: black;
 }
 
 #tempDisplay {
@@ -170,7 +174,7 @@ img {
 
 
 .styleList{
-  margin-top: 15px;
+  margin-top: 15px !important;
   background: #fff;
   border-radius: 3px;
   border: 1px solid #bdbab9;
@@ -178,17 +182,24 @@ img {
 }
 
 
+.styleList li  {
+  padding-left: 24px;
+padding-bottom: 5px;
+padding-right: 24px;
+padding-top: 5px;
+}
+
 .styleList li span p {
   font-size: large;
 }
 
 
 .styleList span {
-  font-size: 20px;
+  font-size: large;
 }
 
 .styleList p {
-  font-size: 25px;
+  font-size:large;
   float: right;
 }
 
@@ -230,6 +241,11 @@ img {
   padding-left: 5px;
 }
 
+.tabdiv {
+  background: whitesmoke;
+border-bottom: lightgray solid .3px;
+    margin-bottom: 10px;
+}
 
 
 

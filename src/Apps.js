@@ -131,7 +131,7 @@ import Divider from '@material-ui/core/Divider';
 
 
                   <main className="maindiv">
-                    <Paper className="hiddenonmobile">
+                    <div className="tabdiv hiddenonmobile">
                       <Tabs
                         indicatorColor="primary"
                         textColor="primary"
@@ -141,11 +141,9 @@ import Divider from '@material-ui/core/Divider';
                         <Tab label="Wendnesday" />
                         <Tab label="Thursday" />
                       </Tabs>
-                    </Paper>
-                    <Paper className="paperforsearchanddisplay">
+                    </div>
 
 
-                     </Paper>
                     <div className="mainFeaturedPost">
                       <Grid container className="mainFeaturedPostContainer">
                         <Grid item xs={10} md={6} className="mainDisplay">
@@ -169,7 +167,11 @@ import Divider from '@material-ui/core/Divider';
 
 
                   </Grid>
+
                 </div>
+
+
+
                   </main>
            </div>
          );
