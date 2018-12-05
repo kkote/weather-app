@@ -16,6 +16,9 @@
     import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
+import Menu from '@material-ui/core/Menu';
+import IconButton from '@material-ui/core/IconButton';
+import Divider from '@material-ui/core/Divider';
 
 
      let Api_Key = process.env.REACT_APP_API_KEY;
@@ -104,13 +107,15 @@ import Typography from '@material-ui/core/Typography';
            <div className="App">
              <React.Fragment className="pagetop">
                <div className="pagetop">
-               <AppBar className="appbar ">
 
-             <Header />
+             <Toolbar className="toolbar">
 
-             <Search handleSubmit={this.onCityChange} />
-             </AppBar>
-             <Toolbar className="toolbarpaper">
+               <div className="headerSearch">
+           <Header />
+           <Search handleSubmit={this.onCityChange} />
+           </div>
+           <hr className="headerdivider"  />
+
 
                <Display
                  city={city}
@@ -121,6 +126,7 @@ import Typography from '@material-ui/core/Typography';
                   />
               </Toolbar>
               </div>
+
             </React.Fragment>
 
 
@@ -131,9 +137,9 @@ import Typography from '@material-ui/core/Typography';
                         textColor="primary"
                         centered
                       >
-                        <Tab label="Item One" />
-                        <Tab label="Item Two" />
-                        <Tab label="Item Three" />
+                        <Tab label="Tomorrow" />
+                        <Tab label="Wendnesday" />
+                        <Tab label="Thursday" />
                       </Tabs>
                     </Paper>
                     <Paper className="paperforsearchanddisplay">
@@ -145,11 +151,21 @@ import Typography from '@material-ui/core/Typography';
                         <Grid item xs={10} md={6} className="mainDisplay">
                           <Img currentTemp={temp} />
                         </Grid>
-                        <Grid item xs={10} md={5} className="mainDisplay styleDisplay">
-                          <Style currentTemp={temp}
-                                city={city}
-                          />
-                      </Grid>
+
+
+
+                      <Grid item xs={10} md={5} className="mainDisplay styleDisplay">
+                        <div className="rightDiv">
+                        <Style currentTemp={temp}
+                              city={city}
+                        />
+                        <Style currentTemp={temp}
+                              city={city}
+                        />
+                      </div>
+
+                    </Grid>
+
 
 
                   </Grid>

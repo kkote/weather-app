@@ -90,24 +90,24 @@ componentDidUpdate(prevProps, prevState) {
         <List className="styleList">
 
         {(<ListItem   >
-          <ListItemText primary="Outer" secondary={outer} />
+          <ListItemText primary="Outer" secondary={outer} className="style-div"/>
           </ListItem>
 
         )}
         <Divider  />
-        {(<ListItem className="style-div">
-          <ListItemText primary="Top" secondary={top} />
+        {(<ListItem >
+          <ListItemText primary="Top" secondary={top} className="style-div"/>
           </ListItem>
 
         )}
         <Divider  />
-        {(<ListItem className="style-div">
-          <ListItemText primary="Pants" secondary={pants} />
+        {(<ListItem>
+          <ListItemText primary="Pants" secondary={pants} className="style-div"/>
           </ListItem>
         )}
         <Divider  />
-        {(<ListItem className="style-div">
-          <ListItemText primary="Shoes" secondary={shoes} />
+        {(<ListItem >
+          <ListItemText primary="Shoes" secondary={shoes} className="style-div"/>
 
           </ListItem>
         )}

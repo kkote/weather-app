@@ -14,18 +14,10 @@ const Header = props => {
                color="inherit"
                noWrap
                className="blogheadermain hiddenonmobile"
-             > Fashion Forecast
-          </Typography>
-
-      <Typography
-               component="h2"
-               variant="h5"
-               color="inherit"
-               align="center"
-               noWrap
-               className="blogheadertwo hiddenonmobile"
              > Weather Style Guide
           </Typography>
+
+
 
 
   </div>);
