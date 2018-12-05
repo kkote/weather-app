@@ -102,24 +102,30 @@ import Typography from '@material-ui/core/Typography';
 
          return (
            <div className="App">
-             <React.Fragment>
-               <AppBar className="appbar">
+             <React.Fragment className="pagetop">
+               <div className="pagetop">
+               <AppBar className="appbar ">
 
              <Header />
 
-
+             <Search handleSubmit={this.onCityChange} />
              </AppBar>
+             <Toolbar className="toolbarpaper">
 
+               <Display
+                 city={city}
+                 currentTemp={temp}
+                 currentWeather={currentWeather}
+                 hiTemp={hightemp}
+                 loTemp={lowtemp}
+                  />
+              </Toolbar>
+              </div>
             </React.Fragment>
-                  <Toolbar className="toolbarpaper">
-                    
-                  <Search handleSubmit={this.onCityChange} />
 
-
-        </Toolbar>
 
                   <main className="maindiv">
-                    <Paper className="classes.root">
+                    <Paper className="hiddenonmobile">
                       <Tabs
                         indicatorColor="primary"
                         textColor="primary"
@@ -131,33 +137,20 @@ import Typography from '@material-ui/core/Typography';
                       </Tabs>
                     </Paper>
                     <Paper className="paperforsearchanddisplay">
-                      <Grid container className="GridContainer">
-                        <Grid item md={6} className="searchitemgrid">
-                    <Search handleSubmit={this.onCityChange} />
-                    </Grid>
 
-                    <Grid item md={6}>
-                    <Display
-                      city={city}
-                      currentTemp={temp}
-                      currentWeather={currentWeather}
-                      hiTemp={hightemp}
-                      loTemp={lowtemp}
-                       />
-                     </Grid>
-                   </Grid>
 
                      </Paper>
                     <div className="mainFeaturedPost">
                       <Grid container className="mainFeaturedPostContainer">
+                        <Grid item xs={10} md={6} className="mainDisplay">
+                          <Img currentTemp={temp} />
+                        </Grid>
                         <Grid item xs={10} md={5} className="mainDisplay styleDisplay">
                           <Style currentTemp={temp}
                                 city={city}
                           />
                       </Grid>
-                        <Grid item xs={10} md={6} className="mainDisplay">
-                          <Img currentTemp={temp} />
-                        </Grid>
+
 
                   </Grid>
                 </div>

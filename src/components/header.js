@@ -13,7 +13,7 @@ const Header = props => {
                variant="h4"
                color="inherit"
                noWrap
-               className="blogheadermain"
+               className="blogheadermain hiddenonmobile"
              > Fashion Forecast
           </Typography>
 

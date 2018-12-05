@@ -16,19 +16,19 @@ import CardContent from '@material-ui/core/CardContent';
           <CardContent className="CardContent">
        {  (
          <div className="displayGroup">
-         <div>
+
          <span className="hiddenonmobile" >In</span>
          <span className="location">
            {" "}{props.city}{" "}
          </span>
-         </div>
-           <div>
+
+           
            <span className="hiddenonmobile">Its currently</span>
            <span id="currentTemp" className=""> {props.currentTemp} ° F</span>
            {" "}With{" "}
            <span className="description"> {props.currentWeather}
            </span>
-           </div>
+
 
          </div>
        )}

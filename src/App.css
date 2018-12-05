@@ -1,4 +1,7 @@
-
+.App {
+  background: whitesmoke;
+  height: -webkit-fill-auto;
+}
 
 
 .blogdisplaypaper {
@@ -76,6 +79,7 @@ margin: auto;
   position: static !important;
   color: black !important;
   background: whitesmoke !important;
+  flex-direction: row !important;
 }
 
 
@@ -112,6 +116,7 @@ margin: auto;
 .displayGroup{
     font-size: 21px;
     color: azure;
+    float: left;
 
 }
 
@@ -138,7 +143,8 @@ background: aliceblue;
 }
 
 .styleDisplay li {
-background: cadetblue;
+background: #eee;
+    outline: black 1px solid;
 }
 
 
@@ -212,6 +218,17 @@ button {
   font-size: medium !important;
 }
 
+.appbar {
+  flex-direction: column !important;
+}
+
+
+.pagetop {
+  display: flex;
+flex-direction: column-reverse;
+}
+
+
 }
 
 /* #currentTemp {
@@ -239,6 +256,16 @@ border-radius: .3rem;
 }
 
 .toolbarpaper {
-  background: black !important;
+  background: whitesmoke !important;
       justify-content: center !important;
+}
+
+
+.tempRangedisplayGroup {
+  float: right;
+}
+
+.pagetop {
+  display: flex;
+flex-direction: column;
 }
