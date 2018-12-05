@@ -9,7 +9,6 @@ import Typography from '@material-ui/core/Typography';
 import ListSubheader from '@material-ui/core/ListSubheader';
 
 
-
 class Style extends React.Component {
   constructor(props) {
     super(props);
@@ -88,29 +87,37 @@ componentDidUpdate(prevProps, prevState) {
 
     return (
       <React.Fragment>
+
+
+
         <List component="nav"
         subheader={<ListSubheader component="div">Style</ListSubheader>} className="styleList">
 
         {(<ListItem   >
-          <ListItemText primary="Outer" secondary={outer} className="style-div"/>
+          <ListItemText primary="Outer"  className="style-div"/>
+          <ListItemText  secondary={outer} className="style-div"/>
           </ListItem>
 
         )}
         <Divider  />
         {(<ListItem >
-          <ListItemText primary="Top" secondary={top} className="style-div"/>
+          <ListItemText primary="Top"  className="style-div"/>
+          <ListItemText secondary={top} className="style-div"/>
           </ListItem>
 
         )}
         <Divider  />
         {(<ListItem>
-          <ListItemText primary="Pants" secondary={pants} className="style-div"/>
+          <ListItemText primary="Pants"  className="style-div"/>
+          <ListItemText secondary={pants} className="style-div"/>
           </ListItem>
         )}
         <Divider  />
+
         {(<ListItem >
-          <ListItemText primary="Shoes" secondary={shoes} className="style-div"/>
-          
+          <ListItemText primary="Shoes"  className="style-div"/>
+          <ListItemText secondary={shoes} className="style-div"/>
+
 
           </ListItem>
         )}

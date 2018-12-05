@@ -22,7 +22,7 @@ import CardContent from '@material-ui/core/CardContent';
            {" "}{props.city}{" "}
          </span>
 
-           
+
            <span className="hiddenonmobile">Its currently</span>
            <span id="currentTemp" className=""> {props.currentTemp} ° F</span>
            {" "}With{" "}
