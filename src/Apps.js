@@ -13,6 +13,9 @@
     import Grid from '@material-ui/core/Grid';
     import Hidden from '@material-ui/core/Hidden';
     import AppBar from '@material-ui/core/AppBar';
+    import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
 
 
      let Api_Key = process.env.REACT_APP_API_KEY;
@@ -106,8 +109,27 @@
 
 
              </AppBar>
+
             </React.Fragment>
-                  <main>
+                  <Toolbar className="toolbarpaper">
+                    
+                  <Search handleSubmit={this.onCityChange} />
+
+
+        </Toolbar>
+
+                  <main className="maindiv">
+                    <Paper className="classes.root">
+                      <Tabs
+                        indicatorColor="primary"
+                        textColor="primary"
+                        centered
+                      >
+                        <Tab label="Item One" />
+                        <Tab label="Item Two" />
+                        <Tab label="Item Three" />
+                      </Tabs>
+                    </Paper>
                     <Paper className="paperforsearchanddisplay">
                       <Grid container className="GridContainer">
                         <Grid item md={6} className="searchitemgrid">
