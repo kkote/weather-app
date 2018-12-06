@@ -97,6 +97,11 @@ import withWidth from '@material-ui/core/withWidth';
       }
     }
 
+    handleGenderChange {
+
+    }
+
+
        render() {
          const city = this.state.city;
          const temp = this.state.currentTemp ;
@@ -157,13 +162,13 @@ import withWidth from '@material-ui/core/withWidth';
 
                       <Grid item xs={10} md={5} className="mainDisplay styleDisplay">
                         <div className="rightDiv">
-                          <RadioButtonsGroup />
+                          <RadioButtonsGroup gender={gender}/>
 
                         <Style currentTemp={temp}
                               city={city}
                         />
 
-                      <Sunset />
+                      <Sunset  />
 
                       </div>
 

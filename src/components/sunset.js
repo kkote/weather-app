@@ -1,16 +1,15 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import ListSubheader from '@material-ui/core/ListSubheader';
     import Hidden from '@material-ui/core/Hidden';
-    import List from '@material-ui/core/List';
-    import ListItem from '@material-ui/core/ListItem';
-    import ListItemText from '@material-ui/core/ListItemText';
 
 
+
+
+ const Sunset = props => {
 
 function Sunset(props) {
   const { classes, theme } = props;
@@ -44,6 +43,6 @@ function Sunset(props) {
   );
 }
 
-
+ }
 
 export default Sunset;

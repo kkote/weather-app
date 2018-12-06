@@ -6,6 +6,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Paper from '@material-ui/core/Paper';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
 
 class RadioButtonsGroup extends React.Component {
@@ -23,7 +25,7 @@ class RadioButtonsGroup extends React.Component {
 
     return (
       <React.Fragment>
-      <Paper className="styleList">
+      <Card className="styleList">
         <FormControl component="fieldset" className="mfForm">
           <FormLabel component="legend">Gender</FormLabel>
           <RadioGroup
@@ -49,7 +51,7 @@ class RadioButtonsGroup extends React.Component {
           </RadioGroup>
         </FormControl>
 
-      </Paper>
+      </Card>
       </React.Fragment>
     );
   }
