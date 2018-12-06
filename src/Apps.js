@@ -41,6 +41,7 @@ import withWidth from '@material-ui/core/withWidth';
            currentWeather: " ",
            hiTemp:"",
            loTemp:"",
+           gender: "default",
            isLoaded: false,
            error: null
          };
@@ -85,6 +86,14 @@ import withWidth from '@material-ui/core/withWidth';
 
        };
 
+       onGenderChange(e) {
+         this.setState({
+        city: e.target.value
+       });
+       console.log("gender is clicked")
+
+       };
+
 
        componentDidMount() {
          this.handleDataChange();
@@ -97,9 +106,7 @@ import withWidth from '@material-ui/core/withWidth';
       }
     }
 
-    handleGenderChange {
 
-    }
 
 
        render() {
@@ -107,7 +114,9 @@ import withWidth from '@material-ui/core/withWidth';
          const temp = this.state.currentTemp ;
          const hightemp = this.state.hiTemp ;
          const lowtemp = this.state.loTemp ;
+
          const currentWeather = this.state.currentWeather ;
+         const gender = this.state.gender ;
 
 
 
@@ -145,7 +154,7 @@ import withWidth from '@material-ui/core/withWidth';
                         textColor="primary"
                         centered
                       >
-                        <Tab label="Tomorrow" />
+                        <Tab label="Tomorrow" value="1"/>
                         <Tab label="Wendnesday" />
                         <Tab label="Thursday" />
                       </Tabs>
@@ -155,14 +164,16 @@ import withWidth from '@material-ui/core/withWidth';
                     <div className="mainFeaturedPost">
                       <Grid container className="mainFeaturedPostContainer">
                         <Grid item xs={10} md={6} className="mainDisplay">
-                          <Img currentTemp={temp} />
+                          <Img gender={gender} currentTemp={temp} />
                         </Grid>
 
 
 
                       <Grid item xs={10} md={5} className="mainDisplay styleDisplay">
                         <div className="rightDiv">
-                          <RadioButtonsGroup gender={gender}/>
+
+
+                          <RadioButtonsGroup handleChange={this.onGenderChange}/>
 
                         <Style currentTemp={temp}
                               city={city}

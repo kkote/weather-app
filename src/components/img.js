@@ -7,21 +7,17 @@ class Img extends React.Component {
     super(props);
     this.state = {
       currentTemp: "",
-      img: require('../Images/default/winter-couplesize.jpg'),
-      pickedGender: "default",
+      img: require('../Images/defaultImg/winter-couplesize.jpg'),
+      pickedGender: "defaultImg",
       male: "",
       female:"",
-      default:"",
+      defaultImg:"",
       error: null
     };
     this.setImage = this.setImage.bind(this);
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.currentTemp !== prevProps.current) {
-    this.setImage();
-    console.log("temperature updated");
-    }
 
     if (this.props.gender !== prevProps.gender) {
     this.setGender();
@@ -29,20 +25,25 @@ class Img extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.setImage();
+   };
+
+
 setGender() {
   let gender = this.props.gender;
 
-  if {pickedGender} === "male" {
+  if ({gender} === "male") {
     this.setState({
       pickedGender: "male"
     });
-  } else if {pickedGender} === "femle" {
+  } else if ({gender} === "female") {
     this.setState ({
       pickedGender: "female"
     });
   } else {
     this.setState ({
-      pickedGender: "default"
+      pickedGender: "defaultImg"
     });
   }
 }
@@ -54,42 +55,42 @@ setImage() {
 
   if({currentTemp} >= 75) {
     this.setState({
-      male:require('../Images/default/winter-couplesize.jpg'),
-      female: require('../Images/default/winter-couplesize.jpg'),
-      default: require('../Images/default/summer-groups.jpg')
+      male:require('../Images/defaultImg/winter-couplesize.jpg'),
+      female: require('../Images/defaultImg/winter-couplesize.jpg'),
+      defaultImg: require('../Images/defaultImg/summer-groups.jpg')
 
     });
   }
  else if (({currentTemp} >= 60) & ({currentTemp} < 75)) {
     this.setState({
-      male:require('../Images/default/winter-couplesize.jpg'),
-      female: require('../Images/default/winter-couplesize.jpg'),
-      default: require('../Images/default/spring-group-s.jpg')
+      male:require('../Images/defaultImg/winter-couplesize.jpg'),
+      female: require('../Images/defaultImg/winter-couplesize.jpg'),
+      defaultImg: require('../Images/defaultImg/spring-group-s.jpg')
 
     });
   }
   else if (({currentTemp} >= 50) & ({currentTemp} < 60)) {
     this.setState({
-      male:require('../Images/default/winter-couplesize.jpg'),
-      female: require('../Images/default/winter-couplesize.jpg'),
-      default: require('../Images/default/fall-couple-s.jpg')
+      male:require('../Images/defaultImg/winter-couplesize.jpg'),
+      female: require('../Images/defaultImg/winter-couplesize.jpg'),
+      defaultImg: require('../Images/defaultImg/fall-couple-s.jpg')
 
     });
   }
 
   else if (({currentTemp} >= 40) & ({currentTemp} < 50)) {
     this.setState({
-      male:require('../Images/default/winter-couplesize.jpg'),
-      female: require('../Images/default/winter-couplesize.jpg'),
-      default: require('../Images/default/winter-couplesize.jpg')
+      male:require('../Images/defaultImg/winter-couplesize.jpg'),
+      female: require('../Images/defaultImg/winter-couplesize.jpg'),
+      defaultImg: require('../Images/defaultImg/winter-couplesize.jpg')
 
     });
   }
   else {
     this.setState({
-      male:require('../Images/default/winter-couplesize.jpg'),
-      female: require('../Images/default/winter-couplesize.jpg'),
-      default: require('../Images/female/winter-woman-crop2size.jpg')
+      male:require('../Images/male/winter-man-s.jpg'),
+      female: require('../Images/female/winter-woman-crop2size.jpg'),
+      defaultImg: require('../Images/defaultImg/winter-couplesize.jpg')
 
     });
   }
@@ -98,7 +99,7 @@ setImage() {
 
 
   render () {
-    const {pickedGender, male, female, default} = this.state;
+    const {pickedGender, male, female, defaultImg} = this.state;
 
 
     if({pickedGender} === "male") {
@@ -113,7 +114,7 @@ setImage() {
     }
     else {
       return (<div className="img-box">
-        <img src={default} alt=" alt"/>
+        <img src={defaultImg} alt=" alt"/>
       </div>);
     }
   }

@@ -11,8 +11,7 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 
  const Sunset = props => {
 
-function Sunset(props) {
-  const { classes, theme } = props;
+
 
   return (
     <Card className="styleList">
@@ -43,6 +42,6 @@ function Sunset(props) {
   );
 }
 
- }
+ 
 
 export default Sunset;
