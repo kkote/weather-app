@@ -5,6 +5,8 @@
      import Img from "./components/img";
      import Display from "./components/display";
      import Header from "./components/header";
+     import RadioButtonsGroup from "./components/mf-radio.js";
+     import Sunset from "./components/sunset.js";
 
 
 
@@ -155,14 +157,14 @@ import withWidth from '@material-ui/core/withWidth';
 
                       <Grid item xs={10} md={5} className="mainDisplay styleDisplay">
                         <div className="rightDiv">
+                          <RadioButtonsGroup />
+
                         <Style currentTemp={temp}
                               city={city}
                         />
-                      <Hidden smDown>
-                      <Style className="hiddenonmobile" currentTemp={temp}
-                              city={city}
-                        />
-                    </Hidden>
+
+                      <Sunset />
+
                       </div>
 
                     </Grid>
@@ -176,6 +178,8 @@ import withWidth from '@material-ui/core/withWidth';
 
 
                   </main>
+
+
            </div>
          );
        }
