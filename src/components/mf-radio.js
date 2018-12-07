@@ -15,6 +15,7 @@ class RadioButtonsGroup extends React.Component {
     super(props);
     this.state = {
       value: '',
+      selectedValue: '',
     };
 
 
@@ -22,10 +23,14 @@ class RadioButtonsGroup extends React.Component {
 
 }
 
-handleChange = event => {
-  this.setState({ value: event.target.value });
-  console.log(this.state.value)
-};
+
+
+  handleChange = event => {
+    this.setState({ selectedValue: event.target.value });
+  };
+
+
+
 
 
 
@@ -43,16 +48,20 @@ handleChange = event => {
             aria-label="gender"
             name="gender2"
             className="radiogroupdiv"
-            value={this.state.value}
-            onChange={this.handleChange}
+            value={this.props.value}
+            onChange={this.props.onGenderChange}
           >
             <FormControlLabel
+            checked={this.state.selectedValue === 'female'}
               value="female"
+              name="gender"
               control={<Radio color="primary" />}
               label="Female"
               labelPlacement="start"
             />
             <FormControlLabel
+            checked={this.state.selectedValue === 'male'}
+            name="gender"
               value="male"
               control={<Radio color="primary" />}
               label="Male"

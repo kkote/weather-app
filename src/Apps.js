@@ -41,11 +41,12 @@ import withWidth from '@material-ui/core/withWidth';
            currentWeather: " ",
            hiTemp:"",
            loTemp:"",
-           gender: "default",
+           gender: "female",
            isLoaded: false,
            error: null
          };
          this.onCityChange = this.onCityChange.bind(this);
+         this.onGenderChange = this.onGenderChange.bind(this);
        }
 
 
@@ -86,9 +87,9 @@ import withWidth from '@material-ui/core/withWidth';
 
        };
 
-       onGenderChange(e) {
+       onGenderChange(event) {
          this.setState({
-        city: e.target.value
+        gender: event.target.value
        });
        console.log("gender is clicked")
 
@@ -173,7 +174,7 @@ import withWidth from '@material-ui/core/withWidth';
                         <div className="rightDiv">
 
 
-                          <RadioButtonsGroup handleChange={this.onGenderChange}/>
+                          <RadioButtonsGroup onGenderChange={this.onGenderChange} value={this.state.gender}/>
 
                         <Style currentTemp={temp}
                               city={city}
