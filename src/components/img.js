@@ -28,29 +28,69 @@ this.setStyle = this.setStyle.bind(this);
   let gender = this.props.gender;
   console.log({currentTemp});
   if (currentTemp >= 75) {
-    this.setState({
-    img: require('../Images/defaultImg/summer-groups.jpg')
-    });
-  } else if ((currentTemp >= 60) & (currentTemp < 75)) {
-    this.setState({
-        img: require('../Images/defaultImg/spring-group-s.jpg')
-    });
-  } else if ((currentTemp >= 50) & (currentTemp < 60)) {
-    this.setState({
-      img: require('../Images/defaultImg/fall-couple-s.jpg')
-    });
-  } else if ((currentTemp >= 40) & (currentTemp < 50)) {
-    this.setState({
-      img: require('../Images/defaultImg/winter-couplesize.jpg')
-    });
-  } else {
     if (gender === "female"){
       this.setState({
-        img: require('../Images/female/winter-woman-crop2size.jpg')
+        img: require('../Images/female/w-sum.jpg')
       });
     } else if (gender === "male") {
       this.setState({
-        img: require('../Images/male/winter-man-s.jpg')
+        img: require('../Images/male/summer-man-s.jpg')
+      });
+    } else {
+    this.setState({
+    img: require('../Images/defaultImg/summer-groups.jpg')
+    });
+  }
+  } else if ((currentTemp >= 60) & (currentTemp < 75)) {
+    if (gender === "female"){
+      this.setState({
+        img: require('../Images/female/w-spring.jpg')
+      });
+    } else if (gender === "male") {
+      this.setState({
+        img: require('../Images/male/ma-spring.jpg')
+      });
+    } else {
+    this.setState({
+        img: require('../Images/defaultImg/spring-group-s.jpg')
+    });
+  }
+  } else if ((currentTemp >= 50) & (currentTemp < 60)) {
+    if (gender === "female"){
+      this.setState({
+        img: require('../Images/female/w-fall.jpg')
+      });
+    } else if (gender === "male") {
+      this.setState({
+        img: require('../Images/male/fall-man.jpg')
+      });
+    } else {
+    this.setState({
+      img: require('../Images/defaultImg/fall-couple-s.jpg')
+    });
+  }
+  } else if ((currentTemp >= 40) & (currentTemp < 50)) {
+    if (gender === "female"){
+      this.setState({
+        img: require('../Images/female/winter-woman-3.jpg')
+      });
+    } else if (gender === "male") {
+      this.setState({
+        img: require('../Images/male/man-winter.jpg')
+      });
+    } else {
+    this.setState({
+      img: require('../Images/defaultImg/winter-couplesize.jpg')
+    });
+  }
+  } else {
+    if (gender === "female"){
+      this.setState({
+        img: require('../Images/female/w-winter.jpg')
+      });
+    } else if (gender === "male") {
+      this.setState({
+        img: require('../Images/male/m-vwinter.jpg')
       });
     } else {
     this.setState({
@@ -77,7 +117,7 @@ componentDidUpdate(prevProps, prevState) {
 
 
   render () {
-    const {img} = this.state.currentTemp ;
+    const {img} = this.state.img;
 
 
     return (<div className="img-box">
