@@ -32,8 +32,6 @@ componentDidUpdate(prevProps, prevState) {
   this.setStyle();
   }
   console.log("style updated");
-  console.log(this.props.currentTemp);
-  console.log(this.state.top);
 }
 
 
@@ -74,7 +72,6 @@ componentDidUpdate(prevProps, prevState) {
     pants: "Thick Pants, Layers",
     shoes: "Boots"});
   }
-  console.log("is working");
 }
 
 

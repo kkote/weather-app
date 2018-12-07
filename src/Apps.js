@@ -38,7 +38,7 @@ import withWidth from '@material-ui/core/withWidth';
            data: '',
            city: "St. Louis",
            currentTemp: " ",
-           currentWeather: " ",
+           currentWeather: "",
            hiTemp:"",
            loTemp:"",
            gender: "female",
@@ -156,7 +156,7 @@ import withWidth from '@material-ui/core/withWidth';
                         centered
                       >
                         <Tab label="Tomorrow" value="1"/>
-                        <Tab label="Wendnesday" />
+                        <Tab label="Wednesday" />
                         <Tab label="Thursday" />
                       </Tabs>
                     </div>

@@ -1,122 +1,72 @@
 import React from "react";
 
 
-
 class Img extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentTemp: "",
-      img: require('../Images/defaultImg/winter-couplesize.jpg'),
-      pickedGender: "defaultImg",
-      male: "",
-      female:"",
-      defaultImg:"",
-      error: null
+      top: "top",
+      pants: "pants",
+      outer: "out",
+      shoes: "shoes",
+      currentTemp: this.props.currentTemp,
+      error: "error",
+      img: require('../Images/defaultImg/summer-groups.jpg'),
+      defaultImg: ""
     };
-    this.setImage = this.setImage.bind(this);
-  };
+this.setStyle = this.setStyle.bind(this);
 
-  componentDidUpdate(prevProps, prevState) {
+};
 
-    if (this.props.gender !== prevProps.gender) {
-    this.setGender();
-    console.log("gender updated");
-    }
+
+
+componentDidUpdate(prevProps, prevState) {
+  if (this.props.currentTemp !== prevProps.currentTemp) {
+  this.setStyle();
   }
+  console.log("image updated");
+  console.log(this.state.img);
+}
 
-  componentDidMount() {
-    this.setImage();
-   };
 
-
-setGender() {
-  let gender = this.props.gender;
-
-  if ({gender} === "male") {
+  setStyle(){
+  let currentTemp = this.props.currentTemp;
+  if ({currentTemp} >= 75) {
     this.setState({
-      pickedGender: "male"
+    img: require('../Images/defaultImg/summer-groups.jpg')
     });
-  } else if ({gender} === "female") {
-    this.setState ({
-      pickedGender: "female"
+  } else if (({currentTemp} >= 60) & ({currentTemp} < 75)) {
+    this.setState({
+        img: require('../Images/defaultImg/spring-group-s.jpg')
+    });
+  } else if (({currentTemp} >= 50) & ({currentTemp} < 60)) {
+    this.setState({
+      img: require('../Images/defaultImg/fall-couple-s.jpg')
+    });
+  } else if (({currentTemp} >= 40) & ({currentTemp} < 50)) {
+    this.setState({
+      img: require('../Images/defaultImg/winter-couplesize.jpg')
     });
   } else {
-    this.setState ({
-      pickedGender: "defaultImg"
+    this.setState({
+      img: require('../Images/defaultImg/winter-couplesize.jpg')
     });
   }
+  console.log("is working");
 }
 
-
-
-setImage() {
-  let currentTemp = this.props.currentTemp;
-
-  if({currentTemp} >= 75) {
-    this.setState({
-      male:require('../Images/defaultImg/winter-couplesize.jpg'),
-      female: require('../Images/defaultImg/winter-couplesize.jpg'),
-      defaultImg: require('../Images/defaultImg/summer-groups.jpg')
-
-    });
-  }
- else if (({currentTemp} >= 60) & ({currentTemp} < 75)) {
-    this.setState({
-      male:require('../Images/defaultImg/winter-couplesize.jpg'),
-      female: require('../Images/defaultImg/winter-couplesize.jpg'),
-      defaultImg: require('../Images/defaultImg/spring-group-s.jpg')
-
-    });
-  }
-  else if (({currentTemp} >= 50) & ({currentTemp} < 60)) {
-    this.setState({
-      male:require('../Images/defaultImg/winter-couplesize.jpg'),
-      female: require('../Images/defaultImg/winter-couplesize.jpg'),
-      defaultImg: require('../Images/defaultImg/fall-couple-s.jpg')
-
-    });
-  }
-
-  else if (({currentTemp} >= 40) & ({currentTemp} < 50)) {
-    this.setState({
-      male:require('../Images/defaultImg/winter-couplesize.jpg'),
-      female: require('../Images/defaultImg/winter-couplesize.jpg'),
-      defaultImg: require('../Images/defaultImg/winter-couplesize.jpg')
-
-    });
-  }
-  else {
-    this.setState({
-      male:require('../Images/male/winter-man-s.jpg'),
-      female: require('../Images/female/winter-woman-crop2size.jpg'),
-      defaultImg: require('../Images/defaultImg/winter-couplesize.jpg')
-
-    });
-  }
-}
 
 
 
   render () {
-    const {pickedGender, male, female, defaultImg} = this.state;
+    const {img} = this.state.currentTemp ;
 
 
-    if({pickedGender} === "male") {
-      return (<div className="img-box">
-        <img src={male} alt="alt"/>
-      </div>);
-    }
-    else if ({pickedGender} === "female") {
-      return (<div className="img-box">
-        <img src={female} alt="alt"/>
-      </div>);
-    }
-    else {
-      return (<div className="img-box">
-        <img src={defaultImg} alt=" alt"/>
-      </div>);
-    }
+    return (<div className="img-box">
+      <img src={this.state.img} alt="summer"/>
+    </div>);
+
+
   }
 }
 
