@@ -11,7 +11,7 @@ class Img extends React.Component {
       shoes: "shoes",
       currentTemp: this.props.currentTemp,
       error: "error",
-      img: require('../Images/defaultImg/summer-groups.jpg'),
+      img: "",
       defaultImg: ""
     };
 this.setStyle = this.setStyle.bind(this);
@@ -44,11 +44,11 @@ this.setStyle = this.setStyle.bind(this);
   } else if ((currentTemp >= 60) & (currentTemp < 75)) {
     if (gender === "female"){
       this.setState({
-        img: require('../Images/female/w-spring.jpg')
+        img: require('../Images/female/w-spring1.jpg')
       });
     } else if (gender === "male") {
       this.setState({
-        img: require('../Images/male/ma-spring.jpg')
+        img: require('../Images/male/ma-spring1.jpg')
       });
     } else {
     this.setState({
@@ -58,11 +58,11 @@ this.setStyle = this.setStyle.bind(this);
   } else if ((currentTemp >= 50) & (currentTemp < 60)) {
     if (gender === "female"){
       this.setState({
-        img: require('../Images/female/w-fall.jpg')
+        img: require('../Images/female/w-fall1.jpg')
       });
     } else if (gender === "male") {
       this.setState({
-        img: require('../Images/male/fall-man.jpg')
+        img: require('../Images/male/fall-man1.jpg')
       });
     } else {
     this.setState({
@@ -72,7 +72,7 @@ this.setStyle = this.setStyle.bind(this);
   } else if ((currentTemp >= 40) & (currentTemp < 50)) {
     if (gender === "female"){
       this.setState({
-        img: require('../Images/female/winter-woman-3.jpg')
+        img: require('../Images/female/winter-woman.jpg')
       });
     } else if (gender === "male") {
       this.setState({
@@ -90,7 +90,7 @@ this.setStyle = this.setStyle.bind(this);
       });
     } else if (gender === "male") {
       this.setState({
-        img: require('../Images/male/m-vwinter.jpg')
+        img: require('../Images/male/m-vwinter1.jpg')
       });
     } else {
     this.setState({
