@@ -90,16 +90,15 @@ componentDidUpdate(prevProps, prevState) {
         <List component="nav"
         subheader={<Hidden smDown><ListSubheader component="div">Style</ListSubheader></Hidden>} className="styleList">
 
-        {(<ListItem   ><Hidden smDown>
-          <ListItemText primary="Outer"  className="style-div"/></Hidden>
+        {(<ListItem   >
+          <ListItemText primary="Outer"  className="style-div"/>
           <ListItemText  secondary={outer} className="style-div"/>
           </ListItem>
 
         )}
         <Divider  />
         {(<ListItem >
-          <Hidden smDown>
-          <ListItemText primary="Top"  className="style-div"/></Hidden>
+          <ListItemText primary="Top"  className="style-div"/>
           <ListItemText secondary={top} className="style-div"/>
           </ListItem>
 

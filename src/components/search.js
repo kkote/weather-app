@@ -33,7 +33,7 @@ class Search extends React.Component {
       <form onSubmit={this.props.handleSubmit}>
 
 
-        <TextField label="Enter location"  name="city" onChange={this.handleChange} defaultValue="Chicago" variant="filled" />
+        <TextField  label="Enter location"  name="city" onChange={this.handleChange} defaultValue="Chicago" variant="filled" />
 
              <Button variant="contained" type="submit">Search</Button>
 

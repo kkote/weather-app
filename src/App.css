@@ -1,6 +1,6 @@
 .App {
   /* background: whitesmoke; */
-  height: -webkit-fill-auto;
+  height: -webkit-fill-available;
   background: #ebebeb;
 font-family: Heebo,sans-serif;
 }
@@ -168,6 +168,8 @@ img {
         max-height: 100%;
       background: center center no-repeat;
      background-size: contain;
+     border-radius: 3px;
+border: 1px solid #bdbab9;
 }
 
 
@@ -294,8 +296,23 @@ padding-left: 5px;
 
 
 @media screen and (max-width: 600px) {
+  .App {
+    height: auto;
+  }
+  .maindiv {
+    width: 100%;
+  }
   .hiddenonmobile {
     display: none !important;
+  }
+
+  .blogsearchpaper {
+        padding: 2px;
+        flex-direction: row;
+  }
+
+  .blogsearchpaper label{
+        display: none;
   }
 
   .GridContainer{
@@ -308,7 +325,7 @@ padding-left: 5px;
   .styleList{
     /* display: inline-flex; */
 
-    margin: 10px 0px 10px 0px;
+    margin: 5px 0px 5px 0px !important;
 
   }
 

@@ -25,7 +25,7 @@ import CardContent from '@material-ui/core/CardContent';
 
            <span className="hiddenonmobile">Its currently</span>
            <span id="currentTemp" className=""> {props.currentTemp} ° F</span>
-           {" "}With{" "}
+            <span className="hiddenonmobile">{" "}With{" "}</span>
            <span className="description"> {props.currentWeather}
            </span>
 
