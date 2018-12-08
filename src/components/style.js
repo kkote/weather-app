@@ -32,15 +32,15 @@ class Style extends React.Component {
   setStyle() {
     let currentTemp = this.props.currentTemp;
     if ({currentTemp} >= 75) {
-      this.setState({outer: "None", top: "T-shirt", pants: "Shorts", shoes: "Sandals"});
+      this.setState({outer: "Lightweight Jacket or None", top: "T-shirt", pants: "Shorts", shoes: "Sandals"});
     } else if ((currentTemp >= 60) & (currentTemp < 75)) {
-      this.setState({outer: "Hoodie or Light Jacket", top: "T-shirt", pants: "Shorts or Pants", shoes: "Shoes "});
+      this.setState({outer: "Light Jacket or Hoodie", top: "T-shirt", pants: "Shorts or Pants", shoes: "Shoes "});
     } else if ((currentTemp >= 50) & (currentTemp < 60)) {
-      this.setState({outer: "Jacket/Fleece", top: "T-shirt or Long sleeve", pants: "Pants", shoes: "Shoes"});
+      this.setState({outer: "Jacket", top: "T-shirt or Long sleeve", pants: "Pants", shoes: "Shoes"});
     } else if ((currentTemp >= 40) & (currentTemp < 50)) {
-      this.setState({outer: "Jacket/Fleece ", top: " Long Sleeve", pants: "Pants", shoes: "Shoes or Boots"});
+      this.setState({outer: "Jacket or Fleece ", top: " Long Sleeve", pants: "Pants", shoes: "Shoes or Boots"});
     } else {
-      this.setState({outer: "Layers: Coat", top: "Long Sleeve", pants: "Thick Pants, Layers", shoes: "Boots"});
+      this.setState({outer: "Coat", top: "Long Sleeve", pants: "Thick Pants, Layers", shoes: "Boots"});
     }
   }
 

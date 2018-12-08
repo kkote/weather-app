@@ -27,7 +27,7 @@ class RadioButtonsGroup extends React.Component {
     return (<React.Fragment>
       <Card className="styleList">
         <FormControl component="fieldset" className="mfForm">
-          <FormLabel component="legend">Gender</FormLabel>
+          <FormLabel component="legend" className="hiddenonmobile">Gender</FormLabel>
           <RadioGroup aria-label="gender" name="gender2" className="radiogroupdiv" value={this.props.value} onChange={this.props.onGenderChange}>
             <FormControlLabel checked={this.state.selectedValue === 'female'} value="female" name="gender" control={<Radio color = "primary" />} label="Female" labelPlacement="start"/>
             <FormControlLabel checked={this.state.selectedValue === 'male'} name="gender" value="male" control={<Radio color = "primary" />} label="Male" labelPlacement="start"/>
