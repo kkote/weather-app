@@ -1,176 +1,131 @@
 import React from "react";
-import Weather from "./components/weather";
 import Style from "./components/style";
-import {Grid, Cell} from "react-flexr";
-import "react-flexr/styles.css";
+import Search from "./components/search";
+import Img from "./components/img";
+import Display from "./components/display";
+import Header from "./components/header";
+import RadioButtonsGroup from "./components/mf-radio.js";
+// import Sunset from "./components/sunset.js";
+import Toolbar from '@material-ui/core/Toolbar';
+import Grid from '@material-ui/core/Grid';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
 let Api_Key = process.env.REACT_APP_API_KEY;
 
-const Title = props => {
-  return (<div clasName="title-boxes">
-    <h1 className="title">Fashion Forecast</h1>
-    <div className="subtitle ">Weather Style Guide</div>
-  </div>);
-};
-
-const Form = props => {
-  return (
-    <Cell>
-      <form onSubmit={props.loadWeather}>
-        <Cell className="location-search" size="2/3">
-          <input type="text" name="city" placeholder="city"/>
-        </Cell>
-        {/* <input type="text" name="country" placeholder="country"/> */}
-        <Cell className="location-search">
-          <button>Search</button>
-        </Cell>
-      </form>
-    </Cell>
-  );
-};
-
-//        var aImg = "couple";
-//
-//        var imageName = require('./Images/' + aImg + '.jpg');
-
-class Img extends React.Component {
-  render() {
-    return (<div className="img-box">
-      <img src={this.props.img}/>
-    </div>);
-  }
-}
-
 class App extends React.Component {
-  state = {
-    temperature: " -  -",
-    city: "_______",
-    country: "__",
-    description: "_____",
-    mintemp: " -  -",
-    maxtemp: " -   -",
-    icon: " ",
-    error: undefined,
-    outer: " ",
-    top: " ",
-    pants: " ",
-    shoes: " ",
-    img: require('./Images/winter-couplesize.jpg')
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: '',
+      city: "St. Louis",
+      currentTemp: " ",
+      currentWeather: "",
+      hiTemp: "",
+      loTemp: "",
+      gender: "female",
+      isLoaded: false,
+      error: null
+    };
+    this.onCityChange = this.onCityChange.bind(this);
+    this.onGenderChange = this.onGenderChange.bind(this);
+  }
+
+  handleDataChange() {
+
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.city},us&units=imperial&appid=${Api_Key}`).then(res => res.json()).then((result) => {
+      this.setState({
+        currentTemp: parseInt(result.main.temp, 10),
+        isLoaded: true,
+        city: result.name,
+        data: result,
+        currentWeather: (result.weather[0].description),
+        hiTemp: parseInt(result.main.temp_max, 10),
+        loTemp: parseInt(result.main.temp_min, 10)
+      });
+      console.log(this.state.data);
+    }, (error) => {
+      this.setState({isLoaded: true, error});
+    })
   };
 
-  getWeather = async e => {
-    //		 const city = e.target.elements.city.value;
-    // const country = e.target.elements.country.value;
-    const city = "Chicago";
-    const country = "us";
-
+  onCityChange(e) {
     e.preventDefault();
-    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${Api_Key}`);
-
-    console.log(api_call);
-    const response = await api_call.json();
-    console.log(response);
-
-    const tempNum = parseInt(response.main.temp, 10);
-    const tempNumHi = parseInt(response.main.temp_max, 10);
-    const tempNumLo = parseInt(response.main.temp_min, 10);
-
-    console.log(tempNum);
-
-    if (city && country) {
-      this.setState({
-        temperature: tempNum,
-        city: response.name,
-        description: response.weather[0].description,
-        mintemp: tempNumLo,
-        maxtemp: tempNumHi,
-        error: ""
-      });
-    } else {
-      this.setState({error: "Please input search"});
-    }
-
-    if (tempNum >= 75) {
-      this.setState({
-        outer: "None",
-        top: "T-shirt",
-        pants: "Shorts",
-        shoes: "Sandals",
-        img: require('./Images/summer-groups.jpg'),
-        error: ""
-      });
-    } else if ((tempNum >= 60) & (tempNum < 75)) {
-      this.setState({
-        outer: "Hoodie or Light Jacket",
-        top: "T-shirt",
-        pants: "Shorts or Pants",
-        shoes: "Shoes ",
-        img: require('./Images/spring-group-s.jpg'),
-        error: ""
-      });
-    } else if ((tempNum >= 50) & (tempNum < 60)) {
-      this.setState({
-        outer: "Jacket/Fleece",
-        top: "T-shirt or Long sleeve",
-        pants: "Pants",
-        shoes: "Shoes",
-        img: "",
-        img: require('./Images/fall-couple-s.jpg'),
-        error: ""
-      });
-    } else if ((tempNum >= 40) & (tempNum < 50)) {
-      this.setState({
-        outer: "Jacket/Fleece ",
-        top: " Long Sleeve",
-        pants: "Pants",
-        shoes: "Shoes or Boots",
-        img: "",
-        img: require('./Images/winter-couplesize.jpg'),
-        error: ""
-
-      });
-    } else {
-      this.setState({outer: "Layers: Hoodie/Jacket/Coat", top: "Long Sleeve", pants: "Thick Pants or Layers", shoes: "Boots", img: require('./Images/winter-woman-crop2size.jpg')});
-    }
+    this.setState({city: e.target.city.value});
 
   };
+
+  onGenderChange(event) {
+    this.setState({gender: event.target.value});
+    console.log("gender is clicked")
+
+  };
+
+  componentDidMount() {
+    this.handleDataChange();
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.city !== prevState.city) {
+      this.handleDataChange();
+    }
+  }
 
   render() {
-    return (<div>
-      <Grid>
-        <Cell className="nav-box">
-          <Cell className="title-box" palm="hidden" size="1/4">
-            <Title/>
-          </Cell>
-          {/*{<Cell className="search-form">
-							<Form loadWeather={this.getWeather} />
-						</Cell> }*/
-          }
-          <Cell className="weather-top" palm="2/3">
-            <Cell className="search-form">
-              <Form loadWeather={this.getWeather}/>
-            </Cell>
+    const city = this.state.city;
+    const temp = this.state.currentTemp;
+    const hightemp = this.state.hiTemp;
+    const lowtemp = this.state.loTemp;
+    const currentWeather = this.state.currentWeather;
+    const gender = this.state.gender;
 
-            <Cell size="3/5">
-              <Weather temperature={this.state.temperature} city={this.state.city} country={this.state.country} description={this.state.description} maxtemp={this.state.maxtemp} mintemp={this.state.mintemp} error={this.state.error} icon={this.state.icon}/>
-            </Cell>
-          </Cell>
-        </Cell>
-      </Grid>
+    return (<div className="App">
+      <React.Fragment className="pagetop">
+        <div className="pagetop">
 
-      <div className="wrapper">
-        <div className="main">
-            <Grid className="display-container">
-              <Cell className="style-box" size="1/2">
-                <Style top={this.state.top} pants={this.state.pants} outer={this.state.outer} shoes={this.state.shoes} error={this.state.error}/>
-              </Cell>
-              <Img img={this.state.img}/>
+          <Toolbar className="toolbar">
 
+            <div className="headerSearch">
+              <Header/>
+              <Search handleSubmit={this.onCityChange}/>
+            </div>
+            <hr className="headerdivider"/>
+
+            <Display city={city} currentTemp={temp} currentWeather={currentWeather} hiTemp={hightemp} loTemp={lowtemp}/>
+          </Toolbar>
+        </div>
+
+      </React.Fragment>
+
+      <main className="maindiv">
+        <div className="tabdiv hiddenonmobile">
+          <Tabs indicatorColor="primary" textColor="primary" centered="centered">
+            <Tab label="" value="1"/>
+            <Tab label=""/>
+            <Tab label=""/>
+          </Tabs>
+        </div>
+
+        <div className="mainFeaturedPost">
+          <Grid container="container" className="mainFeaturedPostContainer">
+            <Grid item="item" xs={10} md={6} className="mainDisplay">
+              <Img gender={gender} currentTemp={temp}/>
             </Grid>
 
+            <Grid item="item" xs={10} md={5} className="mainDisplay styleDisplay">
+              <div className="rightDiv">
+                <RadioButtonsGroup onGenderChange={this.onGenderChange} value={this.state.gender}/>
+                <Style currentTemp={temp} city={city}/> {/* <Sunset  /> */}
+
+              </div>
+            </Grid>
+          </Grid>
         </div>
-      </div>
+      </main>
+
     </div>);
   }
 }
+
 export default App;

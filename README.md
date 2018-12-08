@@ -2,26 +2,27 @@
 > Use your location and find what to wear based on the forecast.
 
 
-Use geolocation or the search function to find location.
 
-![](header.png)
+
 
 
 ## Usage example
 
-This can be used to figure out what to wear, if you need a jacket, umbrella, layers, or for style ideas.
+A fast way to help decide what to wear based on the weather and temperature.
 
 
 
 ## Built With
-
-* [Create-React-App](https://github.com/facebook/create-react-app) - React
+* [React](https://reactjs.org/) - React
 * [OpenWeatherMap](https://openweathermap.org/api) - API
+
+* [Material Ui](https://material-ui.com/) -Layout
+
 
 
 ## Author
 
-* **Katherine Kote** - *Initial work* - [KateGray52](https://github.com/KateGray52)
+* **Katherine Kote**  - [KateGray52](https://github.com/KateGray52)
 
 ## License
 

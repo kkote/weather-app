@@ -1,10 +1,6 @@
-
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
-
 
 class Search extends React.Component {
   constructor(props) {
@@ -17,32 +13,23 @@ class Search extends React.Component {
 
   }
 
-
   handleChange(event) {
-   this.setState({value: event.target.value});
+    this.setState({value: event.target.value});
 
- }
-
-
-
+  }
 
   render() {
 
-    return (
-      <div className="blogsearchpaper">
+    return (<div className="blogsearchpaper">
       <form onSubmit={this.props.handleSubmit}>
 
+        <TextField label="Enter location" name="city" onChange={this.handleChange} defaultValue="Chicago" variant="filled"/>
 
-        <TextField  label="Enter location"  name="city" onChange={this.handleChange} defaultValue="Chicago" variant="filled" />
+        <Button variant="contained" type="submit">Search</Button>
 
-             <Button variant="contained" type="submit">Search</Button>
-
-
-           </form>
-         </div>
-    );
+      </form>
+    </div>);
   }
 }
-
 
 export default Search;

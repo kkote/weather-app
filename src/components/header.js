@@ -1,27 +1,14 @@
 import React from "react";
-
 import Typography from '@material-ui/core/Typography';
 
-
-
 const Header = props => {
-  return (
-    <div className="blogheader">
+  return (<div className="blogheader">
 
-      <Typography
-               component="h2"
-               variant="h4"
-               color="inherit"
-               noWrap
-               className="blogheadermain hiddenonmobile"
-             > Weather Style Guide
-          </Typography>
-
-
-
+    <Typography component="h2" variant="h4" color="inherit" noWrap="noWrap" className="blogheadermain hiddenonmobile">
+      Weather Style Guide
+    </Typography>
 
   </div>);
 }
-
 
 export default Header;
