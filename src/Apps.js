@@ -155,9 +155,9 @@ import withWidth from '@material-ui/core/withWidth';
                         textColor="primary"
                         centered
                       >
-                        <Tab label="Tomorrow" value="1"/>
-                        <Tab label="Wednesday" />
-                        <Tab label="Thursday" />
+                        <Tab label="" value="1"/>
+                        <Tab label="" />
+                        <Tab label="" />
                       </Tabs>
                     </div>
 
@@ -180,7 +180,7 @@ import withWidth from '@material-ui/core/withWidth';
                               city={city}
                         />
 
-                      <Sunset  />
+                      { /*<Sunset  /> */}
 
                       </div>
 
