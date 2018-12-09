@@ -71,19 +71,19 @@ body {
   background: whitesmoke;
 }
 
-.blogdisplaypaper {
+.displayCard {
   margin: 5px;
   background: #1f1f1f !important;
   font-size: larger;
 }
 
-.displayGroup {
+.toolbarDisplayGroup {
   font-size: 21px;
   color: white;
   float: left;
 }
 
-.displayGroup div {
+.toolbarDisplayGroup div {
   padding: 4px 0px 4px 0px;
 }
 
@@ -321,7 +321,7 @@ img {
     padding: 5px !important;
   }
 
-  .displayGroup {
+  .toolbarDisplayGroup {
     font-size: medium !important;
   }
 

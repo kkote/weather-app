@@ -6,26 +6,20 @@ import CardContent from '@material-ui/core/CardContent';
 
 const Display = props => {
 
-  return (<Grid item="item" xs={12} md={10} className="divAbovedisplayPaper">
-    <Card elevation={0} className="blogdisplaypaper">
+  return (<Grid item xs={12} md={7} >
+    <Card elevation={0} className="displayCard">
       <CardContent className="CardContent">
         {
-          (<div className="displayGroup">
-
-            <span className="hiddenonmobile">In</span>
+          (<div className="toolbarDisplayGroup">
             <span className="location">
               {" "}{props.city}{" "}
             </span>
-
-            <span className="hiddenonmobile">Its currently</span>
             <span id="currentTemp" className="">
               {props.currentTemp}
               ° F</span>
-            <span className="hiddenonmobile">{" "}With{" "}</span>
             <span className="description">
               {props.currentWeather}
             </span>
-
           </div>)
         }
         {

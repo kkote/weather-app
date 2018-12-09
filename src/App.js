@@ -9,7 +9,7 @@ import RadioButtonsGroup from "./components/mf-radio.js";
 import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
 import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+// import Tab from '@material-ui/core/Tab';
 
 let Api_Key = process.env.REACT_APP_API_KEY;
 
@@ -81,7 +81,7 @@ class App extends React.Component {
     const gender = this.state.gender;
 
     return (<div className="App">
-      <React.Fragment className="pagetop">
+
         <div className="pagetop">
 
           <Toolbar className="toolbar">
@@ -96,24 +96,24 @@ class App extends React.Component {
           </Toolbar>
         </div>
 
-      </React.Fragment>
+
 
       <main className="maindiv">
         <div className="tabdiv hiddenonmobile">
-          <Tabs indicatorColor="primary" textColor="primary" centered="centered">
-            <Tab label="" value="1"/>
-            <Tab label="" value="2"/>
-            <Tab label="" value="3"/>
+          <Tabs indicatorColor="primary" textColor="primary" value={1}>
+          {/*  <Tab label="" value={1} />
+            <Tab label="" value={2}/>
+            <Tab label="" value={3}/> */ }
           </Tabs>
         </div>
 
         <div className="mainFeaturedPost">
-          <Grid container="container" className="mainFeaturedPostContainer">
-            <Grid item="item" xs={10} md={6} className="mainDisplay">
+          <Grid container className="mainFeaturedPostContainer">
+            <Grid item xs={10} md={6} className="mainDisplay">
               <Img gender={gender} currentTemp={temp}/>
             </Grid>
 
-            <Grid item="item" xs={10} md={5} className="mainDisplay styleDisplay">
+            <Grid item xs={10} md={5} className="mainDisplay styleDisplay">
               <div className="rightDiv">
                 <RadioButtonsGroup onGenderChange={this.onGenderChange} value={this.state.gender}/>
                 <Style currentTemp={temp} city={city}/> {/* <Sunset  /> */}
