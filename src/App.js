@@ -34,7 +34,7 @@ class App extends React.Component {
 
   handleDataChange() {
 
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.state.city},us&units=imperial&appid=${Api_Key}`).then(res => res.json()).then((result) => {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.city},us&units=imperial&appid=${Api_Key}`).then(res => res.json()).then((result) => {
       this.setState({
         currentTemp: parseInt(result.main.temp, 10),
         isLoaded: true,
@@ -102,8 +102,8 @@ class App extends React.Component {
         <div className="tabdiv hiddenonmobile">
           <Tabs indicatorColor="primary" textColor="primary" centered="centered">
             <Tab label="" value="1"/>
-            <Tab label=""/>
-            <Tab label=""/>
+            <Tab label="" value="2"/>
+            <Tab label="" value="3"/>
           </Tabs>
         </div>
 
