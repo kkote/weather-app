@@ -51,29 +51,29 @@ class Style extends React.Component {
     return (<React.Fragment>
 
       <List component="nav" subheader={<Hidden smDown > <ListSubheader component="div">Style</ListSubheader>
-      </Hidden>} className="styleList">
+      </Hidden>} className="styleList ">
 
         {
           (<ListItem >
-            <ListItemText primary="Outer" className="style-div"/>
+            <ListItemText primary="Outer" className="style-div hiddenonmobile"/>
             <ListItemText secondary={outer} className="style-div"/>
           </ListItem>)
         }
         <Divider/> {
           (<ListItem >
-            <ListItemText primary="Top" className="style-div"/>
+            <ListItemText primary="Top" className="style-div hiddenonmobile"/>
             <ListItemText secondary={top} className="style-div"/>
           </ListItem>)
         }
         <Divider/> {
           (<ListItem>
-            <ListItemText primary="Pants" className="style-div"/>
+            <ListItemText primary="Pants" className="style-div hiddenonmobile"/>
             <ListItemText secondary={pants} className="style-div"/>
           </ListItem>)
         }
         <Divider/> {
           (<ListItem >
-            <ListItemText primary="Shoes" className="style-div"/>
+            <ListItemText primary="Shoes" className="style-div hiddenonmobile"/>
             <ListItemText secondary={shoes} className="style-div"/>
 
           </ListItem>)

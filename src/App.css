@@ -1,21 +1,51 @@
 body {
   background: #ebebeb;
+/* font-family: 'Nunito', sans-serif !important; */
+    font-family: Heebo, sans-serif !important;
 }
 
 .App {
   height: -webkit-fill-available;
   background: #ebebeb;
-  font-family: Heebo, sans-serif;
+  font-family: Heebo, sans-serif !important;
 }
 
 .toolbar {
   color: white;
-  background: #1f1f1f !important;
+      background: #3d3d3d !important;
   justify-content: center !important;
   display: flex;
   flex-wrap: wrap;
-  border-bottom: 2px solid #ec5f17;
+  border-bottom: 2px solid #ca885f;
 }
+
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+
 
 .pagetop {
   display: flex;
@@ -63,17 +93,30 @@ body {
 }
 
 .blogsearchpaper label {
-  background: whitesmoke;
+  /* background: whitesmoke; */
   font-size: larger;
 }
 
+.blogsearchpaper input {
+  padding: 19px 14px 4px 0px;
+    text-align: right;
+  background: #f5f5f5a1;
+}
+
+.blogsearchpaper button {
+  box-shadow:  0 2px 2px rgba(0,0,0,.05) !important;
+      border-radius: 1px;
+          background-color: #c8c8c885;
+}
+
+
 .blogsearchpaper div {
-  background: whitesmoke;
+  /* background: whitesmoke; */
 }
 
 .displayCard {
   margin: 5px;
-  background: #1f1f1f !important;
+      background: #3d3d3d !important;
   font-size: larger;
 }
 
@@ -155,22 +198,29 @@ body {
 .img-box {
   border-radius: 3px;
   max-height: 400px;
+  margin: auto;
 }
 
 img {
+      height: -webkit-fill-available;
   max-width: 100%;
   max-height: 100%;
   background: center center no-repeat;
   background-size: contain;
   border-radius: 3px;
-  border: 1px solid #bdbab9;
+  display: flex;
+  /* border: 1px solid #bdbab9; */
+  border: 1.5px solid #d8d8d8;;
+      box-shadow: 0 2px 2px rgba(0,0,0,.05) !important;
+      margin: auto;
 }
 
 .styleList {
   margin-top: 15px !important;
   background: #fff;
   border-radius: 3px;
-  border: 1px solid #bdbab9;
+  border: 1.5px solid #d8d8d8;;
+      box-shadow: 0 2px 2px rgba(0,0,0,.05) !important;
 }
 
 .styleList li {
@@ -271,6 +321,14 @@ img {
   .blogsearchpaper label {
     display: none;
   }
+  /* .blogsearchpaper input {
+    display: none;
+  } */
+
+  .blogsearchpaper div {
+    margin: auto;
+  }
+
 
   .GridContainer {
     flex-wrap: nowrap !important;
@@ -279,13 +337,16 @@ img {
   .styleDisplay {}
 
   .styleList {
-    /* display: inline-flex; */
+    display: inline-flex;
     margin: 5px 0px 5px 0px !important;
+    padding: 5px;
+    margin: 0 !important;
   }
 
   .styleList li {
-    padding: 2px !important;
-    display: inline-block;
+    padding: 1px !important;
+        display: grid;
+        justify-content: center;
   }
 
   .mainFeaturedPostContainer {
@@ -299,7 +360,22 @@ img {
   .styleList p {
     font-size: medium !important;
     float: right;
+    line-height: 1.2em;
+    padding: 0;
+    text-align: center;
   }
+
+  .style-div {
+    padding: 0 !important;
+  }
+
+/* .style-div {
+  padding: 4px 7px;
+} */
+
+.mfDiv {
+  display: flex;
+}
 
   .CardContent {
     padding: 5px !important;
@@ -315,6 +391,7 @@ img {
 
   input {
     padding: 7px !important;
+        height: 100%;
   }
 
   button {
@@ -333,6 +410,14 @@ img {
     display: flex;
     flex-direction: column-reverse;
   }
+  .headerdivider {
+  display: none;
+}
+
+.displayGrid {
+  display: flex;
+justify-content: center;
+}
 
   /*
 li right {

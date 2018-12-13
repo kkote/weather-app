@@ -23,7 +23,7 @@ class App extends React.Component {
       currentTemp: " ",
       currentWeather: "",
       hiTemp: "",
-      loTemp: "",
+      loTemp: "20",
       gender: "female",
       isLoaded: false,
       error: null

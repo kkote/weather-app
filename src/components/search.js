@@ -25,7 +25,9 @@ class Search extends React.Component {
 
         <TextField label="Enter location" name="city" onChange={this.handleChange} defaultValue="St. Louis" variant="filled"/>
 
-        <Button variant="contained" type="submit">Search</Button>
+        <Button variant="contained" type="submit"><i class="material-icons">
+search
+</i></Button>
 
       </form>
     </div>);
