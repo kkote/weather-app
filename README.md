@@ -8,7 +8,7 @@
 
 ## Usage example
 
-A fast way to help decide what to wear based on the weather and temperature.
+An app to help decide what to wear based on the temperature and weather conditions.
 
 
 
@@ -29,6 +29,3 @@ A fast way to help decide what to wear based on the weather and temperature.
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 
-## Acknowledgments
-
-*
