@@ -11,10 +11,10 @@ class Style extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      top: "top",
-      pants: "pants",
-      outer: "out",
-      shoes: "shoes",
+      top: "Long Sleeve",
+      pants: "Thick Pants",
+      outer: "Coat",
+      shoes: "Boots",
       currentTemp: this.props.currentTemp,
       error: "error"
     };
@@ -31,8 +31,8 @@ class Style extends React.Component {
 
   setStyle() {
     let currentTemp = this.props.currentTemp;
-    if ({currentTemp} >= 75) {
-      this.setState({outer: "Lightweight Jacket or None", top: "T-shirt", pants: "Shorts", shoes: "Sandals"});
+    if (currentTemp >= 75) {
+      this.setState({outer: "Lightweight Jacket ", top: "T-shirt", pants: "Shorts", shoes: "Sandals"});
     } else if ((currentTemp >= 60) & (currentTemp < 75)) {
       this.setState({outer: "Light Jacket or Hoodie", top: "T-shirt", pants: "Shorts or Pants", shoes: "Shoes "});
     } else if ((currentTemp >= 50) & (currentTemp < 60)) {

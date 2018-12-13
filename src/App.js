@@ -20,11 +20,11 @@ class App extends React.Component {
     this.state = {
       data: '',
       city: "St. Louis",
-      currentTemp: " ",
-      currentWeather: "",
-      hiTemp: "",
-      loTemp: "20",
-      gender: "female",
+      currentTemp: "35",
+      currentWeather: "Snowing",
+      hiTemp: "37",
+      loTemp: "25",
+      gender: "",
       isLoaded: false,
       error: null
     };
@@ -62,9 +62,7 @@ class App extends React.Component {
 
   };
 
-  componentDidMount() {
-    this.handleDataChange();
-  };
+  
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.city !== prevState.city) {
@@ -79,6 +77,7 @@ class App extends React.Component {
     const lowtemp = this.state.loTemp;
     const currentWeather = this.state.currentWeather;
     const gender = this.state.gender;
+
 
     return (<div className="App">
 
