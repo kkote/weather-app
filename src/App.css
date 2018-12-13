@@ -199,6 +199,7 @@ body {
   border-radius: 3px;
   max-height: 400px;
   margin: auto;
+  /* max-height: 600px; */
 }
 
 img {

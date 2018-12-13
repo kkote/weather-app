@@ -51,7 +51,7 @@ class Style extends React.Component {
     return (<React.Fragment>
 
       <List component="nav" subheader={<Hidden smDown > <ListSubheader component="div">Style</ListSubheader>
-      </Hidden>} className="styleList ">
+      </Hidden>} className="styleList mfDiv">
 
         {
           (<ListItem >
