@@ -1,5 +1,4 @@
 import React from "react";
-import image from "../Images/defaultImg/winter-couplesize1s.jpg";
 
 class Img extends React.Component {
   constructor(props) {
@@ -8,8 +7,8 @@ class Img extends React.Component {
       currentTemp: this.props.currentTemp,
       error: "error",
       gender: this.props.gender,
-      woman: "../Images/female/w-winter1s.jpg",
-      man: "../Images/male/m-vwinter1s.jpg",
+      woman: "w-winter1s",
+      man: "m-vwinter1s",
       img:  "summerdefault"
     };
     this.setStyle = this.setStyle.bind(this);
@@ -18,36 +17,36 @@ class Img extends React.Component {
 
 
   setStyle() {
-    let currentTemp = 20;
+    let currentTemp = this.props.currentTemp;
     if (currentTemp >= 75) {
       this.setState({
-        woman: "../Images/female/w-sum1s.jpg",
-         man: "../Images/male/summer-man-s1.jpg",
-          img: "../Images/defaultImg/summerdefault.jpg"
+        woman: "w-sum1s",
+         man: "summer-man-s1",
+          img: "summerdefault"
         });
     } else if ((currentTemp >= 60) & (currentTemp < 75)) {
       this.setState({
-        woman: "../Images/female/w-springs1.jpg",
-        man: "../Images/male/ma-spring1ss.jpg",
-        img: "../Images/defaultImg/spring-group-s1.jpg"
+        woman: "w-springs1",
+        man: "ma-spring1ss",
+        img: "spring-group-s1"
       });
     } else if ((currentTemp >= 50) & (currentTemp < 60)) {
       this.setState({
-        woman: "../Images/female/w-fall1s.jpg",
-         man: "../Images/male/fall-man1s.jpg",
-         img: "../Images/defaultImg/falldefault1.jpg"
+        woman: "w-fall1s",
+         man: "fall-man1s",
+         img: "falldefault1"
        });
     } else if ((currentTemp >= 40) & (currentTemp < 50)) {
       this.setState({
-        woman: "../Images/female/winter-woman1s.jpg",
-         man: "../Images/male/man-winter1s.jpg",
-          img: "../Images/defaultImg/winter-couplesize1s.jpg"
+        woman: "winter-woman1s",
+         man: "man-winter1s",
+          img: "winter-couplesize1s"
          });
     } else {
       this.setState({
-        woman: "../Images/male/m-vwinter1s.jpg",
-        man: "../Images/male/m-vwinter1s.jpg",
-        img: require({image})
+        woman: "m-vwinter1s",
+        man: "m-vwinter1s",
+        img: "winter-couplesize1s"
       });
     }
   }
@@ -68,17 +67,17 @@ class Img extends React.Component {
 
     if(this.props.gender === "female") {
       return (<div className="img-box">
-      <img src={(woman)} alt="woman"/>
+      <img src={require('../Images/female/' + woman + '.jpg')} alt="woman"/>
       </div>);
     }
     else if (this.props.gender === "male") {
       return (<div className="img-box">
-      <img src={require(man)} alt="man"/>
+      <img src={require('../Images/male/' + man + '.jpg')} alt="man"/>
       </div>);
     }
      else  {
       return (<div className="img-box">
-      <img src={require('../Images/defaultImg/' + this.state.img + '.jpg')}alt="defaultImg"/>
+      <img src={require('../Images/defaultImg/' + this.state.img + '.jpg')} alt="defaultImg"/>
       </div>);
     }
 

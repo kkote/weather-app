@@ -62,7 +62,7 @@ class App extends React.Component {
 
   };
 
-  
+
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.city !== prevState.city) {
