@@ -9,7 +9,7 @@ class Img extends React.Component {
       gender: this.props.gender,
       woman: "w-winter1s",
       man: "m-vwinter1s",
-      img:  "summerdefault"
+      img:  "winter-couplesize1s"
     };
     this.setStyle = this.setStyle.bind(this);
 
@@ -44,7 +44,7 @@ class Img extends React.Component {
          });
     } else {
       this.setState({
-        woman: "m-vwinter1s",
+        woman: "w-winter1s",
         man: "m-vwinter1s",
         img: "winter-couplesize1s"
       });
