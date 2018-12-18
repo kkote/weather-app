@@ -8,13 +8,13 @@
 
 ## Usage example
 
-An app to help decide what to wear based on the temperature and weather conditions.
+Gives style choices based on the temperature and current weather conditions.
 
 
 
 ## Built With
 * [React](https://reactjs.org/) - React
-* [OpenWeatherMap](https://openweathermap.org/api) - API
+* [OpenWeatherMap API](https://openweathermap.org/api) - API
 
 * [Material Ui](https://material-ui.com/) -Layout
 
@@ -27,5 +27,3 @@ An app to help decide what to wear based on the temperature and weather conditio
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-
