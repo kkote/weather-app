@@ -26,7 +26,7 @@ class App extends React.Component {
       loTemp: "25",
       gender: "",
       isLoaded: false,
-      error: null
+      error: undefined
     };
     this.onCityChange = this.onCityChange.bind(this);
     this.onGenderChange = this.onGenderChange.bind(this);
@@ -35,6 +35,7 @@ class App extends React.Component {
   handleDataChange() {
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.city},us&units=imperial&appid=${Api_Key}`).then(res => res.json()).then((result) => {
+    
       this.setState({
         currentTemp: parseInt(result.main.temp, 10),
         isLoaded: true,
@@ -42,11 +43,14 @@ class App extends React.Component {
         data: result,
         currentWeather: (result.weather[0].description),
         hiTemp: parseInt(result.main.temp_max, 10),
-        loTemp: parseInt(result.main.temp_min, 10)
+        loTemp: parseInt(result.main.temp_min, 10),
+        error: ""
       });
       console.log(this.state.data);
+
+
     }, (error) => {
-      this.setState({isLoaded: true, error});
+      this.setState({error: "Please input search values..."});
     })
   };
 
@@ -62,6 +66,9 @@ class App extends React.Component {
 
   };
 
+  componentDidMount() {
+    this.handleDataChange();
+  };
 
 
   componentDidUpdate(prevProps, prevState) {
@@ -87,7 +94,10 @@ class App extends React.Component {
 
             <div className="headerSearch">
               <Header/>
-              <Search handleSubmit={this.onCityChange}/>
+              <Search handleSubmit={this.onCityChange}
+
+                />
+              <div>{this.state.error}</div>
             </div>
             <hr className="headerdivider"/>
 
