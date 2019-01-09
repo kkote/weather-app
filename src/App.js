@@ -35,7 +35,7 @@ class App extends React.Component {
   handleDataChange() {
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.city},us&units=imperial&appid=${Api_Key}`).then(res => res.json()).then((result) => {
-    
+
       this.setState({
         currentTemp: parseInt(result.main.temp, 10),
         isLoaded: true,
@@ -102,35 +102,53 @@ class App extends React.Component {
             <hr className="headerdivider"/>
 
             <Display city={city} currentTemp={temp} currentWeather={currentWeather} hiTemp={hightemp} loTemp={lowtemp}/>
+              <hr className="headerdivider"/>
           </Toolbar>
         </div>
 
 
 
       <main className="maindiv">
-        <div className="tabdiv hiddenonmobile">
-          <Tabs indicatorColor="primary" textColor="primary" value={1}>
-          {/*  <Tab label="" value={1} />
-            <Tab label="" value={2}/>
-            <Tab label="" value={3}/> */ }
-          </Tabs>
-        </div>
 
         <div className="mainFeaturedPost">
           <Grid container className="mainFeaturedPostContainer">
-            <Grid item xs={10} md={6} className="mainDisplay">
+            <Grid item xs={12} md={6} className="mainDisplay">
               <Img gender={gender} currentTemp={temp}/>
             </Grid>
 
-            <Grid item xs={10} md={5} className="mainDisplay styleDisplay">
+            <Grid item xs={12} md={6} className="mainDisplay styleDisplay">
               <div className="rightDiv">
-                <RadioButtonsGroup onGenderChange={this.onGenderChange} value={this.state.gender}/>
-                <Style currentTemp={temp} city={city}/> {/* <Sunset  /> */}
+                {/* }<RadioButtonsGroup onGenderChange={this.onGenderChange} value={this.state.gender}/> */ }
+                <Style currentTemp={temp} city={city}/>
 
               </div>
             </Grid>
           </Grid>
         </div>
+
+        {/* <div className="mainFeaturedPost">
+          <Grid container className="mainFeaturedPostContainer">
+            <Grid item xs={12} md={5} className="mainDisplay">
+              Women Clothing Image
+              <Img gender={gender} currentTemp={temp}/>
+              See More
+            </Grid>
+            <Grid item xs={12} md={5} className="mainDisplay">
+              <div className="img-box">
+                Man Clothing Image
+
+              <Img gender={gender} currentTemp={temp}/>
+              </div>
+              See More
+            </Grid>
+
+
+          </Grid>
+        </div> */ }
+
+
+
+
       </main>
 
     </div>);

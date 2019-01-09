@@ -6,6 +6,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import Hidden from '@material-ui/core/Hidden';
+import Typography from '@material-ui/core/Typography';
 
 class Style extends React.Component {
   constructor(props) {
@@ -58,30 +59,34 @@ class Style extends React.Component {
 
     return (<React.Fragment>
 
-      <List component="nav" subheader={<Hidden smDown > <ListSubheader component="div">Style</ListSubheader>
+      <List component="nav" subheader={<Hidden smDown > <ListSubheader component="div">
+        <Typography variant="h6" gutterBottom>
+       Today is a Great Day to Wear
+     </Typography>
+        </ListSubheader>
       </Hidden>} className="styleList mfDiv">
 
         {
           (<ListItem >
-            <ListItemText primary="Outer" className="style-div hiddenonmobile"/>
+          {/*   <ListItemText primary="Outer" className="style-div hiddenonmobile"/> */ }
             <ListItemText secondary={outer} className="style-div"/>
           </ListItem>)
         }
-        <Divider/> {
+      {
           (<ListItem >
-            <ListItemText primary="Top" className="style-div hiddenonmobile"/>
+          {/*   <ListItemText primary="Top" className="style-div hiddenonmobile"/> */ }
             <ListItemText secondary={top} className="style-div"/>
           </ListItem>)
         }
-        <Divider/> {
+        {
           (<ListItem>
-            <ListItemText primary="Pants" className="style-div hiddenonmobile"/>
+            {/*  <ListItemText primary="Pants" className="style-div hiddenonmobile"/> */ }
             <ListItemText secondary={pants} className="style-div"/>
           </ListItem>)
         }
-        <Divider/> {
+       {
           (<ListItem >
-            <ListItemText primary="Shoes" className="style-div hiddenonmobile"/>
+            {/* <ListItemText primary="Shoes" className="style-div hiddenonmobile"/> */ }
             <ListItemText secondary={shoes} className="style-div"/>
 
           </ListItem>)
