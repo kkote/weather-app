@@ -100,7 +100,7 @@ align-items: center;
 }
 
 .blogsearchpaper input {
-  /* padding: 19px 14px 4px 0px; */
+  padding: 19px 14px 4px 0px;
   text-align: right;
   /* background: white; */
 }
@@ -427,7 +427,7 @@ img {
   .pagetop {
     display: flex;
     flex-direction: column-reverse;
-  
+
   }
 
   .headerdivider {
