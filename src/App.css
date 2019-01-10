@@ -63,10 +63,10 @@ body {
 }
 
 .headerSearch {
-  width: 80%;
+  width: 90%;
   display: flex;
-  justify-content: space-between;
-  padding: 5px;
+  justify-content: space-around;
+  padding: 10px;
 }
 
 .blogheader {
@@ -74,12 +74,13 @@ body {
 }
 
 .blogheadermain {
-  padding: 10px;
+  padding: 0 10px 0 10px;
   font-weight: 100 !important;
   border: solid black 1px;
 display: flex !important;
 text-transform: uppercase;
 align-items: center;
+letter-spacing: .1em;
 }
 
 .blogheadertwo {
@@ -111,10 +112,9 @@ align-items: center;
   background-color: white;
 }
 
-.displayCard {
-  margin: 5px;
-  /* background: #3d3d3d !important; */
-  font-size: larger;
+.CardContents {
+display: flex;
+  justify-content: space-around;
 }
 
 .toolbarDisplayGroup {
@@ -395,7 +395,9 @@ img {
     display: flex;
   }
 
-  .CardContent {
+
+
+  .CardContents {
     padding: 5px !important;
   }
 
@@ -427,7 +429,7 @@ img {
   .pagetop {
     display: flex;
     flex-direction: column-reverse;
-  
+
   }
 
   .headerdivider {

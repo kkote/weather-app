@@ -8,7 +8,7 @@ const Display = props => {
 
   return (<Grid item xs={12} md={7} className="displayGrid">
     <Card elevation={0} className="displayCard">
-      <CardContent className="CardContent">
+      <CardContent className="CardContents">
         {
           (<div className="toolbarDisplayGroup">
             <span className="location">

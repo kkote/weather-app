@@ -97,7 +97,7 @@ class App extends React.Component {
               <Search handleSubmit={this.onCityChange}
 
                 />
-              <div>{this.state.error}</div>
+              {/*}<div>{this.state.error}</div>*/}
             </div>
             <hr className="headerdivider"/>
 
@@ -112,11 +112,11 @@ class App extends React.Component {
 
         <div className="mainFeaturedPost">
           <Grid container className="mainFeaturedPostContainer">
-            <Grid item xs={12} md={6} className="mainDisplay">
+            <Grid item xs={12} md={8} className="mainDisplay">
               <Img gender={gender} currentTemp={temp}/>
             </Grid>
 
-            <Grid item xs={12} md={6} className="mainDisplay styleDisplay">
+            <Grid item xs={12} md={4} className="mainDisplay styleDisplay">
               <div className="rightDiv">
                 {/* }<RadioButtonsGroup onGenderChange={this.onGenderChange} value={this.state.gender}/> */ }
                 <Style currentTemp={temp} city={city}/>
