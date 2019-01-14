@@ -122,19 +122,15 @@ class App extends React.Component {
           <Grid container className="mainFeaturedPostContainer">
             <Grid item xs={12} md={5} className="mainDisplay">
               <div className="MFImages">
-              Women Clothing Image
               <Img gender={female} currentTemp={temp}/>
               </div>
-
-              See More
             </Grid>
             <Grid item xs={12} md={5} className="mainDisplay">
               <div className="MFImages">
-                Man Clothing Image
 
                 <Img gender={male} currentTemp={temp}/>
               </div>
-              See More
+
             </Grid>
           </Grid>
         </div>
