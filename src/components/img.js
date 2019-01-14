@@ -45,7 +45,7 @@ class Img extends React.Component {
     } else {
       this.setState({
         woman: "w-winter1s",
-        man: "m-vwinter1s",
+        man: "m-vwinter1ss",
         img: "winter-couplesize1s"
       });
     }

@@ -22,13 +22,12 @@ class Search extends React.Component {
 
     return (<div className="blogsearchpaper">
       <form onSubmit={this.props.handleSubmit}>
-
         <TextField label="Enter city" name="city" onChange={this.handleChange} defaultValue="St. Louis"/>
-
-        <Button variant="contained" type="submit"><i class="material-icons">
-search
-</i></Button>
-
+        <Button variant="contained" type="submit">
+          <i class="material-icons">
+            search
+          </i>
+        </Button>
       </form>
     </div>);
   }
