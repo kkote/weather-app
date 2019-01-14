@@ -1,5 +1,4 @@
 import React from "react";
-
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -30,7 +29,6 @@ class Style extends React.Component {
     console.log("style updated");
   }
 
-
   setStyle() {
     let x = this.props.currentTemp;
 
@@ -51,44 +49,37 @@ class Style extends React.Component {
     }
   }
 
-
-
   render() {
 
     const {outer, top, pants, shoes} = this.state;
 
     return (<React.Fragment>
 
-      <List component="nav" subheader={<Hidden smDown > <ListSubheader component="div">
-        <Typography variant="h6" gutterBottom>
-       Today is a Great Day to Wear
-     </Typography>
+      <List component="nav" subheader={<Hidden xsDown > <ListSubheader component="div">
+          <Typography variant="h4" gutterBottom="gutterBottom">
+            Today is a Great Day to Wear A...
+          </Typography>
         </ListSubheader>
       </Hidden>} className="styleList mfDiv">
 
         {
           (<ListItem >
-          {/*   <ListItemText primary="Outer" className="style-div hiddenonmobile"/> */ }
             <ListItemText secondary={outer} className="style-div"/>
           </ListItem>)
         }
-      {
+        {
           (<ListItem >
-          {/*   <ListItemText primary="Top" className="style-div hiddenonmobile"/> */ }
             <ListItemText secondary={top} className="style-div"/>
           </ListItem>)
         }
         {
           (<ListItem>
-            {/*  <ListItemText primary="Pants" className="style-div hiddenonmobile"/> */ }
             <ListItemText secondary={pants} className="style-div"/>
           </ListItem>)
         }
-       {
+        {
           (<ListItem >
-            {/* <ListItemText primary="Shoes" className="style-div hiddenonmobile"/> */ }
             <ListItemText secondary={shoes} className="style-div"/>
-
           </ListItem>)
         }
       </List>

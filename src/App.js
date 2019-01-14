@@ -5,11 +5,9 @@ import Img from "./components/img";
 import Display from "./components/display";
 import Header from "./components/header";
 import RadioButtonsGroup from "./components/mf-radio.js";
-// import Sunset from "./components/sunset.js";
 import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
 import Tabs from '@material-ui/core/Tabs';
-// import Tab from '@material-ui/core/Tab';
 
 let Api_Key = process.env.REACT_APP_API_KEY;
 
@@ -44,10 +42,10 @@ class App extends React.Component {
         currentWeather: (result.weather[0].description),
         hiTemp: parseInt(result.main.temp_max, 10),
         loTemp: parseInt(result.main.temp_min, 10),
+
         error: ""
       });
       console.log(this.state.data);
-
 
     }, (error) => {
       this.setState({error: "Please input search values..."});
@@ -70,7 +68,6 @@ class App extends React.Component {
     this.handleDataChange();
   };
 
-
   componentDidUpdate(prevProps, prevState) {
     if (this.state.city !== prevState.city) {
       this.handleDataChange();
@@ -84,41 +81,35 @@ class App extends React.Component {
     const lowtemp = this.state.loTemp;
     const currentWeather = this.state.currentWeather;
     const gender = this.state.gender;
-
+    const img = this.state.img;
+    const female = "female";
+    const male = "male";
 
     return (<div className="App">
 
-        <div className="pagetop">
-
-          <Toolbar className="toolbar">
-
-            <div className="headerSearch">
-              <Header/>
-              <Search handleSubmit={this.onCityChange}
-
-                />
-              <div>{this.state.error}</div>
-            </div>
-            <hr className="headerdivider"/>
-
-            <Display city={city} currentTemp={temp} currentWeather={currentWeather} hiTemp={hightemp} loTemp={lowtemp}/>
-              <hr className="headerdivider"/>
-          </Toolbar>
-        </div>
-
-
+      <div className="pagetop">
+        <Toolbar className="toolbar">
+          <div className="headerSearch">
+            <Header/>
+            <Search handleSubmit={this.onCityChange}/> {/*  <div>{this.state.error}</div>*/}
+          </div>
+          <hr className="headerdivider"/>
+          <Display city={city} currentTemp={temp} currentWeather={currentWeather} hiTemp={hightemp} loTemp={lowtemp}/>
+          <hr className="headerdivider"/>
+        </Toolbar>
+      </div>
 
       <main className="maindiv">
-
         <div className="mainFeaturedPost">
-          <Grid container className="mainFeaturedPostContainer">
-            <Grid item xs={12} md={6} className="mainDisplay">
+          <Grid container="container" className="mainFeaturedPostContainer">
+            <Grid item="item" xs={12} md={8} className="mainDisplay">
               <Img gender={gender} currentTemp={temp}/>
             </Grid>
 
-            <Grid item xs={12} md={6} className="mainDisplay styleDisplay">
+            <Grid item="item" xs={12} md={4} className="mainDisplay styleDisplay">
               <div className="rightDiv">
-                {/* }<RadioButtonsGroup onGenderChange={this.onGenderChange} value={this.state.gender}/> */ }
+                {/*  <RadioButtonsGroup onGenderChange={this.onGenderChange} value={this.state.gender}/>
+                */ }
                 <Style currentTemp={temp} city={city}/>
 
               </div>
@@ -126,28 +117,25 @@ class App extends React.Component {
           </Grid>
         </div>
 
-        {/* <div className="mainFeaturedPost">
+        {
+           <div className="mainFeaturedPost ">
           <Grid container className="mainFeaturedPostContainer">
             <Grid item xs={12} md={5} className="mainDisplay">
-              Women Clothing Image
-              <Img gender={gender} currentTemp={temp}/>
-              See More
+              <div className="MFImages">
+              <Img gender={female} currentTemp={temp}/>
+              </div>
             </Grid>
             <Grid item xs={12} md={5} className="mainDisplay">
-              <div className="img-box">
-                Man Clothing Image
+              <div className="MFImages">
 
-              <Img gender={gender} currentTemp={temp}/>
+                <Img gender={male} currentTemp={temp}/>
               </div>
-              See More
+
             </Grid>
-
-
           </Grid>
-        </div> */ }
+        </div>
 
-
-
+        }
 
       </main>
 
