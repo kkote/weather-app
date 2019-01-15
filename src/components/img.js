@@ -8,7 +8,7 @@ class Img extends React.Component {
       error: "error",
       gender: this.props.gender,
       woman: "w-winter1s",
-      man: "m-vwinter1s",
+      man: "m-vwinter1ss",
       img:  "winter-couplesize1s"
     };
     this.setStyle = this.setStyle.bind(this);
@@ -20,26 +20,26 @@ class Img extends React.Component {
     let currentTemp = this.props.currentTemp;
     if (currentTemp >= 75) {
       this.setState({
-        woman: "w-sum1s",
-         man: "summer-man-s1",
+        woman: "womansummer",
+         man: "mansummer",
           img: "summerdefault"
         });
     } else if ((currentTemp >= 60) & (currentTemp < 75)) {
       this.setState({
-        woman: "w-springs1",
-        man: "ma-spring1ss",
+        woman: "womanspring",
+        man: "manspring",
         img: "spring-group-s1"
       });
     } else if ((currentTemp >= 50) & (currentTemp < 60)) {
       this.setState({
-        woman: "w-fall1s",
-         man: "fall-man1s",
+        woman: "womanfall",
+         man: "manfall1",
          img: "falldefault1"
        });
     } else if ((currentTemp >= 40) & (currentTemp < 50)) {
       this.setState({
-        woman: "winter-woman1s",
-         man: "man-winter1s",
+        woman: "winterwoman",
+         man: "manwinter",
           img: "winter-couplesize1s"
          });
     } else {
