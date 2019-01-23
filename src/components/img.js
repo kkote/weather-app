@@ -8,7 +8,7 @@ class Img extends React.Component {
       error: "error",
       gender: this.props.gender,
       woman: "w-winter1s",
-      man: "m-vwinter1ss",
+      man: "manwinter2",
       img:  "winter-couplesize1s"
     };
     this.setStyle = this.setStyle.bind(this);
@@ -39,13 +39,13 @@ class Img extends React.Component {
     } else if ((currentTemp >= 40) & (currentTemp < 50)) {
       this.setState({
         woman: "winterwoman",
-         man: "manwinter",
+         man: "manwinter1",
           img: "winter-couplesize1s"
          });
     } else {
       this.setState({
         woman: "w-winter1s",
-        man: "m-vwinter1ss",
+        man: "manwinter2",
         img: "winter-couplesize1s"
       });
     }
@@ -68,13 +68,13 @@ class Img extends React.Component {
     if(this.props.gender === "female") {
       return (<div className="img-box">
       <img src={require('../Images/female/' + woman + '.jpg')} alt="woman"/>
-      <div class="text"><h3>Women<span class="text-uppercase">See More</span></h3></div>
+      <div class="text"><h3>Women<span class="text-uppercase"></span></h3></div>
       </div>);
     }
     else if (this.props.gender === "male") {
       return (<div className="img-box">
       <img src={require('../Images/male/' + man + '.jpg')} alt="man"/>
-      <div class="text"><h3>Men<span class="text-uppercase">See More</span></h3></div>
+      <div class="text"><h3>Men<span class="text-uppercase"></span></h3></div>
       </div>);
     }
      else  {

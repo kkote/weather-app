@@ -4,10 +4,8 @@ import Search from "./components/search";
 import Img from "./components/img";
 import Display from "./components/display";
 import Header from "./components/header";
-import RadioButtonsGroup from "./components/mf-radio.js";
 import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
-import Tabs from '@material-ui/core/Tabs';
 
 let Api_Key = process.env.REACT_APP_API_KEY;
 
@@ -81,7 +79,6 @@ class App extends React.Component {
     const lowtemp = this.state.loTemp;
     const currentWeather = this.state.currentWeather;
     const gender = this.state.gender;
-    const img = this.state.img;
     const female = "female";
     const male = "male";
 
@@ -138,6 +135,15 @@ class App extends React.Component {
         }
 
       </main>
+
+      <div className="footer">
+        <div class="row">
+        <div class="fullcolumn">
+          &copy; Weather Style Guide By Kate K
+          <span className="footerRight"><a href="https://github.com/KateGray52">Github: KateGray52</a></span>
+        </div>
+      </div>
+      </div>
 
     </div>);
   }

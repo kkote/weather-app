@@ -172,7 +172,7 @@ padding: 19px 14px 4px 0px;
 
 .mainFeaturedPost {
   margin: auto;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .mainFeaturedPostContainer {
@@ -315,6 +315,29 @@ img {
   float: right;
   margin: .5em;
 }
+
+
+
+/*
+*******Footer********** */
+
+.footer {
+  padding: 50px;
+  color: white;
+  background-color: black;
+  margin-top: 80px;
+}
+
+.footerRight {
+  float: right;
+}
+
+.footerRight a{
+  float: right;
+  text-decoration: none !important;
+  color: white !important;
+}
+
 
 /* ******Mobile Sizing ************ */
 @media screen and (max-width: 600px) {
