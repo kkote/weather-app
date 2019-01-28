@@ -30,8 +30,23 @@ class App extends React.Component {
 
   handleDataChange() {
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.city},us&units=imperial&appid=${Api_Key}`).then(res => res.json()).then((result) => {
+    function handleErrors(response) {
+        if (!response.ok) {
+          console.log("Error!!!!!!!!");
 
+            throw Error(response.statusText);
+        }
+        console.log("okay")
+        return response;
+    }
+
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.city},us&units=imperial&appid=${Api_Key}`)
+    .then(handleErrors)
+    .then(res => res.json())
+    .then((result) => {
+      console.log(typeof result);
+      console.log(result);
       this.setState({
         currentTemp: parseInt(result.main.temp, 10),
         isLoaded: true,
@@ -43,10 +58,10 @@ class App extends React.Component {
 
         error: ""
       });
-      console.log(this.state.data);
+
 
     }, (error) => {
-      this.setState({error: "Please input search values..."});
+      this.setState({error: "Please input valid city..."});
     })
   };
 
@@ -88,7 +103,7 @@ class App extends React.Component {
         <Toolbar className="toolbar">
           <div className="headerSearch">
             <Header/>
-            <Search handleSubmit={this.onCityChange}/> {/*  <div>{this.state.error}</div>*/}
+            <Search handleSubmit={this.onCityChange} error={this.state.error}/>
           </div>
           <hr className="headerdivider"/>
           <Display city={city} currentTemp={temp} currentWeather={currentWeather} hiTemp={hightemp} loTemp={lowtemp}/>
@@ -98,12 +113,12 @@ class App extends React.Component {
 
       <main className="maindiv">
         <div className="mainFeaturedPost">
-          <Grid container="container" className="mainFeaturedPostContainer">
-            <Grid item="item" xs={12} md={8} className="mainDisplay">
+          <Grid container className="mainFeaturedPostContainer">
+            <Grid item xs={12} md={8} className="mainDisplay">
               <Img gender={gender} currentTemp={temp}/>
             </Grid>
 
-            <Grid item="item" xs={12} md={4} className="mainDisplay styleDisplay">
+            <Grid item xs={12} md={4} className="mainDisplay styleDisplay">
               <div className="rightDiv">
                 {/*  <RadioButtonsGroup onGenderChange={this.onGenderChange} value={this.state.gender}/>
                 */ }
@@ -137,8 +152,8 @@ class App extends React.Component {
       </main>
 
       <div className="footer">
-        <div class="row">
-        <div class="fullcolumn">
+        <div className="row">
+        <div className="fullcolumn">
           &copy; Weather Style Guide By Kate K
           <span className="footerRight"><a href="https://github.com/KateGray52">Github: KateGray52</a></span>
         </div>

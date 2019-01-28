@@ -54,8 +54,8 @@ class Style extends React.Component {
 
     return (<React.Fragment>
 
-      <List component="nav" subheader={<Hidden xsDown > <ListSubheader component="div">
-          <Typography variant="h4" gutterBottom="gutterBottom">
+      <List component="nav" subheader={<Hidden xsDown > <ListSubheader >
+          <Typography variant="h4" gutterBottom>
             Today is a Great Day to Wear A...
           </Typography>
         </ListSubheader>
