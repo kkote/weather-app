@@ -28,19 +28,19 @@ class Style extends React.Component {
   }
 
   setStyle() {
-    let x = this.props.currentTemp;
+    let currentTemp = this.props.currentTemp;
 
-    function between(x, min, max) {
-      return x >= min && x <= max;
+    function between(currentTemp, min, max) {
+      return currentTemp >= min && currentTemp <= max;
     }
 
-    if (x >= 75) {
+    if (currentTemp >= 75) {
       this.setState({outer: "Lightweight Jacket ", top: "T-shirt", pants: "Shorts", shoes: "Sandals"});
-    } else if (between(x, 60, 75)) {
+    } else if (between(currentTemp, 60, 75)) {
       this.setState({outer: "Light Jacket or Hoodie", top: "T-shirt", pants: "Shorts or Pants", shoes: "Shoes "});
-    } else if (between(x, 50, 60)) {
+    } else if (between(currentTemp, 50, 60)) {
       this.setState({outer: "Jacket", top: "T-shirt or Long sleeve", pants: "Pants", shoes: "Shoes"});
-    } else if (between(x, 40, 50)) {
+    } else if (between(currentTemp, 40, 50)) {
       this.setState({outer: "Jacket or Fleece ", top: " Long Sleeve", pants: "Pants", shoes: "Shoes or Boots"});
     } else {
       this.setState({outer: "Coat", top: "Long Sleeve", pants: "Thick Pants, Layers", shoes: "Boots"});

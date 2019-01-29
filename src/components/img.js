@@ -1,4 +1,4 @@
-import React from "react";
+currentTempimport React from "react";
 
 class Img extends React.Component {
   constructor(props) {
@@ -17,19 +17,19 @@ class Img extends React.Component {
 
 
   setStyle() {
-    let x = this.props.currentTemp;
+    let currentTemp = this.props.currentTemp;
 
-    function between(x, min, max) {
-      return x >= min && x <= max;
+    function between(currentTemp, min, max) {
+      return currentTemp >= min && currentTemp <= max;
     }
-    
-    if (x >= 75) {
+
+    if (currentTemp >= 75) {
       this.setState({woman: "womansummer", man: "mansummer",img: "summerdefault"
         });
-    } else if (between(x, 60, 75)) {
+    } else if (between(currentTemp, 60, 75)) {
       this.setState({woman: "womanspring", man: "manspring", img: "spring-group-s1"
       });
-    } else if (between(x, 50, 60)) {
+    } else if (between(currentTemp, 50, 60)) {
       this.setState({woman: "womanfall", man: "manfall1", img: "falldefault1"
        });
     } else if (between(x, 40, 50)) {
