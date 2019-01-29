@@ -25,15 +25,14 @@ class App extends React.Component {
       error: undefined
     };
     this.onCityChange = this.onCityChange.bind(this);
-    this.onGenderChange = this.onGenderChange.bind(this);
+    { /*this.onGenderChange = this.onGenderChange.bind(this); */ }
   }
 
   handleDataChange() {
 
     function handleErrors(response) {
         if (!response.ok) {
-          console.log("Error!!!!!!!!");
-
+          console.log("Error!!!!");
             throw Error(response.statusText);
         }
         console.log("okay")
@@ -45,8 +44,6 @@ class App extends React.Component {
     .then(handleErrors)
     .then(res => res.json())
     .then((result) => {
-      console.log(typeof result);
-      console.log(result);
       this.setState({
         currentTemp: parseInt(result.main.temp, 10),
         isLoaded: true,
@@ -71,11 +68,7 @@ class App extends React.Component {
 
   };
 
-  onGenderChange(event) {
-    this.setState({gender: event.target.value});
-    console.log("gender is clicked")
 
-  };
 
   componentDidMount() {
     this.handleDataChange();
@@ -88,6 +81,8 @@ class App extends React.Component {
   }
 
   render() {
+  {  /* const { city, temp, hightemp, lowtemp, currentWeather, gender} = this.state; */ }
+
     const city = this.state.city;
     const temp = this.state.currentTemp;
     const hightemp = this.state.hiTemp;
@@ -120,10 +115,7 @@ class App extends React.Component {
 
             <Grid item xs={12} md={4} className="mainDisplay styleDisplay">
               <div className="rightDiv">
-                {/*  <RadioButtonsGroup onGenderChange={this.onGenderChange} value={this.state.gender}/>
-                */ }
                 <Style currentTemp={temp} city={city}/>
-
               </div>
             </Grid>
           </Grid>

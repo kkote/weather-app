@@ -25,7 +25,6 @@ class Style extends React.Component {
     if (this.props.currentTemp !== prevProps.currentTemp) {
       this.setStyle();
     }
-    console.log("style updated");
   }
 
   setStyle() {
