@@ -11,11 +11,11 @@ class Img extends React.Component {
       man: "mansummer",
       img:  "summerdefault"
     };
-    this.setStyle = this.setStyle.bind(this);
+    this.setImage = this.setImage.bind(this);
   };
 
 
-  setStyle() {
+  setImage() {
     let currentTemp = this.props.currentTemp;
 
     function between(currentTemp, min, max) {
@@ -42,7 +42,7 @@ class Img extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.currentTemp !== prevProps.currentTemp) {
-      this.setStyle();
+      this.setImage();
     }
   }
 

@@ -17,34 +17,38 @@ class Style extends React.Component {
       currentTemp: this.props.currentTemp,
       error: "error"
     };
-    this.setStyle = this.setStyle.bind(this);
+    this.setClothes = this.setClothes.bind(this);
 
   };
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.currentTemp !== prevProps.currentTemp) {
-      this.setStyle();
+      this.setClothes();
     }
   }
 
-  setStyle() {
+  setClothes() {
     let currentTemp = this.props.currentTemp;
 
     function between(currentTemp, min, max) {
       return currentTemp >= min && currentTemp <= max;
     }
 
-    if (currentTemp >= 75) {
-      this.setState({outer: "Lightweight Jacket ", top: "T-shirt", pants: "Shorts", shoes: "Sandals"});
-    } else if (between(currentTemp, 60, 75)) {
-      this.setState({outer: "Light Jacket or Hoodie", top: "T-shirt", pants: "Shorts or Pants", shoes: "Shoes "});
-    } else if (between(currentTemp, 50, 60)) {
-      this.setState({outer: "Jacket", top: "T-shirt or Long sleeve", pants: "Pants", shoes: "Shoes"});
-    } else if (between(currentTemp, 40, 50)) {
-      this.setState({outer: "Jacket or Fleece ", top: " Long Sleeve", pants: "Pants", shoes: "Shoes or Boots"});
-    } else {
-      this.setState({outer: "Coat", top: "Long Sleeve", pants: "Thick Pants, Layers", shoes: "Boots"});
-    }
+    const clothesForWeather = [
+    {outer: "Lightweight Jacket", top: "T-shirt", pants: "Shorts", shoes: "Sandals"},
+    {outer: "Light Jacket or Hoodie", top: "T-shirt", pants: "Shorts or Pants", shoes: "Shoes"},
+    {outer: "Jacket", top: "T-shirt or Long sleeve", pants: "Pants", shoes: "Shoes"},
+    {outer: "Jacket or Fleece", top: "Long Sleeve", pants: "Pants", shoes: "Shoes or Boots"},
+    {outer: "Coat, Layers", top: "Long Sleeve", pants: "Thick Pants, Layers", shoes: "Boots"}
+    ];
+
+    this.setState(
+      (currentTemp >= 75) ? (clothesForWeather[0])
+      :(between(currentTemp, 60, 75)) ? (clothesForWeather[1])
+      :(between(currentTemp, 50, 60)) ? (clothesForWeather[2])
+      :(between(currentTemp, 40, 50)) ? (clothesForWeather[3])
+      : (clothesForWeather[4])
+    );
   }
 
   render() {
@@ -59,27 +63,18 @@ class Style extends React.Component {
           </Typography>
         </ListSubheader>
       </Hidden>} className="styleList mfDiv">
-
-        {
-          (<ListItem >
+          <ListItem >
             <ListItemText secondary={outer} className="style-div"/>
-          </ListItem>)
-        }
-        {
-          (<ListItem >
+          </ListItem>
+          <ListItem >
             <ListItemText secondary={top} className="style-div"/>
-          </ListItem>)
-        }
-        {
-          (<ListItem>
+          </ListItem>
+          <ListItem>
             <ListItemText secondary={pants} className="style-div"/>
-          </ListItem>)
-        }
-        {
-          (<ListItem >
+          </ListItem>
+          <ListItem >
             <ListItemText secondary={shoes} className="style-div"/>
-          </ListItem>)
-        }
+          </ListItem>
       </List>
     </React.Fragment>);
   }
