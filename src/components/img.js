@@ -7,9 +7,9 @@ class Img extends React.Component {
       currentTemp: this.props.currentTemp,
       error: "error",
       gender: this.props.gender,
-      woman: "womansummer",
-      man: "mansummer",
-      img:  "summerdefault"
+      woman: "w-winter1s",
+      man: "manwinter2",
+      img:  "winter-couplesize1s"
     };
     this.setImage = this.setImage.bind(this);
   };
