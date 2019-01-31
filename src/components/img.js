@@ -12,7 +12,6 @@ class Img extends React.Component {
       img:  "summerdefault"
     };
     this.setStyle = this.setStyle.bind(this);
-
   };
 
 
@@ -23,7 +22,7 @@ class Img extends React.Component {
       return currentTemp >= min && currentTemp <= max;
     }
 
-    const imagesFromWeather = [
+    const imagesForWeather = [
     {id:"1", woman: "womansummer", man: "mansummer",img: "summerdefault"},
     {id:"2", woman: "womanspring", man: "manspring", img: "spring-group-s1"},
     {id:"3", woman: "womanfall", man: "manfall1", img: "falldefault1"},
@@ -31,19 +30,14 @@ class Img extends React.Component {
     {id:"5", woman: "w-winter1s", man: "manwinter2", img: "winter-couplesize1s"}
     ];
 
-    if (currentTemp >= 75) {
-      this.setState((imagesFromWeather[0]));
-    } else if (between(currentTemp, 60, 75)) {
-      this.setState((imagesFromWeather[1]));
-    } else if (between(currentTemp, 50, 60)) {
-      this.setState((imagesFromWeather[2]));
-    } else if (between(currentTemp, 40, 50)) {
-      this.setState((imagesFromWeather[3]));
-    } else {
-      this.setState((imagesFromWeather[4]));
-    }
+    this.setState(
+      (currentTemp >= 75) ? (imagesForWeather[0])
+      :(between(currentTemp, 60, 75)) ? (imagesForWeather[1])
+      :(between(currentTemp, 50, 60)) ? (imagesForWeather[2])
+      :(between(currentTemp, 40, 50)) ? (imagesForWeather[3])
+      : (imagesForWeather[4])
+    );
   }
-
 
 
   componentDidUpdate(prevProps, prevState) {
@@ -57,30 +51,29 @@ class Img extends React.Component {
     let woman = this.state.woman;
     let man = this.state.man;
 
-
-    if(this.props.gender === "female") {
+    if (this.props.gender === "female") {
       return (<div className="img-box">
-      <img src={require('../Images/female/' + woman + '.jpg')} alt="woman"/>
-      <div className="text"><h3>Women<span className="text-uppercase"></span></h3></div>
+        <img src={require('../Images/female/' + woman + '.jpg')} alt="woman"/>
+        <div className="text">
+          <h3>Women<span className="text-uppercase"></span>
+          </h3>
+        </div>
+      </div>);
+    } else if (this.props.gender === "male") {
+      return (<div className="img-box">
+        <img src={require('../Images/male/' + man + '.jpg')} alt="man"/>
+        <div className="text">
+          <h3>Men<span className="text-uppercase"></span>
+          </h3>
+        </div>
+      </div>);
+    } else {
+      return (<div className="img-box">
+        <img src={require('../Images/defaultImg/' + this.state.img + '.jpg')} alt="defaultImg"/>
       </div>);
     }
-    else if (this.props.gender === "male") {
-      return (<div className="img-box">
-      <img src={require('../Images/male/' + man + '.jpg')} alt="man"/>
-      <div className="text"><h3>Men<span className="text-uppercase"></span></h3></div>
-      </div>);
-    }
-     else  {
-      return (<div className="img-box">
-      <img src={require('../Images/defaultImg/' + this.state.img + '.jpg')} alt="defaultImg"/>
-
-      </div>);
-    }
-
   }
 }
-
-
 
 
 export default Img;
