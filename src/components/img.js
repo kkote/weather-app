@@ -1,4 +1,4 @@
-currentTempimport React from "react";
+import React from "react";
 
 class Img extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class Img extends React.Component {
     } else if (between(currentTemp, 50, 60)) {
       this.setState({woman: "womanfall", man: "manfall1", img: "falldefault1"
        });
-    } else if (between(x, 40, 50)) {
+    } else if (between(currentTemp, 40, 50)) {
       this.setState({woman: "winterwoman", man: "manwinter1", img: "winter-couplesize1s"
          });
     } else {

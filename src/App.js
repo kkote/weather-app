@@ -25,7 +25,6 @@ class App extends React.Component {
       error: undefined
     };
     this.onCityChange = this.onCityChange.bind(this);
-    { /*this.onGenderChange = this.onGenderChange.bind(this); */ }
   }
 
   handleDataChange() {
@@ -81,14 +80,7 @@ class App extends React.Component {
   }
 
   render() {
-  {  /* const { city, temp, hightemp, lowtemp, currentWeather, gender} = this.state; */ }
-
-    const city = this.state.city;
-    const temp = this.state.currentTemp;
-    const hightemp = this.state.hiTemp;
-    const lowtemp = this.state.loTemp;
-    const currentWeather = this.state.currentWeather;
-    const gender = this.state.gender;
+   const { city, currentTemp, hiTemp, loTemp, currentWeather, gender} = this.state; 
     const female = "female";
     const male = "male";
 
@@ -101,7 +93,7 @@ class App extends React.Component {
             <Search handleSubmit={this.onCityChange} error={this.state.error}/>
           </div>
           <hr className="headerdivider"/>
-          <Display city={city} currentTemp={temp} currentWeather={currentWeather} hiTemp={hightemp} loTemp={lowtemp}/>
+          <Display city={city} currentTemp={currentTemp} currentWeather={currentWeather} hiTemp={hiTemp} loTemp={loTemp}/>
           <hr className="headerdivider"/>
         </Toolbar>
       </div>
@@ -110,12 +102,12 @@ class App extends React.Component {
         <div className="mainFeaturedPost">
           <Grid container className="mainFeaturedPostContainer">
             <Grid item xs={12} md={8} className="mainDisplay">
-              <Img gender={gender} currentTemp={temp}/>
+              <Img gender={gender} currentTemp={currentTemp}/>
             </Grid>
 
             <Grid item xs={12} md={4} className="mainDisplay styleDisplay">
               <div className="rightDiv">
-                <Style currentTemp={temp} city={city}/>
+                <Style currentTemp={currentTemp} city={city}/>
               </div>
             </Grid>
           </Grid>
@@ -126,13 +118,13 @@ class App extends React.Component {
           <Grid container className="mainFeaturedPostContainer">
             <Grid item xs={12} md={5} className="mainDisplay">
               <div className="MFImages">
-              <Img gender={female} currentTemp={temp}/>
+              <Img gender={female} currentTemp={currentTemp}/>
               </div>
             </Grid>
             <Grid item xs={12} md={5} className="mainDisplay">
               <div className="MFImages">
 
-                <Img gender={male} currentTemp={temp}/>
+                <Img gender={male} currentTemp={currentTemp}/>
               </div>
 
             </Grid>
