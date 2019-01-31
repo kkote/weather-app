@@ -7,9 +7,9 @@ class Img extends React.Component {
       currentTemp: this.props.currentTemp,
       error: "error",
       gender: this.props.gender,
-      woman: "w-winter1s",
-      man: "manwinter2",
-      img:  "winter-couplesize1s"
+      woman: "womansummer",
+      man: "mansummer",
+      img:  "summerdefault"
     };
     this.setStyle = this.setStyle.bind(this);
 
@@ -23,21 +23,24 @@ class Img extends React.Component {
       return currentTemp >= min && currentTemp <= max;
     }
 
+    const imagesFromWeather = [
+    {id:"1", woman: "womansummer", man: "mansummer",img: "summerdefault"},
+    {id:"2", woman: "womanspring", man: "manspring", img: "spring-group-s1"},
+    {id:"3", woman: "womanfall", man: "manfall1", img: "falldefault1"},
+    {id:"4", woman: "winterwoman", man: "manwinter1", img: "winter-couplesize1s"},
+    {id:"5", woman: "w-winter1s", man: "manwinter2", img: "winter-couplesize1s"}
+    ];
+
     if (currentTemp >= 75) {
-      this.setState({woman: "womansummer", man: "mansummer",img: "summerdefault"
-        });
+      this.setState((imagesFromWeather[0]));
     } else if (between(currentTemp, 60, 75)) {
-      this.setState({woman: "womanspring", man: "manspring", img: "spring-group-s1"
-      });
+      this.setState((imagesFromWeather[1]));
     } else if (between(currentTemp, 50, 60)) {
-      this.setState({woman: "womanfall", man: "manfall1", img: "falldefault1"
-       });
+      this.setState((imagesFromWeather[2]));
     } else if (between(currentTemp, 40, 50)) {
-      this.setState({woman: "winterwoman", man: "manwinter1", img: "winter-couplesize1s"
-         });
+      this.setState((imagesFromWeather[3]));
     } else {
-      this.setState({woman: "w-winter1s", man: "manwinter2", img: "winter-couplesize1s"
-      });
+      this.setState((imagesFromWeather[4]));
     }
   }
 
