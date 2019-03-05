@@ -1,5 +1,5 @@
 import React from "react";
-import Style from "./components/style";
+import Style from "./components/clothingText";
 import Search from "./components/search";
 import Img from "./components/img";
 import Display from "./components/display";
