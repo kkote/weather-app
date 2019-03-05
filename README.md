@@ -4,11 +4,9 @@
 
 
 
-
-
 ## Usage example
 
-Gives style choices based on the temperature and current weather conditions.
+Suggests clothing based on the temperature and current weather conditions.
 
 
 
