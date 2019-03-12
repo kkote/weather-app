@@ -52,20 +52,16 @@ class Img extends React.Component {
     let man = this.state.man;
 
     if (this.props.gender === "female") {
-      return (<div className="img-box">
+      return (<div className="img-box"><h2>Women<span className="text-uppercase"></span>
+  </h2>
         <img src={require('../Images/female/' + woman + '.jpg')} alt="woman"/>
-        <div className="text">
-          <h3>Women<span className="text-uppercase"></span>
-          </h3>
-        </div>
+
       </div>);
     } else if (this.props.gender === "male") {
       return (<div className="img-box">
+      <h2>Men<span className="text-uppercase"></span>
+  </h2>
         <img src={require('../Images/male/' + man + '.jpg')} alt="man"/>
-        <div className="text">
-          <h3>Men<span className="text-uppercase"></span>
-          </h3>
-        </div>
       </div>);
     } else {
       return (<div className="img-box">
