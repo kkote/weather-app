@@ -14,7 +14,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      city: "St. Louis",
+      city: "",
       currentTemp: "35",
       currentWeather: "Snowing",
       hiTemp: "37",

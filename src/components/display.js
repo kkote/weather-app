@@ -5,7 +5,7 @@ import CardContent from "@material-ui/core/CardContent";
 
 const Display = props => {
   return (
-    <Grid item="item" xs={12} md={7} className="displayGrid">
+    <Grid item xs={12} md={7} className="displayGrid">
       <Card elevation={0} className="displayCard">
         <CardContent className="CardContents">
 

@@ -7,9 +7,9 @@ class Img extends React.Component {
       currentTemp: this.props.currentTemp,
       error: "error",
       gender: this.props.gender,
-      woman: "w-winter1s",
-      man: "manwinter2",
-      img:  "winter-couplesize1s"
+      woman: "defaultw",
+      man: "default-m",
+      img:  "default1"
     };
     this.setImage = this.setImage.bind(this);
   };
@@ -24,9 +24,9 @@ class Img extends React.Component {
 
     const imagesForWeather = [
     {id:"1", woman: "womansummer", man: "mansummer",img: "summerdefault"},
-    {id:"2", woman: "womanspring", man: "manspring", img: "spring-group-s1"},
-    {id:"3", woman: "womanfall", man: "manfall1", img: "falldefault1"},
-    {id:"4", woman: "winterwoman", man: "manwinter1", img: "winter-couplesize1s"},
+    {id:"2", woman: "womanspring", man: "manspring", img: "spring-group2"},
+    {id:"3", woman: "womanfall", man: "manfall1", img: "spring-group-s1"},
+    {id:"4", woman: "winterwoman", man: "manwinter1", img: "falldefault1"},
     {id:"5", woman: "w-winter1s", man: "manwinter2", img: "winter-couplesize1s"}
     ];
 
