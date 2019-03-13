@@ -94,9 +94,8 @@ body {
 }
 
 .blogsearchpaper input {
-padding: 19px 14px 4px 0px;
+  padding: 19px 14px 4px 0px;
   text-align: right;
-
 }
 
 .blogsearchpaper button {
@@ -296,31 +295,8 @@ img {
   text-align: center;
 }
 
-/* .img-box .text {
-  z-index: 2;
-  top:0;
-  padding-left: 20px;
-  position: absolute;
-  width: 100%;
-  color: white;
-  opacity: .8;
-  background: black;
-  width: 60%;
-}
-
-.img-box .text span {
-  font-size: 12px;
-  letter-spacing: .1em;
-  font-weight: 900;
-  float: right;
-  margin: .5em;
-} */
-
-
-
 /*
 *******Footer********** */
-
 .footer {
   padding: 50px;
   color: white;
@@ -332,16 +308,15 @@ img {
   float: right;
 }
 
-.footerRight a{
+.footerRight a {
   float: right;
   text-decoration: none !important;
   color: white !important;
 }
 
-
 /* ******Mobile Sizing ************ */
 @media screen and (max-width: 600px) {
-.App {
+  .App {
     height: auto;
   }
 
@@ -369,7 +344,6 @@ img {
   .GridContainer {
     flex-wrap: nowrap !important;
   }
-
 
   .styleList {
     display: inline-flex;
@@ -476,7 +450,6 @@ img {
     flex-wrap: nowrap !important;
   }
 
-
   .styleList {
     display: inline-flex;
     margin: 5px 0px 5px 0px !important;
@@ -556,6 +529,4 @@ img {
     display: flex;
     justify-content: center;
   }
-
-
 }

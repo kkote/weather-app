@@ -8,7 +8,6 @@ const Display = props => {
     <Grid item xs={12} md={7} className="displayGrid">
       <Card elevation={0} className="displayCard">
         <CardContent className="CardContents">
-
           <div className="toolbarDisplayGroup">
             <span className="location"> {props.city} </span>
             <span id="currentTemp">{props.currentTemp}°F</span>
@@ -21,7 +20,6 @@ const Display = props => {
             <span className="temprange numbers">Low</span>
             <span className="tempoutput numbers">{props.loTemp}°F</span>
           </div>
-
         </CardContent>
       </Card>
     </Grid>

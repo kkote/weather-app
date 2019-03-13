@@ -6,7 +6,7 @@
 
 ## Usage example
 
-Suggests clothing based on the temperature and current weather conditions.
+Suggests clothing based on the temperaturr data received from OpenWeatherMap API.
 
 
 
