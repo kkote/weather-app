@@ -20,7 +20,7 @@ Suggests clothing based on the temperature and current weather conditions.
 
 ## Author
 
-* **Katherine Kote**  - [KateGray52](https://github.com/KateGray52)
+* **Kay D. Kote**  - [Kkote](https://github.com/kkote)
 
 ## License
 
