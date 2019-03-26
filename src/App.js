@@ -145,9 +145,9 @@ class App extends React.Component {
         <div className="footer">
           <div className="row">
             <div className="fullcolumn">
-              &copy; Weather Style Guide By Kay D. K
+              &copy; Weather Style Guide By K.D. Kote
               <span className="footerRight">
-                <a href="https://github.com/kkote">Github: Kkote</a>
+                <a href="https://github.com/kkote">Github: kkote</a>
               </span>
             </div>
           </div>
