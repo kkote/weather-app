@@ -6,7 +6,7 @@
 
 ## Usage example
 
-Suggests clothing based on the temperaturr data received from OpenWeatherMap API.
+Suggests clothing based on the temperature data received from OpenWeatherMap API.
 
 
 
@@ -20,7 +20,7 @@ Suggests clothing based on the temperaturr data received from OpenWeatherMap API
 
 ## Author
 
-* **Kay D. Kote**  - [Kkote](https://github.com/kkote)
+* [kkote](https://github.com/kkote)
 
 ## License
 
