@@ -107,7 +107,7 @@ class App extends React.Component {
               />
             </div>
             <hr className="headerdivider" />
-
+            <Style currentTemp={currentTemp} city={city} />
             <hr className="headerdivider" />
           </Toolbar>
         </div>

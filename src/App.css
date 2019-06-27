@@ -219,12 +219,19 @@ img {
   margin: auto;
 }
 
+.clothingSubheader{
+  padding-top: 5px;
+  line-height: 10px !important;
+}
+
 .styleList li {
-  padding-left: 24px;
+  padding: 5px;
+  /* padding-left: 24px;
   padding-bottom: 5px;
   padding-right: 24px;
-  padding-top: 5px;
-  display: inline-block;
+  padding-top: 5px; */
+  /* display: inline-block; */
+  display: inline;
   /* text-align: center; */
 }
 

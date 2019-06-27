@@ -10,10 +10,10 @@ class Style extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      top: "Long Sleeve",
-      pants: "Thick Pants",
-      outer: "Coat",
-      shoes: "Boots",
+      top: "",
+      pants: "",
+      outer: "",
+      shoes: "",
       currentTemp: this.props.currentTemp,
       error: "error"
     };
@@ -58,7 +58,7 @@ class Style extends React.Component {
     return (<React.Fragment>
 
       <List component="nav" subheader={<Hidden xsDown > <ListSubheader >
-          <Typography variant="h4" gutterBottom>
+          <Typography  variant="h6" className="clothingSubheader" disableGutters>
             Today is a Great Day to Wear A...
           </Typography>
         </ListSubheader>
