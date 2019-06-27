@@ -343,8 +343,16 @@ img {
     width: 100%;
   }
 
-  .hiddenonmobile {
+  /* .hiddenonmobile {
     display: none !important;
+  } */
+
+  .headerSearch {
+    width: 100%;
+    display: block;
+    justify-content: space-around;
+    padding: 5px;
+    margin: 5px;
   }
 
   .blogsearchpaper {
@@ -406,7 +414,8 @@ img {
   }
 
   .blogheadermain {
-    font-size: large;
+    font-size: 1.3rem !important;
+    padding: 5px;
   }
 
   .paperforsearchanddisplay {
@@ -435,9 +444,7 @@ img {
     flex-direction: column-reverse;
   }
 
-  .headerdivider {
-    display: none;
-  }
+
 
   .displayGrid {
     display: flex;
@@ -449,9 +456,9 @@ img {
     width: 100%;
   }
 
-  .hiddenonmobile {
+  /* .hiddenonmobile {
     display: none !important;
-  }
+  } */
 
   .blogsearchpaper {
     padding: 2px;
@@ -483,6 +490,9 @@ img {
     justify-content: center;
   }
 
+  .mainFeaturedPost{
+    margin-top: 0;
+  }
   .mainFeaturedPostContainer {
     flex-wrap: wrap !important;
   }
@@ -505,10 +515,24 @@ img {
 
   .mfDiv {
     display: flex;
+
+  }
+  .mainImage{
+
+    margin-right: 1rem !important;
+    margin-left: 1rem !important;
+  }
+
+  .MFImages{
+    max-width: 100%;
+    margin: 1rem;
   }
 
   .CardContents {
     padding: 5px !important;
+  }
+  .blogheader{
+    justify-content: center;
   }
 
   .blogheadermain {
@@ -542,7 +566,7 @@ img {
   }
 
   .headerdivider {
-    display: none;
+    /* display: none; */
   }
 
   .displayGrid {

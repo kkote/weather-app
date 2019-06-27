@@ -4,7 +4,7 @@ import Card from "@material-ui/core/Card";
 
 const Display = props => {
   return (
-    <Grid item xs={5} md={5} className="displayGrid">
+    <Grid item xs={12} md={5} className="displayGrid">
       <Card elevation={0} className="displayCard CardContents">
 
           <div className="toolbarDisplayGroup">

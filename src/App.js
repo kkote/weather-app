@@ -115,7 +115,7 @@ class App extends React.Component {
         <main className="maindiv">
           <div className="mainFeaturedPost">
             <Grid container className="mainFeaturedPostContainer">
-              <Grid item xs={12} md={4} className="mainDisplay">
+              <Grid item xs={12} md={4} className="mainDisplay mainImage">
                 <Img gender={gender} currentTemp={currentTemp} />
               </Grid>
 
