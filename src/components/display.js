@@ -1,13 +1,12 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
 
 const Display = props => {
   return (
-    <Grid item xs={12} md={7} className="displayGrid">
-      <Card elevation={0} className="displayCard">
-        <CardContent className="CardContents">
+    <Grid item xs={5} md={5} className="displayGrid">
+      <Card elevation={0} className="displayCard CardContents">
+
           <div className="toolbarDisplayGroup">
             <span className="location"> {props.city} </span>
             <span id="currentTemp">{props.currentTemp}°F</span>
@@ -20,7 +19,7 @@ const Display = props => {
             <span className="temprange numbers">Low</span>
             <span className="tempoutput numbers">{props.loTemp}°F</span>
           </div>
-        </CardContent>
+
       </Card>
     </Grid>
   );

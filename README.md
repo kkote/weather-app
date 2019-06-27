@@ -14,7 +14,7 @@ Suggests clothing based on the temperature data received from OpenWeatherMap API
 * [React](https://reactjs.org/) - React
 * [OpenWeatherMap API](https://openweathermap.org/api) - API
 
-* [Material Ui](https://material-ui.com/) -Layout
+* [Material UI](https://material-ui.com/) -Layout
 
 
 

@@ -26,7 +26,7 @@ class Search extends React.Component {
             onChange={this.handleChange}
             defaultValue="St. Louis"
           />
-          <Button variant="contained" type="submit">
+        <Button size="small" variant="contained" type="submit">
             <i className="material-icons">search</i>
           </Button>
         </form>

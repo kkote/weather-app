@@ -14,7 +14,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      city: "",
+      city: "Chicago",
       currentTemp: "35",
       currentWeather: "Snowing",
       hiTemp: "37",
@@ -98,15 +98,16 @@ class App extends React.Component {
                 handleSubmit={this.onCityChange}
                 error={this.state.error}
               />
+              <Display
+                city={city}
+                currentTemp={currentTemp}
+                currentWeather={currentWeather}
+                hiTemp={hiTemp}
+                loTemp={loTemp}
+              />
             </div>
             <hr className="headerdivider" />
-            <Display
-              city={city}
-              currentTemp={currentTemp}
-              currentWeather={currentWeather}
-              hiTemp={hiTemp}
-              loTemp={loTemp}
-            />
+
             <hr className="headerdivider" />
           </Toolbar>
         </div>
