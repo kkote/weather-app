@@ -115,18 +115,33 @@ class App extends React.Component {
         <main className="maindiv">
           <div className="mainFeaturedPost">
             <Grid container className="mainFeaturedPostContainer">
-              <Grid item xs={12} md={8} className="mainDisplay">
+              <Grid item xs={12} md={4} className="mainDisplay">
                 <Img gender={gender} currentTemp={currentTemp} />
               </Grid>
 
-              <Grid item xs={12} md={4} className="mainDisplay styleDisplay">
+              <Grid item xs={12} md={7} className="mainDisplay styleDisplay">
                 <div className="rightDiv">
-                  <Style currentTemp={currentTemp} city={city} />
-                </div>
+                {/* <Style currentTemp={currentTemp} city={city} /> */}
+                <Grid container className="mainFeaturedPostContainer">
+                  <Grid item xs={12} md={12} className="mainDisplay">
+                    <div className="MFImages">
+                      <Img gender={female} currentTemp={currentTemp} />
+                    </div>
+                  </Grid>
+                  <Grid item xs={12} md={12} className="mainDisplay">
+                    <div className="MFImages">
+                      <Img gender={male} currentTemp={currentTemp} />
+                    </div>
+                  </Grid>
+                </Grid>
+
+
+              </div>
               </Grid>
             </Grid>
           </div>
 
+          {/*
           <div className="mainFeaturedPost ">
             <Grid container className="mainFeaturedPostContainer">
               <Grid item xs={12} md={5} className="mainDisplay">
@@ -141,12 +156,13 @@ class App extends React.Component {
               </Grid>
             </Grid>
           </div>
+        */}
         </main>
 
         <div className="footer">
           <div className="row">
             <div className="fullcolumn">
-              &copy; Weather Style Guide By K.D. Kote
+              &copy; Weather Style Guide By K. Kote
               <span className="footerRight">
                 <a href="https://github.com/kkote">Github: kkote</a>
               </span>

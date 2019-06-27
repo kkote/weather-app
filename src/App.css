@@ -60,7 +60,8 @@ body {
   width: 90%;
   display: flex;
   justify-content: space-around;
-  /* padding: 10px; */
+  padding: 10px;
+  margin: 10px;
 }
 
 .blogheader {
@@ -114,6 +115,7 @@ body {
 .toolbarDisplayGroup {
   font-size: 16px;
   float: left;
+  padding-bottom: 10px
 }
 
 .toolbarDisplayGroup div {
@@ -232,7 +234,7 @@ img {
   padding-top: 5px; */
   /* display: inline-block; */
   display: inline;
-  /* text-align: center; */
+  text-align: center;
 }
 
 .styleList li span p {
@@ -301,7 +303,7 @@ img {
 /* Male Female section */
 .MFImages {
   max-width: 80%;
-  margin: 2rem;
+  margin: 1rem;
 }
 
 .img-box {
