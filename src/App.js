@@ -15,10 +15,10 @@ class App extends React.Component {
 
     this.state = {
       city: "Chicago",
-      currentTemp: "35",
-      currentWeather: "Snowing",
-      hiTemp: "37",
-      loTemp: "25",
+      currentTemp: "",
+      currentWeather: "",
+      hiTemp: "",
+      loTemp: "",
       gender: "",
       isLoaded: false,
       error: undefined

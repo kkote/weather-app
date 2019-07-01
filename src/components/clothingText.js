@@ -15,6 +15,7 @@ class Style extends React.Component {
       outer: "",
       shoes: "",
       currentTemp: this.props.currentTemp,
+      city: this.props.city,
       error: "error"
     };
     this.setClothes = this.setClothes.bind(this);
@@ -53,13 +54,13 @@ class Style extends React.Component {
 
   render() {
 
-    const {outer, top, pants, shoes} = this.state;
+    const {outer, top, pants, shoes, city} = this.state;
 
     return (<React.Fragment>
 
       <List component="nav" subheader={<Hidden xsDown > <ListSubheader >
           <Typography  variant="h6" className="clothingSubheader" disableGutters>
-            Today is a Great Day to Wear A...
+            In <b>{city}</b>, Today is a Great Day to Wear A...
           </Typography>
         </ListSubheader>
       </Hidden>} className="styleList mfDiv">
