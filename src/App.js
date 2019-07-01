@@ -140,23 +140,6 @@ class App extends React.Component {
               </Grid>
             </Grid>
           </div>
-
-          {/*
-          <div className="mainFeaturedPost ">
-            <Grid container className="mainFeaturedPostContainer">
-              <Grid item xs={12} md={5} className="mainDisplay">
-                <div className="MFImages">
-                  <Img gender={female} currentTemp={currentTemp} />
-                </div>
-              </Grid>
-              <Grid item xs={12} md={5} className="mainDisplay">
-                <div className="MFImages">
-                  <Img gender={male} currentTemp={currentTemp} />
-                </div>
-              </Grid>
-            </Grid>
-          </div>
-        */}
         </main>
 
         <div className="footer">

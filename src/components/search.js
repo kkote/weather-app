@@ -6,7 +6,7 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ""
+      value: "St. Louis"
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -30,7 +30,7 @@ class Search extends React.Component {
             <i className="material-icons">search</i>
           </Button>
         </form>
-        <div>{this.props.error}</div>
+        <div className="searchError">{this.props.error}</div>
       </div>
     );
   }

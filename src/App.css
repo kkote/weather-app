@@ -63,6 +63,9 @@ body {
   padding: 10px;
   margin: 10px;
 }
+.searchError{
+  color: red;
+}
 
 .blogheader {
   display: flex;

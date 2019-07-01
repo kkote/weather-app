@@ -60,7 +60,7 @@ class Style extends React.Component {
 
       <List component="nav" subheader={<Hidden xsDown > <ListSubheader >
           <Typography  variant="h6" className="clothingSubheader" disableGutters>
-            In <b>{city}</b>, Today is a Great Day to Wear A...
+            In <b>{this.props.city}</b>, Today is a Great Day to Wear A...
           </Typography>
         </ListSubheader>
       </Hidden>} className="styleList mfDiv">
