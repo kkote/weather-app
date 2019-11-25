@@ -1,26 +1,31 @@
 # Weather App
-> Use your location and find what to wear based on the forecast.
 
 
+Use your location and find what to wear based on the forecast.
 
 
-## Usage example
-
-Suggests clothing based on the temperature data received from OpenWeatherMap API.
+# How to Use
+1. Clone or Download repo.
+2. cd into folder.
+3. Run  ``` npm install ```.
+4. Run  ``` npm start ```.
+5. Go to local dev port 8000 (http://localhost:8000)
+6. Make changes in src/App.js and src/components
 
 
 
 ## Built With
-* [React](https://reactjs.org/) - React
-* [OpenWeatherMap API](https://openweathermap.org/api) - API
 
-* [Material UI](https://material-ui.com/) -Layout
+* [React](https://reactjs.org/)
+* [create-react-aa](https://create-react-app.dev)
+* [OpenWeatherMap API](https://openweathermap.org/api) 
+* [Material UI](https://material-ui.com/) 
 
 
 
 ## Author
 
-* [kkote](https://github.com/kkote)
+[kkote](https://github.com/kkote)
 
 ## License
 
