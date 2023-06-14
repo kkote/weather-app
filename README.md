@@ -1,7 +1,8 @@
 # Weather App
 
-
-Use your location and find what to wear based on the forecast.
+Created an interactive web application that provides apparel suggestions based on data retrieved from the Open Weather API.
+Utilized JavaScript to fetch weather data and recommend suitable clothing options.
+Enhanced the user experience by providing weather forecasts and real-time suggestions.
 
 
 # How to Use
